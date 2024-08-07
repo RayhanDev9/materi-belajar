@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute</title>
+
+    <style>
+        /* a[attribute] Selector  */
+        /* a[target]{
+            color: red;
+        } */
+
+        /* a[attribute="value"] Selector */
+        /* a[target="_blank"]{
+            color: red;
+        } */
+
+        /* p[attribute~="value"] ` */
+        /* p[title~="belajar"] {
+            color: blueviolet;
+        } */
+
+        /*  p[attribute|="value"] Selector */
+        /* p[title|="belajar"] {
+            color: blueviolet;
+        } */
+
+        /*  p[attribute^="value"] Selector */
+        /* p[title^="belajar"] {
+            color: blueviolet;
+        } */
+
+        /*  p[attribute$="value"] Selector */
+        /* p[title$="belajar"] {
+            color: blueviolet;
+        } */
+
+        /*  p[attribute*="value"] Selector */
+        /* p[title*="belajar"] {
+            color: blueviolet;
+        } */
+
+        /*  [attribute*="value"] Selector */
+        /* [title*="belajar"] {
+            color: blueviolet;
+        } */
+
+        /*  .test[attribute*="value"] Selector */
+        /* .test[title*="belajar"] {
+            color: blueviolet;
+        } */
+
+    </style>
+
+</head>
+<body>
+    <!-- a[attribute] Selector -->
+    <!-- <a href="" target="_blank">Contoh 1</a>
+    <a href="">Contoh 1</a>
+    <a href="" target="_blank">Contoh 1</a>
+    <a href="">Contoh 1</a> -->
+
+    <!-- a[attribute="value"] Selector -->
+    <!-- <a href="" target="_blank">Contoh 1</a>
+    <a href="" target="_self">Contoh 1</a>
+    <a href="" target="_blank">Contoh 1</a>
+    <a href="" target="_self">Contoh 1</a> -->
+
+    <!-- p[attribute~="value"] Selector -->
+    <!-- <p title="belajar pemograman">Ini dipilih</p>
+    <p title="belajar-pemograman">Ini tidak dipilih</p> -->
+
+    <!-- p[attribute|="value"] Selector -->
+    <!-- <p title="belajar pemograman">Ini tidak dipilih</p>
+    <p title="belajar">Ini dipilih</p>
+    <p title="belajarpemograman">Ini tidak dipilih</p>
+    <p title="belajar-pemograman">Ini dipilih</p> -->
+
+    <!-- p[attribute^="value"] Selector -->
+    <!-- <p title="belajar pemograman">Ini dipilih</p>
+    <p title="belajar">Ini dipilih</p>
+    <p title="belajarpemograman">Ini dipilih</p>
+    <p title="belajar-pemograman">Ini dipilih</p>
+    <p title="pemograman belajar">Initidak dipilih</p> -->
+
+    <!-- p[attribute$="value"] Selector -->
+    <!-- <p title="belajar pemograman">Ini tidak dipilih</p>
+    <p title="belajar">Ini dipilih</p>
+    <p title="belajarpemograman">Ini tidak dipilih</p>
+    <p title="belajar-pemograman">Ini tidak dipilih</p>
+    <p title="pemograman-belajar">Ini dipilih</p>
+    <p title="pemograman belajar">Ini dipilih</p> -->
+    
+    <!-- p[attribute*="value"] Selector -->
+    <!-- <p title="belajar pemograman">Ini dipilih</p>
+    <p title="belajar">Ini dipilih</p>
+    <p title="belajarpemograman">Ini dipilih</p>
+    <p title="belajar-pemograman">Ini dipilih</p>
+    <p title="pemograman-belajar">Ini dipilih</p>
+    <p title="pemograman belajar">Ini dipilih</p> -->
+
+    <!-- [attribute*="value"] Selector -->
+    <!-- <p title="belajar pemograman">Ini dipilih</p>
+    <p title="belajar">Ini dipilih</p>
+    <p title="belajarpemograman">Ini dipilih</p>
+    <p title="belajar-pemograman">Ini dipilih</p>
+    <p title="pemograman-belajar">Ini dipilih</p>
+    <p title="pemograman belajar">Ini dipilih</p> -->
+
+    <!-- .test[attribute*="value"] Selector -->
+    <!-- <p title="belajar pemograman" class="test">Ini dipilih</p>
+    <p title="belajar"  class="test">Ini dipilih</p>
+    <p title="belajarpemograman"  class="test">Ini dipilih</p>
+    <p title="belajar-pemograman"  >Ini tidak dipilih</p>
+    <p title="pemograman-belajar"  class="test">Ini dipilih</p>
+    <p title="pemograman belajar" class="test">Ini dipilih</p> -->
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinator Selector</title>
+    <style>
+        .descendant-selector p {
+            color: blueviolet;
+        }
+
+        .child-selector > p {
+            color: blueviolet;
+        }
+
+        .adjacent-sibling-selector + p {
+            color: blue;
+        }
+        .general-sibling-selector ~ p {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Descendant Selector -->
+    <!-- <div class="descendant-selector">
+        <article>
+            <p>Ini dipilih</p>
+        </article>
+        <p>Ini dipilih</p>
+    </div>
+    <p>ini tidak dipilih</p> -->
+
+    <!-- Child Selector -->
+    <!-- <div class="child-selector">
+        <article>
+            <p>Ini tidak dipilih</p>
+        </article>
+        <p>Ini dipilih</p>
+    </div>
+    <p>ini tidak dipilih</p> -->
+
+    <!-- adjacent sibling Selector -->
+    <!-- <div class="adjacent-sibling-selector">
+        <article>
+            <p>Ini tidak  dipilih</p>
+        </article>
+        <p>Ini tidak  dipilih</p>
+    </div>
+    <p>ini dipilih</p>
+    <p>ini tidak  dipilih</p> -->
+
+    <!-- general sibling Selector -->
+    <!-- <p>Ini tidak  dipilih</p>
+    <div class="general-sibling-selector">
+        <article>
+            <p>Ini tidak  dipilih</p>
+        </article>
+        <p>Ini tidak  dipilih</p>
+    </div>
+    <p>ini dipilih</p>
+    <p>ini dipilih</p>
+    <p>ini dipilih</p> -->
+</body>
+</html>
