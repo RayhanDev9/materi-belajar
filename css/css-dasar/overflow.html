@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,20,121,1) 35%, rgba(0,212,255,1) 100%);
+
+        }
+        div {
+            background-color: blue;
+            color: white;
+        }
+        .article-1 {
+            height: 200px;
+            width: 200px;
+            margin: 20px;
+            padding: 5px;
+            
+            /* Overflow  */
+            /* overflow: visible; */
+            overflow: auto;
+            /* overflow: hidden; */
+            /* overflow:scroll; */
+            
+            /* Overflow-X  */
+            /* overflow-x:visible; */
+            /* overflow-x: auto; */
+            /* overflow-x: hidden; */
+            /* overflow-x:scroll; */
+
+            /* Overflow-Y */
+            /* overflow-y:visible; */
+            /* overflow-y: auto; */
+            /* overflow-y: hidden; */
+            /* overflow-y:scroll; */
+
+            
+            /* Outline => seperti border,bedanya outline tidak mengambil space sama sekali,kalo border mengambil space*/
+            outline-style:solid ;
+            outline-width: 4px;
+            outline-color: black;
+            border-radius: 5px;
+
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="article-1">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat adipisci nesciunt molestiae consequatur, fuga expedita. Rerum corporis, sapiente minima nam iusto amet provident qui quidem dignissimos ex labore, dolor ducimus!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat adipisci nesciunt molestiae consequatur, fuga expedita. Rerum corporis, sapiente minima nam iusto amet provident qui quidem dignissimos ex labore, dolor ducimus!</p>
+    </div>
+
+</body>
+</html>

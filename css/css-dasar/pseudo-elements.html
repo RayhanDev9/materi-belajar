@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo Element</title>
+    <style>
+      .boring-text::after {
+        content: " <- BORING";
+        color: red;
+      }
+      .exciting-text::before {
+        content: " <- EXCITING!";
+        color: green;
+      }
+
+      .ribbon {
+        background-color: #5bc8f7;
+      }
+
+      .ribbon::after {
+        content: "This is a fancy orange box.";
+        background-color: #ffba10;
+        border-color: black;
+        border-style: dotted;
+      }
+      span[data-descr] {
+        position: relative;
+        text-decoration: underline;
+        font-weight: bolder;
+        color: #00f;
+        cursor: help;
+      }
+
+      span[data-descr]:hover::after,
+      span[data-descr]:focus::after {
+        content: attr(data-descr);
+        position: absolute;
+        left: 0;
+        top: 24px;
+        min-width: 200px;
+        border: 1px #aaaaaa solid;
+        border-radius: 10px;
+        background-color: #ffffcc;
+        padding: 12px;
+        color: #000000;
+        font-size: 14px;
+        z-index: 1;
+      }
+
+      ::backdrop {
+        background-image: radial-gradient(
+            circle,
+            #fff 0 5vw,
+            transparent 5vw 20vw,
+            #fff 20vw 22.5vw,
+            #eee 22.5vw
+          ),
+          conic-gradient(
+            #272b66 0 50grad,
+            #2d559f 50grad 100grad,
+            #9ac147 100grad 150grad,
+            #639b47 150grad 200grad,
+            #e1e23b 200grad 250grad,
+            #f7941e 250grad 300grad,
+            #662a6c 300grad 350grad,
+            #9a1d34 350grad 400grad,
+            #43a1cd 100grad 150grad,
+            #ba3e2e
+          );
+      }
+
+      input[type="file"]::file-selector-button {
+        border: 2px solid #6c5ce7;
+        padding: 0.2em 0.4em;
+        border-radius: 0.2em;
+        background-color: #a29bfe;
+        transition: 1s;
+      }
+
+      input[type="file"]::file-selector-button:hover {
+        background-color: #81ecec;
+        border: 2px solid #00cec9;
+      }
+
+      .letter::first-letter {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="boring-text">Here is some plain old boring text.</p>
+    <p>Here is some normal text that is neither boring nor exciting.</p>
+    <p class="exciting-text">Contributing to MDN is easy and fun.</p>
+
+    <span class="ribbon">Look at the orange box after this text. </span>
+
+    <p>
+      Here we have some
+      <span tabindex="1" data-descr="collection of words and punctuation">
+        text
+      </span>
+      with a few
+      <span tabindex="1" data-descr="small popups that appear when hovering">
+        tooltips</span
+      >.
+    </p>
+
+    <dialog>
+      <button autofocus>Close</button>
+      <p>This modal dialog has a beautiful backdrop!</p>
+    </dialog>
+    <button>Show the dialog</button>
+
+    <form>
+      <label for="fileUpload">Upload file</label>
+      <input type="file" id="fileUpload" />
+    </form>
+
+    <p class="letter">
+      Scientists exploring the depths of Monterey Bay unexpectedly encountered a
+      rare and unique species of dragonfish. This species is the rarest of its
+      species.
+    </p>
+
+    <p class="letter">
+      When Robison and a team of researchers discovered this fish, they were
+      aboard a week-long expedition.
+    </p>
+
+    <script>
+      const dialog = document.querySelector("dialog");
+      const showButton = document.querySelector("dialog + button");
+      const closeButton = document.querySelector("dialog button");
+
+      // "Show the dialog" button opens the dialog modally
+      showButton.addEventListener("click", () => {
+        dialog.showModal();
+      });
+
+      // "Close" button closes the dialog
+      closeButton.addEventListener("click", () => {
+        dialog.close();
+      });
+    </script>
+  </body>
+</html>
