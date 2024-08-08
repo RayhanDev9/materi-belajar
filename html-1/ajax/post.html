@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Native</title>
+
+    <style>
+        body {
+            margin: 5%;
+            font-family: sans-serif;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Latihan AJAX 1</h1>
+
+    <button id="btn">Ambil data</button>
+    <ul>
+        <li>Nama : <strong id="result"></strong></li>
+    </ul>
+
+    <script>
+        function loadAjax () {
+        const ajax = new XMLHttpRequest()
+        
+        ajax.open('POST', 'src/data.json',true)
+        ajax.getResponseHeader('Content-Type','application/x-www-form-urlencoded')
+
+        ajax.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status ===200) {
+                let data =JSON.parse(this.responseText);
+                document.getElementById('result').textContent =data.nama;
+                }
+            }
+            ajax.send();
+        }
+
+        document.getElementById('btn').onclick = function () {
+           loadAjax()
+        }
+
+    </script>
+</body>
+</html>
