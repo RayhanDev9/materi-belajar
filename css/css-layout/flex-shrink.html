@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Grow</title>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .content {
+        background-color: aqua;
+        border: solid 1px blue;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .content-1 {
+        flex-shrink: 1;
+    }
+
+    .content-2 {
+        flex-shrink: 2;
+    }
+    .content-3 {
+        flex-shrink: 1;
+    }
+
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="content content-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, rerum culpa labore mollitia omnis totam magni perferendis illum similique. In, et. Dolores voluptas praesentium recusandae delectus reprehenderit repellendus sed sit!</div>
+
+        <div class="content content-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, rerum culpa labore mollitia omnis totam magni perferendis illum similique. In, et. Dolores voluptas praesentium recusandae delectus reprehenderit repellendus sed sit!</div>
+
+        <div class="content content-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, rerum culpa labore mollitia omnis totam magni perferendis illum similique. In, et. Dolores voluptas praesentium recusandae delectus reprehenderit repellendus sed sit!</div>
+        
+    </div>
+</body>
+</html>
