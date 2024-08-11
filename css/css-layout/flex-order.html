@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+
+    <style>
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column; */
+            /* flex-direction: column-reverse; */
+            flex-wrap: wrap;
+            
+        }
+
+        .content {
+        width: 300px    ;
+            background-color: aqua;
+            border: 2px solid blue;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="content" style="order: 2;">
+            <h1>Ini Kontent 1</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi velit molestias accusantium consequatur, omnis nam fuga beatae asperiores aliquam repudiandae commodi nostrum alias tempore eaque voluptates? Perferendis totam corrupti maiores.</p>
+        </div>
+   
+        <div class="content" style="order: 3;">
+            <h1>Ini Kontent 2</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi velit molestias accusantium consequatur, omnis nam fuga beatae asperiores aliquam repudiandae commodi nostrum alias tempore eaque voluptates? Perferendis totam corrupti maiores.</p>
+        </div>
+
+        <div class="content" style="order: 2;">
+            <h1>Ini Kontent 3</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi velit molestias accusantium consequatur, omnis nam fuga beatae asperiores aliquam repudiandae commodi nostrum alias tempore eaque voluptates? Perferendis totam corrupti maiores.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

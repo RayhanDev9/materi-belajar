@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Tamplate</title>
+
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns:[cline1] 100px [cline2] auto [cline3] 100px [cline4];
+            grid-template-rows: [rline1] 50px [rline2] auto  [rline3] 100px [rline4];
+        }
+
+        .content {
+            background-color: aqua;
+            border: solid 2px blue;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .header {
+            background-color: aqua;
+            grid-column-start: cline1;
+            grid-column-end: cline4;
+            grid-row-start: rline1;
+            grid-row-end: rline2;
+        }
+
+        .footer {
+            background-color: aqua;
+            grid-column-start: cline1;
+            grid-column-end: cline4;
+            grid-row-start: rline3;
+            grid-row-end: rline4;
+        }
+
+        .content {
+            background-color: bisque;
+            grid-column-start: cline2;
+            grid-column-end: cline3;
+            grid-row-start: rline2;
+            grid-row-end: rline3;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p>Selamat datang di web progremer zaman now</p>
+        </div>
+        <div class="content">
+            <h1>progremer zaman now</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam laborum animi commodi necessitatibus harum velit? Aspernatur aliquam asperiores ullam! Debitis numquam animi molestiae explicabo ut atque soluta voluptas velit tenetur.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos incidunt soluta eum quae earum totam sit vitae. Minima laudantium delectus sed dignissimos, quae distinctio unde, nisi eveniet iure vel fugiat?</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos incidunt soluta eum quae earum totam sit vitae. Minima laudantium delectus sed dignissimos, quae distinctio unde, nisi eveniet iure vel fugiat?</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos incidunt soluta eum quae earum totam sit vitae. Minima laudantium delectus sed dignissimos, quae distinctio unde, nisi eveniet iure vel fugiat?</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos incidunt soluta eum quae earum totam sit vitae. Minima laudantium delectus sed dignissimos, quae distinctio unde, nisi eveniet iure vel fugiat?</p>
+        </div>
+        <div class="footer">
+            <p>develop with love by progremer zaman now</p>
+        </div>
+    </div>
+</body>
+</html>
