@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+        img {
+            width: 75%;
+        }
+        /* 
+            blur(px)
+            brightness(angka | %)
+            contrast(angka | %)
+            saturate(angka | %)
+            grayscale(angka | %)
+            sepia(angka | %)
+            hue-rotate(deg)
+            invert(angka | %)
+            opacity(angka | %)
+            drop-shadow(sama seperti box-shadow)
+
+         */
+        .img {
+            /* filter: blur(2px); */
+
+            /* filter: brightness(50%);
+            filter: brightness(130%);
+            filter: brightness(1.3); */
+
+            /* filter: contrast(150%); */
+
+            /* filter: saturate(0%);
+            filter: saturate(20%);
+            filter: saturate(200%); */
+
+            /* filter: grayscale(10%);
+            filter: grayscale(100%); */
+
+            /* filter: sepia(100%);
+            filter: sepia(10%); */
+
+            /* filter: hue-rotate(100deg); */
+
+            /* filter: invert(80%);
+            filter: invert(0); */
+
+            /* filter: opacity(.8); */
+
+            /* filter:drop-shadow(5px 5px 5px black); */
+
+            filter:grayscale(50%)  drop-shadow(5px 5px 5px black);
+            transition: 3s;
+        }
+
+        .img:hover {
+            filter:grayscale(0) brightness(130%) drop-shadow(5px 5px 5px black) ;
+        }
+
+        h1 {
+            filter:drop-shadow(5px 5px 5px black);
+        }
+
+        .oip {
+            margin-top: 20px;
+            filter: drop-shadow(10px 12px 5px white);
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Muhamad Rayhan</h1>
+    <img class="img" src="img/jumbotron-bg.jpg" alt="">
+
+    <img class="oip" src="img/OIP.jpeg" alt="">
+
+</body>
+</html>

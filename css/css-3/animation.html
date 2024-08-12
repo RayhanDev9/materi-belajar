@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+
+    <style>
+        .kotak {
+            width: 200px;
+            height: 200px;
+            background-color: salmon;
+        }
+
+        .kotak:hover {
+            /* animation: animation-kotak 2s ease; */
+
+            /* animation: animation-kotak 2s ease 2;
+            animation: animation-kotak 2s ease infinite; */
+
+            /* animation: animation-kotak 2s ease infinite normal;
+            animation: animation-kotak 2s ease infinite reverse;
+            animation: animation-kotak 2s ease infinite alternate;
+            animation: animation-kotak 2s ease infinite alternate-reverse; */
+
+            /* animation: animation-kotak 2s ease 3 alternate none;
+            animation: animation-kotak 2s ease 3 alternate backwards;
+            animation: animation-kotak 2s ease 3 alternate both;
+            animation: animation-kotak 2s ease 3 alternate forwards; */
+
+            /* animation: animation-kotak 2s ease 3 alternate forwards paused;
+            animation: animation-kotak 2s ease 3 alternate forwards running; */
+        }
+
+        /* @keyframes animation-kotak {
+            from {
+                width: 200px;
+            }
+
+            to {
+                width: 500px;
+            }
+            
+        } */
+
+        /* @keyframes animation-kotak {
+            0%{
+                width: 200px;
+            }
+
+            100% {
+                width: 500px;
+            }
+            
+        } */
+
+        @keyframes animation-kotak {
+            0%{
+                width: 200px;
+            }
+
+            50% {
+                width: 500px;
+                height: 200px;
+            }
+
+            100% {
+                height: 500px;
+                width: 500px;
+            }
+            
+        }
+    </style>
+
+</head>
+<body>
+    <div class="kotak"></div>
+</body>
+</html>
