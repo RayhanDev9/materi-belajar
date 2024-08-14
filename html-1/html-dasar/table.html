@@ -3,45 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Table</title>
+
+    <style>
+        body {
+
+        }
+        .table {
+            margin: 0px auto;            
+            overflow: auto;
+            font-size: 1.3em;
+
+        }
+        table {
+            border-collapse: collapse;
+
+        }
+
+        table,th,td {
+            border: 1px solid black;
+        } 
+        th,td {
+            padding: 10px;
+        }
+        th{
+            background-color: rgb(43, 116, 184);
+            color: white;
+        }
+        a{
+            text-decoration: none;
+        }
+        img {
+            width: 6rem;
+            height: 6rem;
+        }
+    </style>
+
 </head>
 <body>
-    
-    <h1>Belajar Table</h1>
 
-    <table style="border: 1px solid black; color: white;">
-        <colgroup>
-            <col span="2" style="background-color: blue; ">
-            <col style="background-color: blueviolet; ">
-        </colgroup>
-        <thead>
-            <tr>
-                <th colspan="2">Nama</th>
-                <th>Nilai</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td colspan="2">Muahamd Rayhan</td>
-                <td>80</td>
-            </tr>
-            <tr>
-                <td colspan="2">Muahamd Aldi</td>
-                <td>80</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td rowspan="2">Total </td>
-                <td >Total</td>
-                <td>160</td>
-            </tr>
-            <tr>
-                <td>Rata-Rata</td>
-                <td>80</td>
-            </tr>
-        </tfoot>
-    </table>
+    <div class="table">
+        <table >
+            <thead>
+                <tr >
+                    <th>Bendera</th>
+                    <th>Negara(nama singkat)</th>
+                    <th>Negara(nama resmi)</th>
+                    <th>Nama domestik</th>
+                    <th>Ibu kota</th>
+                    <th>Peta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://id.wikipedia.org/wiki/Berkas:Flag_of_Indonesia.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Indonesia.svg/150px-Flag_of_Indonesia.svg.png" alt=""></a></td>
+                    <td><a href="https://id.wikipedia.org/wiki/Indonesia" >Indonesia</a></td>
+                    <td>Republik Indonesia</td>
+                    <td><a href="https://id.wikipedia.org/wiki/Bahasa_Indonesia">Indonesia</a>: Bahasa Indonesia</td>
+                    <td><a href="https://id.wikipedia.org/wiki/DKI_Jakarta">DKI Jakarta</a></td>
+                    <td><a href="https://id.wikipedia.org/wiki/Berkas:LocationIndonesia.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/LocationIndonesia.svg/150px-LocationIndonesia.svg.png" alt=""></a></td>
+                </tr>
+    
+                <tr>
+                    <td><a href="https://id.wikipedia.org/wiki/Argentina"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/75px-Flag_of_Argentina.svg.png" alt=""></a></td>
+                    <td><a href="https://id.wikipedia.org/wiki/Argentina" >Argentina</a></td>
+                    <td>Republik Argentina</td>
+                    <td><a href="https://id.wikipedia.org/wiki/Bahasa_Spanyol">Spanyol</a>: República Argentina</td>
+                    <td><a href="https://id.wikipedia.org/wiki/Buenos_Aires">Buenos Aires</a></td>
+                    <td><a href="https://id.wikipedia.org/wiki/Berkas:Argentina_in_its_region_(de-facto).svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Argentina_in_its_region_%28de-facto%29.svg/100px-Argentina_in_its_region_%28de-facto%29.svg.png" alt=""></a></td>
+                </tr>
+    
+                <tr>
+                    <td><a href="https://id.wikipedia.org/wiki/Bolivia"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Flag_of_Bolivia.svg/75px-Flag_of_Bolivia.svg.png" alt=""></a></td>
+                    <td><a href="https://id.wikipedia.org/wiki/Bolivia" >Bolivia</a></td>
+                    <td>Republik Bolivia</td>
+                    <td><a href="https://id.wikipedia.org/wiki/Bahasa_Spanyol">Spanyol</a>: Estado Plurinacional de Bolivia</td>
+                    <td><a href="https://id.wikipedia.org/wiki/La_Paz">La paza</a></td>
+                    <td><a href="https://id.wikipedia.org/wiki/Berkas:Bolivia_in_its_region.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Bolivia_in_its_region.svg/100px-Bolivia_in_its_region.svg.png" alt=""></a></td>
+                </tr>
+    
+                
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>
