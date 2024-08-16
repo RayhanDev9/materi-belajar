@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@media query</title>
+</head>
+
+<style>
+
+ h1 {
+    font-size: 6em;
+    text-align: center;
+    color: blue;
+ }
+
+ nav {
+    font-size: 1.25em;
+    display: flex;
+ }
+ ul,li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+ }
+ ul,li,a {
+    text-decoration: none;
+    margin-right: 20px;
+ }
+
+ @media screen and (max-width:500px) {
+    h1 {
+        color: brown;
+        font-size: 3em;
+    }
+    a {
+        font-size:.7em;
+    }
+    ul,li {
+        display: block;
+        margin-top: 3px;
+    }
+ }
+ @media screen and (min-width:500px) and (max-width:768px) {
+    h1 {
+        color: blueviolet;
+    }
+
+ }
+
+ @media screen and (min-width:768px) and (max-width:992px) {
+    h1 {
+        color: coral;
+    }
+ }
+
+ @media screen and (min-width:992px) and (max-width:1200px) {
+    h1 {
+        color:plum;
+    }
+ }
+
+ @media screen and (orientation:landscape){
+    body {
+        background-color: darkslategray;
+    }
+    a {
+        color: white;
+    }
+ }
+</style>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Profile</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Register</a></li>
+        </ul>
+    </nav>
+    <h1>Media Query</h1>
+</body>
+</html>

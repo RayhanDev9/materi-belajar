@@ -1,0 +1,52 @@
+<!DOCTYPE html>     
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-Sizing</title>
+    <style>
+        .container {
+            width: 90%;
+            /* height: 500px; */
+            margin: 0 auto;
+            border: 5px solid black;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .container div {
+            width: 20%;
+            height: 15%;
+            text-align: center;
+            color: white;
+            margin: 20px;
+            background-color: blue;
+
+            /* flex-basis: 500px; */
+        }
+    
+
+        div:nth-of-type(4) {
+            /* flex-grow: 1; */
+        }
+        div:nth-of-type(5) {
+            /* flex-grow: 2; */
+        }
+        div:nth-of-type(3) {
+            /* flex-shrink: 2; */
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+</body>
+</html>
