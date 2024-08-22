@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable</title>
+</head>
+<body>
+    <script>
+        
+        // Kata Kunci Let => bisa di ubah" isi datany
+        // Cara 1
+        let firstName;
+        firstName = "Muhamad";
+        
+        // Cara 2
+        let lastName ="Rayhan";
+        
+        // Cara 3
+        let fullName = firstName + ' ' + lastName;
+
+
+        // Mengakses Variable
+        document.writeln(fullName);
+        fullName = lastName ;
+        document.writeln('<br>')
+        document.writeln(fullName);
+        document.writeln('<br>')
+
+        // Kata Kunci Const => tidak bisa di ubah" datanya
+
+        const application = "Belajar Javascript Dasar";
+        document.writeln(application);
+
+        application = "Gak Mau Belajar";
+
+        document.writeln(application); // Kalo Eror, Programnya di block
+        
+
+
+    </script>
+</body>
+</html>
