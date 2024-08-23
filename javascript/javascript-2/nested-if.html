@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Kondisi Berlapis Biar Lebih Aman</title>
+</head>
+<body>
+    
+    <script>
+
+        const password = prompt('buat password');
+
+        // Password harus sepanjang 6 karakter
+        if(password.length >= 6) {
+
+            // Tidak boleh ada sepasi
+            if(password.indexOf(' ') === -1) {
+
+                // Tidak boleh  ada tanda bintang
+                if (password.indexOf('*') === -1) {
+
+                    // Tidak boleh lebih dari 8 karakter
+                    if (password.length <= 8 ) {
+                         console.log('password valid');
+                    }
+                    else {
+                        console.log('password tidak boleh lebih dari 8 karakter')
+                    }
+
+                }
+                else {
+                    console.log('tidak boleh ada tanda bintang')
+                }
+
+            }else {
+                console.log('password tidak boleh ada sepasi');
+            }
+
+        }else {
+            console.log('password minimal 6 karakter')
+        }
+
+
+
+    </script>
+
+</body>
+</html>
