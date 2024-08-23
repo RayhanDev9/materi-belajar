@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Tipe Data String Dan Number</title>
+</head>
+<body>
+    <script>
+        const value1 = parseInt('1');
+        const value2 = 1;
+
+        const sum = value1 + value2;
+
+        document.writeln(`<p> ${sum} </p>`);
+        
+        //Pembahasan konversi dari string ke number
+        document.writeln(`<p> ${parseInt('1.1')} </p>`); // 1
+        document.writeln(`<p> ${parseFloat('1.1')} </p>`); // 1.1
+        document.writeln(`<p> ${Number('1.1')} </p>`); // 1.1
+        document.writeln(`<p> ${Number('1')} </p>`); // 1
+
+        //Pembahasan konversi dari number ke string
+        const a = 1;
+        const b = 1;
+        const total = a.toString() + b.toString();
+        document.writeln(`<p> ${total} </p>`); // 11
+
+        // Pembahasan Nan
+        const value3 = Number('salah');
+        const totalNumber = value3 + 100;
+        document.writeln(`<p> ${totalNumber} </p>`); // NaN
+
+        document.writeln(`<p> ${parseInt('salah')} </p>`); // NaN
+        document.writeln(`<p> ${parseInt('1salah')} </p>`); // 1
+        document.writeln(`<p> ${parseFloat('salah1.1')} </p>`); // NaN
+        document.writeln(`<p> ${parseFloat('1.1salah')} </p>`); // 1.1
+
+        document.writeln(`<p> ${Number('1.1salah')} </p>`); // NaN
+        document.writeln(`<p> ${Number('salah1.1')} </p>`); // NaN
+
+        // isNaN()  Function => pengecekan apakah ini sebuah NaN atau bukan
+        document.writeln(`<p> ${isNaN(totalNumber)} </p>`); // true
+
+
+        
+
+    </script>
+</body>
+</html>

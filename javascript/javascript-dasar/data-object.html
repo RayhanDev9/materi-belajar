@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Data Object</title>
+</head>
+<body>
+    
+    <script>
+        //Membuat Object
+        const person = {};
+
+        // Membuat Object Langsung Dengan Propertisnya
+        const orang = {
+            nama : 'Muhamad Rayhan',
+            alamat : 'Indonesia',
+            umur : 30,
+            'lebih dari 2 kata' : 'harus pake kutip (\') atau (")'
+        }
+
+        //melihat property object orang
+        console.table(orang);
+
+        //mengakses property object
+        console.log(`Nama : ${orang.nama}`)
+        console.log(`Alamat : ${orang.alamat}`)
+        console.log(`Umur : ${orang.umur}`)
+        console.log(`Kalo lebih dari satu kata : ${orang['lebih dari 2 kata']}`)
+
+        //menambah object
+        person['nama'] ='Muhamad Rayhan';
+        person['alamat'] = 'Indonesia';
+        person['umur'] ='18';
+
+        //melihat property person
+        console.table(person);
+        
+        //menghapus object object
+        delete person['umur'];
+
+        //ketika ada yang di hapus property'nya
+        console.table(person);
+
+
+
+
+    </script>
+
+</body>
+</html>

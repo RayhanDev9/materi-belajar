@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operatoro In</title>
+</head>
+<body>
+    
+    <script>
+        //Operator In ini hanya mengecek ada atau tidak sebuah value,tapi tidak mengecek tipe datanya
+
+        const person = {
+            firstName : 'Muhamad',
+            lastName : 'Rayhan',
+            undefined :undefined,
+            null : null
+        }
+
+            if ('null' in person) {
+                alert(`Hello ${person.null}`);
+            }else {
+                alert('Hello');
+            }
+    </script>
+
+</body>
+</html>

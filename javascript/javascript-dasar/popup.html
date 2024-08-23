@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PopUp</title>
+</head>
+<body>
+    <script>
+
+        // Popup Alert
+        alert('Selamat Belajar Javascript Dasar');
+
+        //Popup Prompt
+        const name = prompt('Siapa Nama Anda');
+        alert(`Hello ${name}`);
+
+        //Popup confrim
+        const masuk = confirm('Anda yakin mau masuk');
+
+        if (masuk) { // Ini sama saja dengan if (masuk === true) 
+            const name = prompt('Masukan nama anda');
+            alert(`Hello ${name}`)
+        }
+
+        else {
+            alert('Bye bye')
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undefined</title>
+</head>
+<body>
+    <script>
+        let name;
+        let aray = ['rayhan','ravli'];
+        delete aray[1]; 
+        let object = {
+            nama : 'rayhan',
+            umur : '19'
+        }
+        delete object.nama;
+
+             //Pengkondisian variable
+            if (name === undefined) {
+                console.info('undefined');
+            }else {
+                console.info('defined');
+            }
+
+            //Pengkondisian Array
+            if (aray[2] === undefined) {
+                console.info('Array undefined');
+            }else {
+                console.info('Array defined');
+            }
+
+            //Pengkondisian Array, ketika indexnya di hapus
+            if (aray[1] === undefined) {
+                console.info('Array undefined');
+            }else {
+                console.info('Array defined');
+            }
+
+            //Pengkondisian object
+            if (object.eko === undefined) {
+                console.info('Object undefined');
+            }else {
+                console.info('Object defined');
+            }
+
+            //Pengkondisian object ketika propertnya di hapus
+            if (object.nama === undefined) {
+                console.info('Object undefined');
+            }else {
+                console.info('Object defined');
+            }
+
+            
+
+    </script>
+</body>
+</html>

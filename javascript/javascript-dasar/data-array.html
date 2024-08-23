@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Data Array</title>
+</head>
+<body>
+    <script>
+        // Membuat Array
+        let arrayKosong = [];
+
+        let arrayNama = ['Muhamad', 'Rayhan',true,4];
+
+        // Menambah Data
+        const names = [];
+        names.push('Rayhan');
+        names.push('Aldi','ikhsan');
+        names.push('Ravli','Paqih');
+        console.table(names);
+        
+        //melihat panjang array
+        console.log(names.length);
+
+        //melihat data array
+        console.log(names[0]);
+
+        //mengubah data array
+        names[1] = 'Ibnu';
+
+        //Menghapus data array
+        delete names[2];
+        console.log(names[2]);
+
+        //table ketika data di hapus
+        console.table(names);
+
+        // ketika di apus,tapi di ubah lagi
+        names[2] = 'di ubah lagi'
+
+        //melihat data array setelah di hapus 
+        console.log(names.length);
+
+        // table ketika data di apus tapi ada'in lagi
+        console.table(names);
+
+        //Menambahkan data setelah di hapus
+        names.push('data baru');
+
+        //Memasukan array didalam array
+        names.push(['yahfi','lisna',['deni','iwan']]);
+
+    
+        //table akhir
+        console.table(names);
+        console.table(names[6]);
+        
+
+    </script>
+</body>
+</html>
