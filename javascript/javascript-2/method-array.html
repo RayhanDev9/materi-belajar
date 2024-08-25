@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Array</title>
+</head>
+<body>
+    <script>
+
+        //Beberapa Method Array 
+        const nama = ['Rayhan','Ravli','Aldi','Aris'];
+        const angka = [1,3,5,11,22,1000];
+        const month = ['jenuari','febuari','april'];
+        const animals = ['bision','duck','elevent','fish','tiger','lion','bird','zebra']
+        const teks = "Hello, World!";
+
+        //Method Push => Menambahkan value di akhir tumpukan
+        nama.push('Daus');
+        nama.push('Qidut');
+        console.log(nama);
+        
+        //Method Pop => Menghapus value di akhir tumpukan
+        nama.pop();
+        nama.pop();
+        console.log(nama);
+        
+        //Method Unshift => Menambahkan value di awal tumpukan
+        nama.unshift('Ibnu');
+        nama.unshift('Hafiz');
+        console.log(nama);
+        
+        // Method Shift => Menghapus value di awal tumpukan
+        nama.shift();
+        nama.shift();
+        console.log(nama);
+
+        //Method Concat => menggabungkan array
+        const kelas_1 = ['Eko','Yahfi'];
+        const kelas_2 = ['Erlangga','Deni'];
+        const concat = kelas_1.concat(kelas_2);
+        console.info(concat)
+
+        //Method indexOf => Memanggil index
+        console.info(nama.indexOf('Rayhan'));
+        console.info(nama.indexOf('Ravli'));
+        console.info(nama.indexOf('rayfi')); // -1 => ketika indexnya tidak ditemukan maka dia akan mengembalikan nilai -1
+
+        //Method includes => akan mencari nilai yang di definisan dalam includes,kalo ada dia bernilai true kalo tidak ada dia bernilai false
+        console.info(nama.includes('Ravli'));
+        console.info(nama.includes('rayfi'));
+
+        //Method sort => Akan melakukan pengurutan 
+        console.info(nama.sort());
+        console.info(angka.sort());
+
+        //Method splice => bisa menghapus nilai atau bisa menggantikan atau menambahkan nilainya
+        console.info(month);
+        month.splice(1,0,'mei','Desember','November');
+        console.info(month);
+        month.splice(1,3);
+        console.info(month);
+        month.splice(1,1,'agustus');
+        console.info(month);
+
+        //Method slice => memotong sesuai nomor index
+        const potongan = teks.slice(7,13);
+        // let potongan = teks.slice(7);
+        console.log(potongan);
+        console.log(animals);
+        console.info(animals.slice(1,4));
+        console.info(animals.slice(4));
+        console.info(animals.slice(-2));
+
+        // Method Reverse => membalikan urutan array
+        const reverse = animals.reverse();
+        console.info(reverse);    
+        
+        //Method join => membuat suatu string dari kumpulan nilai di dalam array(simpelnya index di dalem array di gabung);
+        console.info(animals.join());
+        console.info(animals.join(' '));
+        console.info(animals.join(' - '));
+
+
+
+
+
+        
+
+
+    </script>
+</body>
+</html>

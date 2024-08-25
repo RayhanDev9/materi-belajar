@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For of</title>
+  </head>
+  <body>
+    <script>
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+      for (let fruit of fruits) {
+        console.info(`Buah ${fruit}`);
+      }
+
+      //Nested Loop Menampilkan data dalam array mengunakan for of
+      const studentRow = [
+        ["Olivia", "Liam", "Emma", "Noah"],
+        ["Amelia", "Oliver", "Ava", "Elijah"],
+        ["Sophia", "Mateo", "Isabela", "Lucas"],
+      ];
+
+      for (let [index, row] of studentRow.entries()) {
+        console.info("Kelompok " + parseInt(index + 1));
+        for (let student of row) {
+          console.info(student);
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            
+            const barang = {
+                nama : 'Sepatu',
+                harga : '2.000.000',
+                isReady : true,
+                size : [39,40,41,42,43,44],
+                location : {
+                    indonesia : 48,
+                    singapure : 50 
+                },
+                productLain :    [
+                                        {
+                                            product : 'vue.js',
+                                            price : '1.22',
+                                            quantity : 3
+                                        },
+                                        {
+                                            product : 'react.js',
+                                            price : 2.32,
+                                            quantity : 1
+                                        },
+                                        {
+                                            product : 'angular.js',
+                                            price : 3.32,
+                                            quantity : 2
+                                        },
+                                    ],
+            }
+
+            console.info(barang);
+
+        // Memanggil object
+                console.info(barang['nama']);
+                console.info(barang['is' + 'Ready']); 
+                console.info(barang.nama); // => yang di sarankan
+
+                //memanggil array di dalam object
+                console.info(barang.size[0]);
+
+                //memanggil object di dalam object
+                console.info(barang.location.indonesia);
+
+                //memanggil object didalam object dan array
+                console.info(barang.productLain[0].product);
+
+        //Mengubah object berjalan
+
+                //Mengubah property object berjalan
+                barang.nama = 'Sendal';
+
+                //mengubah array di dalam object berjalan
+                barang.size[0] = 47;
+
+                //mengubah object di dalam object berjalan
+                barang.location.indonesia = 100;
+                
+                //mengubah object didalam array dan di dalam object berjalan
+                barang.productLain[0].price = 2.9;
+                console.info(barang);
+
+        //menambah object berjalan
+
+                //menambahkan peroperty di dalam object berjalan
+                barang.jamActive = '07.00 - 17.00';
+
+                //Menambahkan array di dalam object berjalan
+                barang.hariLibur = ['sabtu', 'minggu'];
+
+                //menambahkan obeject di dalam object berjalan
+                barang.hariKerja = {
+                    senin : 'masuk',
+                    selasa : 'masuk',
+                    rabu : 'masuk',
+                    kamis : 'masuk',
+                    jumat: 'masuk'
+                }
+
+                //Menambahkan object di dalam array dan di dalam object berjalan
+                barang.info = [
+                    { informasi : 'buka setiap hari senin- jumat. sabtu minggu libur'}
+                ]
+
+                console.info(barang);
+
+
+    //Membuat object di dalam array
+
+            const shopingCart = [
+            {
+                product : 'vue.js',
+                price : '1.22',
+                quantity : 3
+            },
+            {
+                product : 'react.js',
+                price : 2.32,
+                quantity : 1
+            },
+            {
+                product : 'angular.js',
+                price : 3.32,
+                quantity : 2
+            },
+        ]
+
+        //memanggil object di dalam array
+        console.info([0]);
+        console.info([0].product);
+        console.info([0].price);
+        
+
+            
+
+
+
+    </script>
+</body>
+</html>

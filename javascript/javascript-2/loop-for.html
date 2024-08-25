@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loop</title>
+  </head>
+  <body>
+    <script>
+      //Membuat pengulangan
+      // for (let i = 1; i<=10; i++) {
+      //     console.info(i);
+      // }
+
+      // for (let i = 1; i<=10; i+=2) {
+      //     console.info(i);
+      // }
+
+      // for (let i = 10; i <= 100000; i *=10) {
+      //console.info(i);
+      //}
+
+      //Mendapatkan data array menggunakan foor
+      // const animals = ["dog", "bird", "elevent", "tiger", "lion"];
+
+      // for (let i = 0; i < animals.length; i++) {
+      //     console.info(i + 1, animals[i]);
+      // }
+
+      //Nested Loop
+      //   let pilihan = "abcd";
+
+      //   for (let i = 0; i < 4; i++) {
+      //     console.info("Soal Nomor " + (i + 1));
+
+      //     for (let j = 0; j < pilihan.length; j++) {
+      //       console.info(pilihan[j] + "." + "Pilihan Jawaban");
+      //     }
+      //   }
+
+      //Nested Loop Menampilkan data dalam array
+      const studentRow = [
+        ["Olivia", "Liam", "Emma", "Noah"],
+        ["Amelia", "Oliver", "Ava", "Elijah"],
+        ["Sophia", "Mateo", "Isabela", "Lucas"],
+      ];
+
+      for (let i = 0; i < studentRow.length; i++) {
+        // console.info(studentRow[i]);
+        const row = studentRow[i];
+        console.info(`Seat Row ${i + 1}`);
+        for (let j = 0; j < row.length; j++) {
+          console.info(`   ${row[j]}`);
+        }
+      }
+    </script>
+  </body>
+</html>

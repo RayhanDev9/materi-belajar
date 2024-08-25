@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scope</title>
+  </head>
+  <body>
+    <script>
+
+    //Pembahasan local scope => scope function dan global scope
+            let programing = "Javascript";// Global Scope
+            
+            function typeSafe() {
+                
+            let programing = "/"; // Local scope => function scope
+
+            //  programing = "Typescript";`
+            console.info(programing);
+            }
+            typeSafe();
+
+            console.info(programing);
+
+
+
+
+
+
+    //Pembahasan local scope => scope block dan global scope
+                let tinggi = 8; //Global Scope
+
+            if (tinggi > 5) {
+
+                let lebar = 10; //Local scope => block scope
+                console.info(lebar);
+            }
+
+            console.info(tinggi);
+            //   console.info(lebar);
+
+            for (let index = 0; index < 10; index++) {
+
+                const indexNumber = index; //Local scope => block scope
+                console.info(indexNumber);
+            }
+
+            // console.info(indexNumber);
+
+
+
+
+
+
+    //Pembahasan lexical scope 
+            function lamaKerja () {
+                const jabatan = 'Progeremer';
+
+                function orangDalam () {
+                    let kenalan = `Orang dalam bisa memasukan ${jabatan}`;
+                    console.info(kenalan);
+
+                    function sudahMasuk () {
+                        console.info(kenalan);
+                    }
+                    sudahMasuk();
+                }
+                orangDalam();
+            }
+            lamaKerja();
+
+
+
+    </script>
+  </body>
+</html>
