@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spreed operator</title>
+  </head>
+  <body>
+    <script>
+      const angka = [1, 2, 3, 4];
+      const nama = ["rayhan", "bimo", "bobby", "felix"];
+      console.info(Math.max(angka));
+      console.info(angka);
+      console.info("");
+      console.info(Math.max(...angka));
+      console.info(...angka);
+      console.info("");
+
+      //Menggabungkan array dengan spreed operator
+      //const campuran = [...angka,0,'b',true]
+      const campuran = [...angka, ...nama];
+      console.info(campuran);
+      console.info("");
+
+      //Menggabungkan object dengan spreed operator
+      //   const user = {
+      //     nama: "Rayhan",
+      //     email: "jhon@gmail.com",
+      //   };
+
+      const credential = {
+        password: "password ",
+        token: "kdj039jf4i",
+      };
+
+      //const userBaru = {...user,id:123,password:'password'};
+    //   const userBaru = { ...user, ...credential };
+    //   console.info(userBaru);
+    //   console.info("");
+
+      //rest parameter
+      const sumAll = (...nums) => {
+        return nums.reduce((total, el) => total + el);
+      };
+
+      console.info(sumAll(1, 2, 3, 4, 5));
+      console.info("");
+
+      const animals = [
+        "tiger",
+        "elevent",
+        "zebra",
+        "lion",
+        "crocodile",
+        "cat",
+        "dog",
+      ];
+
+      const level = (gold, silver, bronze, ...sisa) => {
+        console.info(`Medali emas dirahi : ${gold}`);
+        console.info(`Medali emas dirahi : ${silver}`);
+        console.info(`Medali emas dirahi : ${bronze}`);
+        console.info(`hewan lainya : ${sisa}`);
+      };
+      console.info(level(...animals));
+      console.info("");
+
+      //Destructring Array
+      const [gold, silver, bronze, ...sisa] = animals;
+      console.info(gold);
+      console.info(sisa);
+      console.info("");
+
+      //Destructring Object
+      const user = {
+        nama: "Rayhan",
+        email: "jhon@gmail.com",
+        role : 'admin'
+      };
+
+      const { nama: name, email, phone = "089836" } = user;
+      console.info("");
+
+      const userAndRole = (({nama,role}) => {
+        return `${name} ${role}`;
+      });
+
+     console.info( userAndRole(user));
+     console.info('');
+
+     
+     const animes = [
+        {
+          title: "Attack on tictan",
+          rating: "90",
+        },
+        {
+          title: "One pice",
+          rating: "90",
+        },
+        {
+          title: "Naruto",
+          rating: "90",
+        },
+        {
+          title: "The Fable",
+          rating: "90",
+        },
+      ];
+
+      const anime = animes.map(({title,rating})=> {
+        return `${title} rating: ${rating}`
+      });
+      console.info(anime);
+    </script>
+  </body>
+</html>

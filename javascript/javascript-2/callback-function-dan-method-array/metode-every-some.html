@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metode Every dan Some</title>
+</head>
+<body>
+    <script>
+
+        // Metode Every
+        const examScore = [80,85,79,93,97,70];
+
+        const isGradute = examScore.every((score ) => score >= 75); //Seperti  operator &&
+        console.info(isGradute);
+        console.info('');
+
+        
+        const animes = [
+        {
+          title: "Attack on tictan",
+          rating: "80",
+        },
+        {
+          title: "One pice",
+          rating: "90",
+        },
+        {
+          title: "Naruto",
+          rating: "90",
+        },
+        {
+          title: "The Fable",
+          rating: "83",
+        },
+      ];
+
+      //Metode Some
+      const isRanting = animes.some((anime) => anime.rating >=85); //Seperti operator logika
+
+    </script>
+</body>
+</html>

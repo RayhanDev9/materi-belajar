@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metode Filter</title>
+</head>
+<body>
+    <script>
+        const angka= [1,2,3,4,5,6,7,8,9];
+
+        const angkaGanjil = angka.filter((n) => {
+            return n % 2 === 1;
+        });
+
+        
+        const animes = [
+        {
+          title: "Attack on tictan",
+          rating: "80",
+        },
+        {
+          title: "One pice",
+          rating: "90",
+        },
+        {
+          title: "Naruto",
+          rating: "90",
+        },
+        {
+          title: "The Fable",
+          rating: "83",
+        },
+      ];
+
+      const animeBagus = animes.filter( anime => anime.rating >= 85);
+      
+      const animeTitle = animes.filter( anime => anime.rating >= 85)
+                        .map((anime) => anime.title);
+
+
+      const animeCukupBagus = animes.filter( anime => anime.rating <= 85);
+      
+    </script>
+</body>
+</html>

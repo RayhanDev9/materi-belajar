@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Timeout dan Set Interval</title>
+</head>
+<body>
+    <script>
+        // SetTimeout
+        console.info('Hallo...');
+
+        setTimeout(() => {
+            console.info('masih disana gak');
+        }, 5000);
+
+        console.info('saya pergi ya');
+
+        clearTimeout() //Cara memberhentikan setTimeout
+
+        // SetInterval
+        setInterval (() => {
+            console.info(Math.random());
+        },5000);
+
+        //
+        const inter = setInterval (() => {
+            console.info(Math.random());
+        },5000);
+
+        clearInterval(inter); // Cara memberhentikan setInterval
+    </script>
+</body>
+</html>
