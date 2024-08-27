@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Argumrnt Dan Parameter</title>
+  </head>
+  <body>
+    <script>
+      function selamatPagi(nama) {
+        console.info(`Halo ${nama} Selamat Pagi`);
+      }
+      selamatPagi("Rayhan");
+
+      //Multiple arguments & parameters
+      function jumlahkan(a = 0, b = 0) {
+        const total = a + b;
+        console.info(total);
+      }
+      jumlahkan(5, 4);
+    </script>
+  </body>
+</html>

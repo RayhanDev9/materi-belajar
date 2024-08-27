@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mengatur Nilai Default</title>
+  </head>
+  <body>
+    <script>
+      //  Default Parameter Values dalam Fungsi
+      function lemparDadu(sisi = 6) {
+        return Math.floor(Math.random() * sisi) + 1;
+      }
+
+      function menyapa(nama = "User", msg = "Selamat bekerja") {
+        console.info(`${nama} ${msg}`);
+      }
+
+      function main(nama, msg = "maen bola") {
+        console.info(`${nama} ${msg}`);
+      }
+      console.info('')
+
+      // Contoh Destructuring Object:
+
+      const person = { name: "John" };
+      const { name = "Unknown", age = 30 } = person;
+      console.log(name); // Output: "John"
+      console.log(age); // Output: 30
+      console.info('')
+
+      // Contoh Destructuring Array:
+      const numbers = [1];
+      const [first = 0, second = 0] = numbers;
+      console.log(first); // Output: 1
+      console.log(second); // Output: 0
+
+    </script>
+  </body>
+</html>

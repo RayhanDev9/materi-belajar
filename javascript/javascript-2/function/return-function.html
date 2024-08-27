@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retrun Function</title>
+  </head>
+  <body>
+    <script>
+      function hasilnyaAdalahFunction(params) {
+        const rand = Math.random();
+
+        if (rand > 0.1) {
+          return function () {
+            console.info("Selamat , angkanya lebih besar");
+          };
+        } else {
+          return function () {
+            console.info("maff, mungkin bisa coba lagi");
+          };
+        }
+      }
+
+      const hasil = hasilnyaAdalahFunction();
+
+
+
+      
+
+      function pembuatPesan(salam) {
+        return function (nama) {
+          return `${salam}, ${nama}!`;
+        };
+      }
+
+      const halo = pembuatPesan("Halo");
+      console.log(halo("Alice")); // Output: Halo, Alice!
+
+      const selamatPagi = pembuatPesan("Selamat pagi");
+      console.log(selamatPagi("Bob")); // Output: Selamat pagi, Bob!
+    </script>
+  </body>
+</html>

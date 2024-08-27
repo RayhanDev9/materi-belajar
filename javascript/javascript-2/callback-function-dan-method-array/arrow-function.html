@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow function</title>
+</head>
+<body>
+    <script>
+        const perpangkatan = (x) => { // sintak sederhana arrow function
+            return x * x;
+        };
+        console.info(perpangkatan(6));
+
+        const kurang  = (a,b) => a - b ; // jika parameternya 2 maka wajib harus ada kurung ()
+        console.info(kurang(34,2));
+
+        const pemgbagian = x => x/x ; //Jika parameter 1 dan expresinya hanya 1
+        console.info(pemgbagian(6));
+
+        const random = () => Math.floor(Math.random() * 10000) + 1 ; // jika tidak ada parameter dan expresinya hanya 1
+        console.info(random());
+
+        
+        
+
+    </script>
+</body>
+</html>

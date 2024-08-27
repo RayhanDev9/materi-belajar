@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For In</title>
+  </head>
+  <body>
+    <script>
+      const obj = {
+        a: 1,
+        b: 2,
+        c: 3,
+      };
+
+      for (const key in obj) {
+        const value = obj[key]; // Mendapatkan nilai dari objek menggunakan kunci
+        console.log(`Key: ${key}, Value: ${value}`);
+      }
+
+      const studentSecore = {
+        Olivia: 20,
+        Liam: 13,
+        Emma: 40,
+        Noah: 10,
+        Amelia: 12,
+        Oliver: 10,
+        Ava: 11,
+        Elijah: 21,
+        Sophia: 14,
+        Mateo: 22,
+      };
+
+      for (let student in studentSecore) {
+        console.info(`student memiliki skor ${studentSecore[student]}`);
+      }
+
+      //Nested for in
+      const nestedObj = {
+        a: { x: 10, y: 20 },
+        b: { x: 30, y: 40 },
+      };
+
+      for (const key in nestedObj) {
+        const subObj = nestedObj[key]; // Mendapatkan sub-objek
+        console.log(`Key: ${key}`);
+        for (const subKey in subObj) {
+          const value = subObj[subKey];
+          console.log(`  Sub-Key: ${subKey}, Value: ${value}`);
+        }
+      }
+
+      //Sebelum di looping, studentSecorenya di rubah dulu ke array dan mengambil values-nya
+      let total = 0;
+
+      let secores = Object.values(studentSecore);
+
+      for (secore of secores) {
+        total += secore;
+      }
+
+      console.info(total / secores.length);
+    </script>
+  </body>
+</html>

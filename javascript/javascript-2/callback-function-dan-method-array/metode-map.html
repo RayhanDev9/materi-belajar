@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metode Map</title>
+</head>
+<body>
+    <script>
+        const angka = [1,2,3,4,5,6,7,8,9];
+        const angkaDouble = angka.map(function (e) {
+            return e * 2;
+        });
+
+        console.info(angkaDouble);
+        console.info('');
+
+        const animes = [
+        {
+          title: "Attack on tictan",
+          rating: "90",
+        },
+        {
+          title: "One pice",
+          rating: "90",
+        },
+        {
+          title: "Naruto",
+          rating: "90",
+        },
+        {
+          title: "The Fable",
+          rating: "90",
+        },
+      ];
+
+      const animeList = animes.map(function (anime) {
+        return anime.title.toUpperCase();
+      });
+
+      console.info(animeList);
+    </script>
+</body>
+</html>

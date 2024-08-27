@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This</title>
+  </head>
+  <body>
+
+    <button id="myButton">Simpan</button>
+
+    <script>
+
+        // beberapa konteks utama di mana this berfungsi:
+
+      // 1.Dalam Object method => Di dalam metode objek, this merujuk pada objek tempat metode tersebut dipanggil.
+
+      const saya = {
+        nama: "Rayhan",
+        hobi: "Maen Bola",
+        kenalan: function () {
+          return `Hi, saya ${this.nama},Hobi saya ${this.hobi}`;
+        },
+      };
+
+      //2.Dalam fungsi global => Di luar fungsi atau objek, dalam konteks global, this merujuk pada objek global (window di browser atau global di Node.js).
+      console.log(this); // Di browser, Output: Window
+
+      // 3.dalam countractor function => Di dalam fungsi kontruktor, this merujuk pada instance objek yang sedang dibuat.
+      function Person(nama) {
+        this.nama = nama;
+      }
+
+      const orang = new Person("John");
+      console.log(orang.nama); // Output: John
+
+      // 4.Dalam arrow function =>Arrow functions tidak memiliki konteks this mereka sendiri. Sebaliknya, mereka mengambil nilai this dari konteks lexical tempat mereka didefinisikan.
+      const obj = {
+        nama: "Alice",
+        tampilkanNama: function () {
+          setTimeout(() => {
+            console.log(this.nama); // `this` di sini merujuk pada `obj`
+          }, 1000);
+        },
+      };
+
+      obj.tampilkanNama(); // Output: Alice
+
+      // 5.Event Handlers => Di dalam event handler, this merujuk pada elemen yang memicu event tersebut.
+      document
+        .getElementById("myButton")
+        .addEventListener("click", function () {
+          console.log(this); // Output: <button id="myButton">Click me</button>
+        });
+
+      // 6.Method Binding => this dapat diubah secara eksplisit dengan metode bind, call, atau apply.
+      function greet() {
+        console.log(`Hello, ${this.name}`);
+      }
+
+      const user = { name: "Bob" };
+
+      const greetUser = greet.bind(user);
+      greetUser(); // Output: Hello, Bob
+    </script>
+  </body>
+</html>

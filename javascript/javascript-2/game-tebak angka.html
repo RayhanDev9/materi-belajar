@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Membuat nilai untuk juga memulai game
+      let input = parseInt(prompt("Masukan angka di sini,Jika ingin bermain"));
+
+      //perulangan jika ingin memulai game masukan input dulu
+      while (!input) {
+        input = parseInt(prompt("Masukan angka di sini, jika ingin bermain"));
+      }
+
+      //Membuat nilai input tadi dikali nilai random dan bulatkan ke bawah dan dikali 2
+      guess = Math.floor(Math.random() * input) + 1;
+      console.info(guess);
+
+      //Membuat variable untuk user masukan nilai
+      let user = parseInt(
+        prompt("Masukan jawaban anda kesempatan anda hanya 3 kali")
+      );
+
+      //Membuat count
+      let count = 0;
+
+      //membuat perulangan jika user menebak angka sebanyak tiga kali dan salah semua maka di nyakan kalah, jika user benar maka user manang
+      while (guess !== user) {
+        if (count === 0) {
+          user = parseInt(
+            prompt("Masukan jawaban anda kesempatan anda hanya tersisa 2 kali")
+          );
+        } else if (count === 1) {
+          user = parseInt(
+            prompt("Masukan jawaban anda kesempatan anda hanya tersisa 1 kali")
+          );
+        } else {
+          alert("Kesempatan anda sudah habis dan anda kalah");
+          count++;
+          break;
+        }
+        count++;
+      }
+      if (count < 3) {
+        alert("Selamat anda menang");
+      }
+    </script>
+  </body>
+</html>

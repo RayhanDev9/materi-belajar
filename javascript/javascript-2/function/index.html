@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        try {
+            saya.kenalan () 
+        }catch {
+            console.info('error');
+        }
+        
+        console.info('Setelah proses try and catch');
+
+        function teriak (msg) {
+            try {
+                console.log(msg.toUpperCase());
+            }catch (error) {
+                console.log(error)
+                console.info('Silahkan masukan tipe data string pada argument triak ()')
+            }
+        }
+
+        teriak('ojek');
+        teriak(1223);
+
+    </script>
+</body>
+</html>

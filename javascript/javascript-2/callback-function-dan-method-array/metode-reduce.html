@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metode Reduce</title>
+  </head>
+  <body>
+    <script>
+      const examScore = [80, 85, 79, 93, 97, 70];
+
+      const total = examScore.reduce((accumulator, crurentValue) => {
+        return accumulator + crurentValue;
+      });
+
+      console.info(total);
+      console.info("");
+
+      const animes = [
+        {
+          title: "Attack on tictan",
+          rating: "80",
+        },
+        {
+          title: "One pice",
+          rating: "90",
+        },
+        {
+          title: "Naruto",
+          rating: "90",
+        },
+        {
+          title: "The Fable",
+          rating: "83",
+        },
+      ];
+
+      bestAnime = animes.reduce((accumulator, currentAnime) => {
+        console.info(accumulator, currentAnime);
+        if (currentAnime.rating > accumulator.rating) {
+          return currentAnime;
+        }
+        return accumulator;
+      });
+      console.info("");
+      console.info(bestAnime);
+
+      //Menggabungkan String
+      const words = ["Hello", "world", "from", "JavaScript"];
+      const sentence = words.reduce(
+        (accumulator, currentValue) => accumulator + " " + currentValue
+      );
+      console.log(sentence); // Output: "Hello world from JavaScript"
+      console.info("");
+
+      //Menghitung Frekuensi Element Array
+      const colors = ["red", "blue", "red", "green", "blue", "blue"];
+      const colorCount = colors.reduce((accumulator, currentValue) => {
+        accumulator[currentValue] = (accumulator[currentValue] || 0) + 1;
+        return accumulator;
+      }, {});
+      console.log(colorCount); // Output: { red: 2, blue: 3, green: 1 }
+
+      console.info("");
+    </script>
+  </body>
+</html>

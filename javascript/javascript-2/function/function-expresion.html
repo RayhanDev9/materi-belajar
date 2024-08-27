@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functioin Expresion</title>
+  </head>
+  <body>
+    <script>
+
+      //anonim Function expresion
+      const hasilPerpangkatan = function (nilai) {
+        return nilai * nilai;
+      };
+
+      console.info(hasilPerpangkatan(5));
+
+      //Function expresion menggunakan nama function => Nama fungsi (jika ada) dalam ekspresi hanya digunakan untuk debugging dan tidak mempengaruhi pemanggilan fungsi 
+      const greet = function greetFunc(name) {
+        return `Hello, ${name}!`;
+      };
+
+     console.info( greet('Rayhan'));
+
+    </script>
+  </body>
+</html>

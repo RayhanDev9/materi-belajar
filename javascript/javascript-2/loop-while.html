@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>While</title>
+  </head>
+  <body>
+    <script>
+      let num = 0;
+
+      while (num < 10) {
+        console.info(num + 1);
+        num++;
+      }
+
+      const password = "123";
+
+      let guess = prompt("enter the password");
+
+      while (guess !== password) {
+        guess = prompt("enter the password");
+      }
+
+      alert("Congrats the password is cuncret");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function duaKali(func) {
+        func();
+        func();
+      }
+
+      function lemparDadu() {
+        const hasil = Math.floor(Math.random() * 6) + 1;
+        console.info(hasil);
+      }
+
+      duaKali(lemparDadu);
+
+      // Fungsi yang akan menerima callback sebagai argumen
+      function prosesData(data, callback) {
+        // Proses data
+        console.log("Memproses data:", data);
+
+        // Panggil callback dengan hasil data yang telah diproses
+        callback(data);
+      }
+
+      // Fungsi callback yang akan digunakan
+      function tampilkanHasil(result) {
+        console.log("Hasil:", result);
+      }
+
+      // Memanggil fungsi dengan callback
+      prosesData("Data penting", tampilkanHasil);
+    </script>
+  </body>
+</html>
