@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Logika Non Boolean</title>
+</head>
+<body>
+    <script>
+
+        //Operator or non boolean
+        console.info('hello' || '');
+        console.info('' || [] );
+        console.info('0' || 'NOL' );
+        console.info('0' || 'NOL' );
+        console.info(0 || 'NOL' );
+        console.info(null || 'null' );
+        console.info(undefined || 'undefined' );
+        console.info(0 || false );
+
+
+        const person = {
+            firstName : 'Muhamad',
+            lastName : 'Rayhan'
+        }
+
+        const name = person.firstName || person.lastName;
+
+        console.info(name);
+
+        //Operator and di non boolean
+        console.info('hello' && '');
+        console.info('' && []);
+        console.info('ture' && 'null');
+
+
+
+
+        const data = NaN;
+
+        if(data) {
+            console.info('true');
+        }else {
+            console.info('false');
+        }
+
+
+    </script>
+</body>
+</html>

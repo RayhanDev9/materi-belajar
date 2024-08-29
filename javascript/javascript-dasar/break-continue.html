@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Break dan continue</title>
+  </head>
+  <body>
+    <script>
+      //break
+      let counter = 1;
+
+      while (true) {
+        console.info(`Perulangan ke ${counter}`);
+        counter++;
+
+        if (counter > 10) {
+          break;
+        }
+      }
+      console.info("");
+
+      //Continue
+      for (let i = 0; i < 10; i++) {
+        if (i % 2 === 0) {
+          continue;
+        }
+        console.info(`Perulangan Ganjil ${i}`);
+      }
+    </script>
+  </body>
+</html>

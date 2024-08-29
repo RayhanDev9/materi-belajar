@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring</title>
+  </head>
+  <body>
+    <script>
+      // Destructuring array
+      {
+        const names = ["Muahamd", "Rayhan", "Budi", "Joko"];
+
+        const [firstName, lastName, ...others] = names;
+
+        console.info(firstName);
+        console.info(lastName);
+        console.info(others);
+        console.info('');
+      }
+
+      //Destructuring Object
+      {
+        const person = {
+          firstName: "Muhamad",
+          lastName: "Rayhan",
+          addres: {
+            street: "Jalan BelumAda",
+            city: "Banten",
+            country: "Indonesia",
+          },
+          hobby: "Maen Bola",
+        };
+
+        const {firstName,lastName,addres,...others} = person;
+        console.info(firstName);
+        console.info(lastName);
+        console.info(addres);
+        console.info(others);
+        console.info('');
+      }
+
+      //Desturcturing Nasted Object
+      {
+        const person = {
+          firstName: "Muhamad",
+          lastName: "Rayhan",
+          addres: {
+            street: "Jalan Belum Ada",
+            city: "Banten",
+            country: "Indonesia",
+          },
+          hobby: "Maen Bola",
+        };
+
+        const {firstName,lastName,addres:{city,street,country},...others} = person;
+        console.info(city);
+        console.info(street);
+        console.info(country);
+        console.info('');
+      }
+
+      //Destructuring Function Parameter Object
+      {
+        function displayPerson({firstName,lastName,...others}) {
+            console.info(firstName);
+            console.info(lastName);
+            console.info('')
+        }
+
+        const person = {
+            firstName : 'Muhamad',
+            lastName : 'rayhan'
+        };
+        displayPerson(person);
+      }
+
+      //Destructuring Function Parameter Array
+      {
+       const number = [20,20]
+
+       function sum([first,second]) {
+         return parseInt(first + second);
+       }
+
+       console.info(sum([23,40]));
+       console.info(sum(number));
+      }
+      
+    </script>
+  </body>
+</html>

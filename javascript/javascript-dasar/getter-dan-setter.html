@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getter dan Stter</title>
+</head>
+<body>
+    <script>
+        // Getter
+        const person = {
+            firstName : 'Muhamad',
+            lastName : 'Rayhan',
+            get fullName () {
+                return `${this.firstName} ${this.lastName}`;
+            },
+            set fullName(value) {
+                // console.info(`Ubah Full Name ${value}`);
+                const array = value.split(" ");
+                console.info(array);
+                this.firstName = array[0];
+                console.info(this.firstName)
+                this.lastName = array[1];
+                console.info(this.lastName)
+            },
+        };
+        console.info(person.fullName);
+
+        // person.fullName = 'Budi Nugraha';
+
+        
+        person.fullName = 'Joko Norro';
+        console.table(person);
+
+        person.fullName = 'Alex Martin';
+        console.table(person);
+
+    </script>
+</body>
+</html>

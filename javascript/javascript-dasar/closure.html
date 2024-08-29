@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+  <body>
+    <script>
+      function creeateAdder(value) {
+        const owner = "Rayhan";
+
+        function add(param) {
+          console.info(owner);
+          return value + param;
+        }
+        return add;
+      }
+
+      const addTwo = creeateAdder(2);
+      console.info(addTwo(10));
+      console.info(addTwo(30));
+
+      console.info('')
+
+      //ini tuh seperti di bawah ini
+      // function addfour(param) {
+      //     console.info('eko');
+      //     return 2 + param;
+      // };
+      // console.info(addfour(4));
+
+      //
+
+      function outerFunction() {
+        let outerVariable = "I am from outer function";
+
+        function innerFunction() {
+          console.log(outerVariable); // Mengakses variabel dari outerFunction
+        }
+
+        return innerFunction;
+      }
+
+      const closure = outerFunction(); // Menyimpan referensi ke innerFunction
+      closure(); // Output: 'I am from outer function'
+    </script>
+  </body>
+</html>

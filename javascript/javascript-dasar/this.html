@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+</head>
+<body>
+    <script>
+        //This di global scope
+        console.info(this);
+
+        function name(params) {
+            console.info(this);
+
+            function inner() {
+                console.info(this)
+            }
+            inner();
+        }
+        name();
+
+        //This di object method
+        const person = {
+            name : 'Rayhan',
+            sayHello : function (name) {
+                console.info(this)
+                console.info(`Hello ${name} My Name Is  ${this.name}`)
+            }
+        };
+
+        person.sayHello('Budi');
+    </script>
+</body>
+</html>
