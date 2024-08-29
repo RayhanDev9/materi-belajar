@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Optional Chaining</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        addres : {
+            country : 'indonesia'
+        }
+      };
+
+
+      let country =alert(person?.addres?.country);
+
+      // Yang bawah sama saja dengan yang atas
+
+    //   if(/.addres !== undefined && person.addres !== null) {
+    //     country = person.addres.country
+    //   }
+
+    </script>
+  </body>
+</html>
