@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+<body>
+    <script>
+        //Global Scope
+        let counter = 0;
+
+        //global scope
+        function hitMe() {
+            //Local scope hitMe
+            let firstName = 'Rayhan';
+            console.info(firstName);
+            counter++;
+        }
+
+        //global scope
+        function outher() {
+            //Local scope outher
+            let nomor = 40;
+            console.info(nomor);
+            
+            // Nested function scope
+            function firstNested() {
+                console.info(`${nomor}`);
+            }
+            firstNested();
+        }
+        hitMe();
+        hitMe();
+        console.info(counter);
+
+        outher();
+
+        // console.info(firstName); //Eror
+        // console.info(nomor); //Error
+
+        
+
+        
+    </script>
+</body>
+</html>

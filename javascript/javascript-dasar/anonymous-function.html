@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anonymous Function</title>
+  </head>
+  <body>
+    <script>
+      // Anonymous function di variable
+      let say = function (name) {
+        console.info(`Hello,${name}`);
+      };
+
+      say("Rayhan");
+
+      //Anonymous function di parameter
+      function givMeName(callback,nomor) {
+        callback("rayhan", 34);
+      }
+
+      givMeName((name)=> {
+        console.info(`Hai ${name}`)
+      });
+    </script>
+  </body>
+</html>

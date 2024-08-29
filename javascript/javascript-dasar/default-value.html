@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Default value</title>
+  </head>
+  <body>
+    <script>
+      // Default Value di Array
+      {
+        const names = [];
+
+        const [firstName = "Muhamad", lastName = "Rayhan", ...others] = names;
+
+        console.info(firstName);
+        console.info(lastName);
+        console.info(others);
+        console.info("");
+      }
+
+      //Default Value di Object
+      {
+        const person = {
+          firstName: "Muhamad",
+          lastName: "Rayhan",
+        };
+
+        const { firstName, lastName, nomor_hp = "08568724354" } = person;
+        console.info(parseInt(nomor_hp));
+        console.info('')
+      }
+
+      //Menggunakan nama variable lain
+      {
+        const person = {
+          firstName: "Muhamad",
+          lastName: "Rayhan",
+        };
+
+        const {
+          firstName: namaDepan,
+          lastName: namaBelakang,
+          nomor_hp = "08568724354",
+        } = person;
+
+        console.info(namaDepan);
+        console.info(namaBelakang);
+
+    }
+    </script>
+  </body>
+</html>

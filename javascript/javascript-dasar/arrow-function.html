@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <script>
+        const sayHello = (name) => {
+            const say = `Hello ${name}`;
+            console.info(say);
+        }
+        sayHello('Rayhan');
+        console.info('');
+
+        //Arrow function tanpa block
+        const goodBye = (name) => console.info(`Good Bye ${name}`);
+
+        goodBye('Aldi');
+        console.info('');
+
+        //Arrow function tanpa return value
+        const sum = (first,second) => first + second;
+
+        console.info(sum(100,200));
+        console.info('');
+
+        //Arrow function tanpa kurung parameter
+        const jam = jam => console.info(`sekarang jam ${jam}`);
+        
+        parseInt(jam('07.00'));
+        console.info('1');
+
+        //Arrow Function Sebagai Parameter
+        function giveName(callback) {
+            callback('Rayhan');
+        }
+
+        giveName((name) => console.info(`Nama Saya Muhamad ${name}`))
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default parameter</title>
+</head>
+<body>
+    <script>
+        function register (nama, gender ='UNKNOW') {
+            console.info(nama);
+            console.info(gender);
+        } ;
+
+        register();
+        console.info('');
+
+        register('Eko');
+        console.info('')
+
+        register('Eko','Male');
+        console.info('')
+
+        register('Eko',undefined);
+        console.info('')
+        
+        register('Eko',null);
+        
+    </script>
+</body>
+</html>

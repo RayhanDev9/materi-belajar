@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>With Statment</title>
+</head>
+<body>
+    <script>
+
+        //With statment tidak di rekomendasikan
+        const person = {
+            firstName : 'Muhamad',
+            lastName : 'Rayhan'
+        }
+
+        with (person) {
+            console.info(firstName);
+            console.info(lastName);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Return Value</title>
+</head>
+<body>
+    <script>
+        function sayHello(firstName,lastName) {
+            const say = `Hello ${firstName} ${lastName}`;
+            return say;
+        };
+
+        rsault = sayHello('Muhamad','Rayhan');
+        console.info(rsault);
+
+        //Return lebih dari satu
+        function getFinalSecore (value) {
+            if (value > 90) {
+                return 'A';
+            }else if (value > 80) {
+                return 'B'
+            }else if (value > 70) {
+                return 'C';
+            }else if (value > 60) {
+                return 'D';
+            }else {
+                return 'E'
+            }
+        }
+
+        const finalValue = getFinalSecore(90);
+        console.info(finalValue);
+
+        //Menghentikan Eksekusi dengan retrun 
+        function isContent (array,searcValue) {
+
+            for (const element of array) {
+                if (element === searcValue) {
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+
+        const hasilContent = isContent([1,2,3,4,5,],4);
+        console.info(hasilContent);
+    </script>
+</body>
+</html>
