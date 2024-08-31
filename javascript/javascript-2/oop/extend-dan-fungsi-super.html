@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extend Dan Fungsi Super</title>
+  </head>
+  <body>
+    <script>
+      class Peliharaan {
+        //parent class atau object
+        constructor(name, age) {
+          console.info("parent excuted");
+          this.name = name;
+          this.age = age;
+        }
+        makan() {
+          return `${this.name} lagi makan`;
+        }
+      }
+
+      class Kucing extends Peliharaan {
+        //Child class atau object
+        constructor(name, age, lives) {
+          console.info("child excuted");
+          // super(name, age);
+          this.lives = lives;
+        }
+        meong() {
+          return `Meong`;
+        }
+      }
+
+      class Anjing extends Peliharaan {
+        //Child class atau object
+        gongong() {
+          return `Gonggong`;
+        }
+      }
+    </script>
+  </body>
+</html>
