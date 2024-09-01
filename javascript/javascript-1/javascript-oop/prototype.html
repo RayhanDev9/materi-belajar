@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype</title>
+  </head>
+  <body>
+    <script>
+      function Person(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.sayHello = function (name) {
+          console.info(`Hello ${name} Nama Saya ${this.firstName}`);
+        };
+      }
+
+      //Menambahkan protperty Ke Prototype
+      Person.prototype.sayBye= function () {
+        console.info('Good Baye');
+      }
+
+      Person.prototype.run= function () {
+        console.info(`${this.firstName} Is Running`);
+      }
+
+      const rayhan = new Person("Muhamad", "Rayhan");
+
+      const budi = new Person("Budy", "Nugraho");
+
+      console.info(rayhan);
+      console.info(budi);
+
+      rayhan.sayBye();
+      rayhan.run();
+      budi.sayBye();
+      budi.run();
+    </script>
+  </body>
+</html>

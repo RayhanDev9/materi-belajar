@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Class Metode</title>
+</head>
+<body>
+    <script>
+
+        class Peron  {
+
+            say(name) {
+                if(name) {
+                    this.#SayWithName(name);
+                }else {
+                    this.#sayWtihoutName()
+                }
+            }
+
+            #sayWtihoutName() {
+                console.info('Hello')
+            }
+
+            #SayWithName(name) {
+                console.info(`Hello ${name}`);
+            }
+
+        }
+
+        const rayhan= new Peron();
+
+        rayhan.say('Rayhan');
+
+        // rayhan.#sayWtihoutName();//Bakalan Eror
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Instanceof</title>
+</head>
+<body>
+    <script>
+        class Employe {
+
+        }
+
+        class Maneger extends Employe {
+
+        }
+
+        const rayhan = new Employe();
+        const budi = new Maneger();
+
+        console.info(rayhan instanceof Employe);
+        console.info(rayhan instanceof Maneger);
+
+        //True knp ? karena Maneger turunan dari class Employe
+        console.info(budi instanceof Employe);
+        console.info(budi instanceof Maneger);
+    </script>
+</body>
+</html>
