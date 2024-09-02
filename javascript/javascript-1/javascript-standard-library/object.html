@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body>
+    <script>
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+      //Object Freeze dan Seal
+      {
+        const person = {
+          fristName: "Muhamad",
+          lastName: "Rayhan",
+        };
+
+        // Object.freeze(person); //Kalo di freeze propertynya tidak bisa di ubah dan di hapus dan tidak bisa menambah propertynya
+        Object.seal(person); //Kalo di seal propertynya bisa di ubah tapi bisa di hapus dan tidak bisa menambah propertynya
+
+        person.fristName = "budi";
+        delete person.lastName;
+
+        console.info(person);
+
+        console.info("");
+      }
+
+      //Object Assign
+      {
+        const target = { fristName: "Muhamad" };
+        const source = { lastName: "Rayhan" };
+
+        Object.assign(target, source);
+        console.info(target);
+
+        console.info("");
+      }
+
+      //Object property name dan value
+      {
+        const person = {
+          fristName: "Muhamad",
+          lastName: "Rayhan",
+        };
+
+        console.info(Object.values(person));
+        console.info(Object.getOwnPropertyNames(person));
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+      // Array Loop
+      {
+        const array = ["Muhamad", "Rayhan"];
+        array.forEach((value, index) => {
+          console.info(`${index + 1} : ${value}`);
+        });
+      }
+
+      //Array Queue
+      {
+        const queue = [];
+
+        console.info("");
+
+        queue.push("Muhamad");
+        queue.push("Rayhan");
+        console.info(queue);
+
+        console.info(queue.shift());
+        console.info(queue.shift());
+        console.info(queue.shift());
+        console.info(queue);
+
+        console.info("");
+      }
+
+      //   Array Stack
+      {
+        const stack = [];
+
+        stack.unshift("Rayhan");
+        stack.unshift("Muhamad");
+        console.info(stack);
+
+        console.info(stack.pop());
+        console.info(stack.pop());
+        console.info(stack);
+
+        console.info("");
+      }
+
+      //Array Search
+      {
+        const source = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+
+        console.info(source.find((value) => value > 3));
+        console.info(source.findIndex((value) => value > 3));
+        console.info(source.includes(7));
+        console.info(source.indexOf(5));
+        console.info(source.lastIndexOf(5));
+
+        console.info("");
+      }
+
+      //Array Filter
+      {
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        console.info(numbers.filter((value) => value % 2 === 1));
+        console.info(numbers.filter((value) => value % 2 === 0));
+
+        console.info("");
+      }
+
+      //Array Transfrom
+      {
+        const names = ["Muhamad", "Rayhan"];
+        const nameUpper = names.map((value) => value.toUpperCase());
+        console.info(nameUpper);
+
+        const namesReduce = names.reduce(
+          (before, values) => before + " " + values
+        );
+        console.info(namesReduce);
+
+        const namesReduceRight = names.reduceRight(
+          (before, values) => before + " " + values
+        );
+        console.info(namesReduceRight);
+
+        const numbers = [1, 2, 3, 4, 5, 6, 7];
+        const total = numbers.reduce((before, values) => before + values);
+        console.info(total);
+
+
+        
+      }
+    </script>
+  </body>
+</html>

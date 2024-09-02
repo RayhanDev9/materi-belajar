@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy</title>
+</head>
+<body>
+    <script>
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
+
+        //Proxy Handler
+        {
+            const target = {
+                middleName:'kurniawan',
+            };
+
+            const handler = {
+                get : function (target,property) {
+                    console.info(`acces property : ${property}`);
+                    return target[property];
+                },
+                set : function (target,property,value) {
+                    console.info(`Changes property ${property} : ${value}`);
+                    return target[property] = value;
+                }
+            };
+
+            const proxy = new Proxy(target,handler);
+            proxy.fristName = 'Muhamad';
+            proxy.lastName = 'Rayhan';
+
+            console.info(proxy.fristName);
+            console.info(proxy.middleName);
+            console.info(proxy.lastName);
+            console.info(target);
+        }
+
+    </script>
+</body>
+</html>

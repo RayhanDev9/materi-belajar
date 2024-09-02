@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON</title>
+  </head>
+  <body>
+    <script>
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
+      // https://json.org/json-en.html
+
+      const person = {
+        fristName: "Muhamad",
+        lastName: "Rayhan",
+        age :19,
+        addres: {
+          country: "indonesia",
+          city: "banten",
+        },
+        hobies: ["maen bola", "ngoding"],
+      };
+
+      const json = JSON.stringify(person);
+      console.info(json)
+      console.info('');
+
+      const jsonArray = JSON.stringify([person]);
+      console.info(jsonArray)
+      console.info('');
+
+      const jsonObject = JSON.parse(json);
+      console.info(jsonObject);
+    </script>
+  </body>
+</html>

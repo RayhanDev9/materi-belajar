@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date</title>
+  </head>
+  <body>
+    <script>
+      //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+
+      const date = new Date();
+      console.info(date);
+
+      const date_2 = new Date(2005, 7, 9);
+      console.info(date_2);
+
+      const date_3 = new Date(2005, 7, 9, 16, 15, 9, 123);
+      console.info(date_3);
+
+      const date_4 = new Date(1725244826847);
+      console.info(date_4);
+
+      console.info("");
+
+      //Unix StampTime
+      console.info(date.getTime());
+      console.info(Date.now());
+
+      console.info("");
+
+      //Parsing Date
+      const time = Date.parse("2024-09-01T12:00:00Z");
+      console.info(time);
+
+      const tanggal = new Date(time);
+      console.info(tanggal);
+
+      console.info("");
+
+      //Date Getter dan Setter
+      {
+        const date = new Date();
+
+        // date.setDate();
+
+        console.info(date.getFullYear());
+        console.info(date.getMonth());
+        console.info(date.getHours());
+        console.info(date.getMinutes());
+        console.info(date.getSeconds());
+        console.info(date.getMilliseconds());
+        console.info(date.getTimezoneOffset());
+      }
+    </script>
+  </body>
+</html>

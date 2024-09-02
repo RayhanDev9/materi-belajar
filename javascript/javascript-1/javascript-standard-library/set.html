@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set</title>
+</head>
+<body>
+    <script>
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+
+        const set = new Set();
+
+        set.add('Muhamad');
+        set.add('Rayhan'); //Ini akan di timpa,kalo  set pasti tidak ada data yang sama
+        set.add('Rayhan');
+        console.info(set);
+
+        set.forEach((value)=> console.info(`${value}`));
+    </script>
+</body>
+</html>

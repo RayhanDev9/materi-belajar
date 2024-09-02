@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Symbol</title>
+  </head>
+  <body>
+    <script>
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol
+
+      {
+        const fristName = Symbol("fristName");
+        const lastName = Symbol("lastName");
+
+        const person = {};
+        person[fristName] = "Muhamad";
+        person[lastName] = "Rayhan";
+        console.info(person);
+
+        console.info('');
+      }
+
+      //Symbol For
+      {
+        const person ={};
+        person[Symbol.for('fristName')]= 'Muhamad';
+        person[Symbol.for('lastName')]= 'Rayhan';
+
+        console.info(person);
+        console.info(person[Symbol.for('fristName')]);
+        console.info(person[Symbol.for('lastName')]);
+      }
+    </script>
+  </body>
+</html>

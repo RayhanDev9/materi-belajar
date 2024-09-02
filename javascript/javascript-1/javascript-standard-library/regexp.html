@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RegExp</title>
+  </head>
+  <body>
+    <script>
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+
+      //Membuat RegExp
+      {
+        const regExp_1 = /Rayhan/;
+        const regExp_2 = new RegExp("Rayhan");
+        const regExp_3 = new RegExp(/Rayhan/);
+      }
+
+      //RegExpInstance Method
+      {
+        const name = "Muhamad Rayhan";
+        const regExp = /Rayhan/;
+
+        const result = regExp.exec(name);
+        console.info(result);
+
+        const tes = regExp.test(name);
+        console.info(tes);
+
+        console.info(regExp.test("Tidak ada"));
+      }
+
+      //RegExp Modifier
+      {
+        const name = 'Muhamad Rayhan\nMuhamad Rayhan\nMuhamad Rayhan';
+        const regExp_1= /Rayhan/gm
+        const regExp_2= /muhamad/ig
+
+        let result;
+        while (result =regExp_1.exec(name) !== null) {
+            console.info(result);
+        }
+        while (result =regExp_2.exec(name) !== null) {
+            console.info(result);
+        }
+      }
+
+      //Fiture RegExp Lainya
+      {
+
+        //Masih banyak lagi,harus expore lagi
+
+        const regex = /ek[ioueo]/ig
+
+        const name = ' eko eki eks eku eke edo eko eki';
+
+        let result;
+        while (result =regex.exec(name) !== null) {
+            console.info(result);
+        }
+
+      }
+
+      //Regular expresion di string
+      {
+        const name = ' eko eki eks eku eke edo eko eki';
+
+        console.info(name.match(/ek[ioueo]/ig));
+        console.info(name.search(/ek[ioueo]/ig));
+        //di replace semua
+        console.info(name.replace(/ek[ioueo]/i,'Kamu'));
+        console.info(name.replaceAll(/ek[ioueo]/ig,'Kamu'));
+        console.info(name.split(/e/ig));
+      }
+    </script>
+  </body>
+</html>

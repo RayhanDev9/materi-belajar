@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflect</title>
+</head>
+<body>
+    <script>
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect
+
+        const person = {};
+
+        Reflect.set(person,'fristName','Muhamad');
+        Reflect.set(person,'lastName','Rayhan');
+
+        console.info(person);
+
+        console.info(Reflect.get(person,'fristName'));
+        console.info(Reflect.get(person,'lastName'));
+
+        console.info(Reflect.has(person,'fristName'));
+        console.info(Reflect.has(person,'middleName'));
+        console.info(Reflect.has(person,'lastName'));
+    </script>
+</body>
+</html>

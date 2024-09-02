@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    <script>
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+
+        const map = new Map ();
+
+        map.set('Name','Muhamad Rayhan');
+        map.set('addres','Indonesia');
+        console.info(map);
+
+        console.info(map.get('Name'));
+        console.info(map.get('addres'));
+
+        map.forEach((key,value) => console.info(` ${value} : ${key}`));
+    </script>
+</body>
+</html>

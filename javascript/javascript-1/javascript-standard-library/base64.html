@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Base64</title>
+  </head>
+  <body>
+    <script>
+      // https://developer.mozilla.org/en-US/docs/Glossary/Base64
+
+      const original = "Muhamad Rayhan";
+      console.info(original);
+
+      const encoded = btoa(original);
+      console.info(encoded);
+
+      const decoded = atob(encoded);
+      console.info(decoded);
+    </script>
+  </body>
+</html>
