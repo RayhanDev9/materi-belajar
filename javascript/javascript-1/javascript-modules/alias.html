@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alias</title>
+  </head>
+  <body>
+    <script type="module">
+      import { Company, company, sum } from "./script/alias-2.mjs"; // Yang di Sarankan
+      import {
+        Company as Perusahaan,
+        company as perusahaan,
+        sum as total,
+      } from "./script/alias.mjs"; // Yang di Sarankan
+
+      console.info(perusahaan);
+      console.info(company);
+
+      console.info(sum(13, 13));
+      console.info(total(13, 13));
+
+      const a = new Perusahaan();
+      const b = new Company();
+    </script>
+  </body>
+</html>

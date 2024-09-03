@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic module loading</title>
+  </head>
+  <body>
+    <input type="text" id="name" />
+    <input type="button" value="say" id="sayButton" />
+
+    <script type="module">
+      // import { alertHelo } from "./script/dynamic-module-loading.mjs";
+
+      document.getElementById("sayButton").onclick = function () {
+        const name = document.getElementById("name").value;
+        import("./script/dynamic-module-loading.mjs").then(function (module) {
+          module.alertHelo(name);
+        });
+      };
+    </script>
+  </body>
+</html>
