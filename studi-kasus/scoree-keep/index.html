@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Rayhan</title>
+  </head>
+  <body>
+    <main class="container scoreboard d-flex justify-content-center flex-column ">
+      <section class=" d-flex  justify-content-center align-items-center  ">
+         
+         <div class="row d-flex align-items-center   col-auto py-5 text-center justify-content-center  d-grid ">
+          <div class="col-sm-6 points py-3 mx-auto">
+            <h2>Home</h2>
+            <h1>
+              <span id="p1-display">0</span>
+            </h1>
+            <div>
+              <button class="btn btn-primary" id="p1-button">+1</button>
+            </div>
+          </div>
+
+          <div class="col-sm-6 points py-3">
+            <h2>Guest</h2>
+            <h1>
+              <span id="p2-display">0</span>
+            </h1>
+            <div class="">
+              <button class="btn btn-primary" id="p2-button">+1</button>
+            </div>
+          </div>
+         </div>
+          
+      </section>
+
+      <section class="row d-flex flex-column justify-content-center">
+        <div class="d-grid col-6 offset-3  ">
+          <label for="win-score-option" class="d-none d-sm-block">Select Winning Score :</label>
+          <select id="win-score-option" name="option"  class="form-select">
+            <option value="3" selected>3</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="row d-flex flex-column justify-content-center my-4">
+        <div class="d-grid col-6 offset-3  ">
+          <button id="reset" class="btn-primary">Reset</button>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
