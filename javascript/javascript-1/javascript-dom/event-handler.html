@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler</title>
+</head>
+<body>
+
+    <input type="button" value="clickMe" id="clickMe">
+    <script>
+
+        const clickMe = document.getElementById('clickMe');
+
+        //Event Target
+        clickMe.addEventListener('click', function() {
+            clickMe.setAttribute('value','You Ready Click Me');
+            console.info(clickMe)
+        });
+
+        //Global Event Handler
+        clickMe.onclick = function () {
+            clickMe.setAttribute('class','rayhan');
+        };
+        clickMe.onclick = function () {
+            clickMe.setAttribute('name','rayhan');
+        };
+    </script>
+</body>
+</html>

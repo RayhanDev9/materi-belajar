@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window</title>
+  </head>
+  <body>
+    <p id="content"></p>
+    <script>
+      const content = document.getElementById("content");
+
+      const height = window.screen.width;
+      const width = window.screen.width;
+      const url = window.location;
+
+      content.innerHTML = `Window Width ${width}, Height ${height}, <br> URL ${url}`;
+      console.info(window.localStorage);
+      console.info('')
+      console.info(window.performance);
+      console.info('')
+      console.info(window.screen);
+      console.info('')
+      console.info(window.scrollY);
+      console.info('')
+      console.info(window.top);
+      console.info('')
+      console.info(window.window);
+      console.info('')
+      window.close()
+      window.open()
+    </script>
+  </body>
+</html>
