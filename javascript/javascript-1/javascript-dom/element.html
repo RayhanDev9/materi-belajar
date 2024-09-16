@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Element</title>
+  </head>
+  <body>
+    <div class="content" id="content" name="content">
+      <h1 id="title"></h1>
+      <p id="description"></p>
+    </div>
+
+    <button id="button">Hello world</button>
+    <script>
+      const title = document.getElementById("title");
+      title.textContent = "Belajar Javascript Dom";
+
+      const description = document.getElementById("description");
+      description.textContent = "Selamat Belajar Javascript Dom";
+
+      //Properties
+      const content = document.getElementById("content");
+      console.info(content.id);
+      console.info(content.className);
+      console.info(content.tagName);
+      console.info(content.children);
+      console.info(content.firstElementChild);
+      console.info(content.classList);
+      console.info(content.className);
+      console.info(content.lastElementChild);
+      console.info(content.innerHTML);
+      console.info(content.namespaceURI);
+      console.info(content.localName);
+      console.info(title.nextElementSibling);
+      console.info(description.previousElementSibling);
+
+      //Metode
+      //   description.remove();
+      const removeAtribute = description.removeAttribute("id");
+      console.info(removeAtribute);
+      const attribute = content.getAttribute("name");
+      console.info(attribute);
+      const hasAttribute = content.hasAttribute("id");
+      console.info(hasAttribute);
+
+      const button = document.querySelector("button");
+
+      button.setAttribute("name", "helloButton");
+    //   button.setAttribute("disabled", "");
+    button.addEventListener('click', () =>{
+        button.toggleAttribute('disabled');
+        console.info(button);
+    })
+
+      //   Membuat element
+      const h2 = document.createElement("h2");
+      h2.textContent = "Selalu Semangat Belajar";
+
+      // content.appendChild(h2);
+      content.prepend(h2);
+      // content.before(h2);
+      content.after(h2);
+    </script>
+  </body>
+</html>

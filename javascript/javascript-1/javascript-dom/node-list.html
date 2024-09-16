@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node List</title>
+</head>
+<body>
+    <ul id="menu_1">
+        <li id="frist">Frist</li>
+        <li id="second">Secodn</li>
+        <li id="last">Last</li>
+    </ul>
+
+    <ul id="menu_2">
+        <li>Muhamad</li>
+        <li>Rayhan</li>
+    </ul>
+    <script>
+        const list = document.querySelectorAll('li');
+        console.info(list);
+
+        const menu_1 = document.getElementById('menu_1');
+        console.info(menu_1);
+        console.info('');
+
+        const menu_2 = document.getElementById('menu_2').childNodes;
+        console.info(menu_2);
+        console.info('');
+
+        //Node list live
+        
+
+        //Node list static
+        menu_1.appendChild(document.createElement('li'))
+        menu_1.appendChild(document.createElement('li'))
+
+         listPerbaharui = document.querySelectorAll('li');
+        
+        console.info(listPerbaharui);
+        console.info('');
+
+        // Node list properties
+        console.info(listPerbaharui.length);
+        console.info('');
+
+        //Node list Metode
+        console.info(list.item(1));
+        console.info(list.item(3));
+        console.info('');
+
+        list.forEach(list => {
+            console.info(list)
+        });
+        console.info('');
+
+        for(listIterator of list.keys() ) {
+            console.info(listIterator);
+        }
+        console.info('');
+
+        for(listIterator of list.values() ) {
+            console.info(listIterator);
+        }
+        console.info('');
+
+        for(listIterator of list.entries() ) {
+            console.info(listIterator);
+        }
+        console.info('')
+    </script>
+</body>
+</html>

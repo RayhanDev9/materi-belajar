@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Node</title>
+</head>
+<body>
+
+    Muhamad Rayhan
+    <br>
+
+    <script>
+
+        //Mendapatkan text node
+        const text = document.body.firstChild;
+        console.info(text);
+        console.info(text.wholeText);
+
+        //Membuat text node
+        const textNode = document.createTextNode('Ini di buat di javascript oleh text node');
+        document.body.appendChild(textNode);
+    </script>
+</body>
+</html>

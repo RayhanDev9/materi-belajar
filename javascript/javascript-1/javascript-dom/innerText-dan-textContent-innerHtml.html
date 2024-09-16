@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnerText dan TextContent dan InnerHtml</title>
+</head>
+<body>
+    <p id="content">
+        <script>
+            console.info('hello world');
+        </script>
+        <b>Muhamad</b> <i>Rayhan</i>
+    </p>
+
+    <div id="contentTextContent"></div>
+    <div id="contentInnerText"></div>
+    <div id="contentInnerHtml"></div>
+    <script>
+        const content = document.getElementById('content');
+        const contentTextContent = document.getElementById('contentTextContent');
+        const contentInnerText = document.getElementById('contentInnerText');
+        const contentInnerHtml = document.getElementById('contentInnerHtml');
+
+        console.info(content.textContent);
+        console.info(content.innerText);
+        console.info(content.innerHTML);
+
+        contentTextContent.textContent = `<h1>Belajar Javascript Dom </h1> <p>Di Buat Dengan Text Content</p>`
+        contentInnerText.innerText = `<h1>Belajar Javascript Dom </h1> <p>Di Buat Dengan Inner Text</p>`
+        contentInnerHtml.innerHTML = `<h1>Belajar Javascript Dom </h1> <p>Di Buat Dengan Inner Html</p>`
+    </script>
+</body>
+</html>

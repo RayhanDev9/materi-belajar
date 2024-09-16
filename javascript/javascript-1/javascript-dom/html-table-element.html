@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMl Table Element</title>
+</head>
+<body>
+    <table id="table" border="1">
+        <caption>Order Revenu</caption>
+        <thead>
+            <tr>
+                <th>Month</th>
+                <th>Income</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Febuary</td>
+                <td>1.000.000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total :</td>
+                <td>3.000.000</td>
+            </tr>
+        </tfoot>
+    </table>
+    <script>
+        const table= document.getElementById('table');
+        console.info(table.caption)
+        console.info(table.tHead)
+        console.info(table.tBodies)
+        console.info(table.tFoot)
+        console.info(table.rows)
+    </script>
+</body>
+</html>
