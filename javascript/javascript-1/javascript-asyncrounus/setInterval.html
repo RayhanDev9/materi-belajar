@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set Interval</title>
+  </head>
+  <body>
+    <script>
+      let total = 0;
+
+      const header = () => {
+        const h1 = document.createElement("h1");
+        h1.textContent = new Date().toString();
+
+        document.body.append(h1);
+
+        total++;
+        console.info(total);
+        if (parseInt(total) === 5) {
+          clearInterval(interval);
+        }
+      };
+
+      const interval = setInterval(header, 3000);
+    </script>
+  </body>
+</html>

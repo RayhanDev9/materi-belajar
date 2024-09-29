@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Worker</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      button {
+        width: 50%;
+        height: 50%;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="button">Click Me</button>
+    <script>
+      const worker = new Worker("worker.js");
+      const worker1 = new Worker("worker.js");
+      const worker2 = new Worker("worker.js");
+
+      worker.addEventListener("message", (message) =>
+        console.info(message)
+      );
+
+      document.getElementById("button").addEventListener("click", () => {
+        worker.postMessage(10);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slow</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+        button{
+            width: 50%;
+            height: 50%;
+            padding: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <button id="button">Click Me</button>
+    <script>
+      function slow(total) {
+        for (let i = 0; i < total; i++) {
+          console.info(i);
+        }
+      }
+      document.getElementById("button").addEventListener("click", () => {
+        console.info("mulai");
+        slow(10000);
+        console.info("selesai");
+      });
+    </script>
+  </body>
+</html>

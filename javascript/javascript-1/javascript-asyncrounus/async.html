@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asyn Awati</title>
+</head>
+<body>
+    <script>
+        // Promise<String>
+        function getNamePromise() {
+            return new Promise(function (resolve,reject) {
+                resolve('Rayhan Pomise')
+            })
+        }
+
+        // Promise<String>
+        async function getNameAsyn() {
+            return "Rayhan Async"
+        }
+
+        // Promise<Promise><String>
+        async function getNameAsynPromise() {
+            return new Promise(function (resolve,reject) {
+                resolve('Rayhan Async And Pomise')
+            })
+        }
+
+        getNamePromise()
+            .then(response => console.info(response))
+
+        getNameAsyn()
+            .then(response => console.info(response))
+
+        getNameAsynPromise()
+            .then(response => console.info(response))
+    </script>
+</body>
+</html>

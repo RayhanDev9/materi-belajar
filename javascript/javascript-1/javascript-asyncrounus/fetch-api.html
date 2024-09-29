@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Api</title>
+  </head>
+  <body>
+    <form>
+      <label for="username">
+        Username : <input type="text" id="username" name="username" />
+      </label>
+      <br />
+      <label for="password">
+        Password : <input type="text" id="password" name="password" />
+      </label>
+      <br />
+      <button type="button" id="login">Login</button>
+    </form>
+    <h1 id="response"></h1>
+    <script>
+      // Request Fecth API
+      function doLogin() {
+        const request = new Request("https://eoqsmc0ymvllu8a.m.pipedream.net", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            username: document.getElementById("username").value,
+            password: document.getElementById("password").value,
+          }),
+        });
+        const response = fetch(request);
+
+        response 
+            .then(response => response.json())
+            .then(json => document.getElementById('response').textContent = json.status)
+            .catch(error => document.getElementById('response').textContent = error)
+
+      }
+
+      document.getElementById('login').addEventListener('click',doLogin);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise Static Metode</title>
+  </head>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <td>Nama :</td>
+          <td id="name"></td>
+        </tr>
+        <tr>
+          <td>Id :</td>
+          <td id="id"></td>
+        </tr>
+        <tr>
+          <td>Price :</td>
+          <td id="price"></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+        addEventListener
+      function getProduct(product) {
+        return new Promise((resolve, reject) => {
+          const ajax = new XMLHttpRequest();
+          ajax.open("GET", `api/${product}.json`);
+          ajax.addEventListener("load", () => {
+            if (ajax.status === 200) {
+              resolve(ajax.responseText);
+            } else {
+              reject(`Ajax Error Product With Response ${ajax.status}`);
+            }
+          });
+          ajax.send();
+        });
+      }
+
+      const promise = Promise.all([
+        getProduct('product-1'),
+        getProduct('product-2'),
+        getProduct('product-3'),
+      ])
+      
+      promise
+        .then((product)=>{
+            console.info(product);
+        })
+
+    </script>
+  </body>
+</html>

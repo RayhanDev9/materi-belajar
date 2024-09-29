@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Await</title>
+  </head>
+  <body>
+    <script>
+      function getProduct() {
+        const request = new Request("api/product.json", {
+          method: "GET",
+        });
+
+        const response = fetch(request);
+
+        return response.then((response) => response.json());
+      }
+
+      //Promise<String>
+      function productPromise() {
+        return new Promise(function (resolve, reject) {
+          getProduct()
+          .then((response) => console.info(response.name))
+          .catch(error => reject('Product Not Found'));
+        });
+      }
+
+      async function productAsync() {
+        try {
+          const product = await getProduct();
+          return product.name;
+        } catch (error) {
+          return "Product Not Found";
+        }
+      }
+
+      productPromise().then((response) => console.info(response));
+      productAsync().then((response) => console.info(response));
+    </script>
+  </body>
+</html>
