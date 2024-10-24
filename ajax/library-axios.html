@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Axios</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      let total = 0;
+      const dataPeploe = async () => {
+        try {
+          const data = await axios.get(`https://swapi.dev/api/people`);
+          for (const Data in data) {
+            total++;
+            const res = await axios.get(`https://swapi.dev/api/people/${total}`);
+            console.info(res);
+          }
+        } catch (error) {
+          console.info(error);
+          console.info(error.message);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        }
+      };
+
+      dataPeploe();
+    </script>
+  </body>
+</html>

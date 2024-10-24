@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch</title>
+  </head>
+  <body>
+    <script>
+      let total = 0;
+      const dataPeploe = async () => {
+        try {
+          const data = await fetch("https://swapi.dev/api");
+
+          for (const Data in data) {
+            total++;
+            const res = await fetch(`https://swapi.dev/api/people/${total}`);
+            const data = await res.json();
+
+            console.info(data);
+          }
+        } catch (err) {
+          console.log(err);
+          
+        }
+      };
+
+      dataPeploe();
+    </script>
+  </body>
+</html>
