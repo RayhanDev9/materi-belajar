@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <title>Daftar Acara Tv</title>
+  </head>
+  <body>
+    <h1>Daftar Acara TV</h1>
+    <form id="serch-form">
+      <input type="text" name="query" value="" id="" />
+      <button type="submit">Find</button>
+    </form>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+      const form = document.querySelector("#serch-form ");
+      console.info(form);
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        document.querySelectorAll("img").forEach((img) => img.remove());
+
+        const keyword = form.elements.query.value;
+        const config = {
+          params: { q: keyword },
+        };
+
+        const res = await axios.get(
+          `http://api.tvmaze.com/search/shows`,
+          config
+        );
+        console.info(res.data[7].show);
+        getImage(res.data);
+        form.elements.query.value = "";
+      });
+
+      const getImage = (show) => {
+        for (const resault of show) {
+          if (resault.show.image) {
+            const img = document.createElement("img");
+            img.src = resault.show.image.medium;
+            document.body.append(img);
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

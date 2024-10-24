@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax</title>
+  </head>
+  <body>
+    <script>
+      function displayResponse(json) {
+        const h1 = document.createElement("h1");
+        const h2 = document.createElement("h2");
+        h1.textContent = json.response;
+        h2.textContent = json.umur;
+
+        document.body.append(h1);
+        document.body.append(h2);
+      }
+
+      const ajax = new XMLHttpRequest();
+      ajax.addEventListener('readystatechange', () => console.info(`Reday of state ${ajax.readyState}`))
+      ajax.open("GET", "../api/hello.json");
+
+      ajax.addEventListener("load", () => {
+        if (ajax.status === 200) {
+          const json = JSON.parse(ajax.responseText);
+          displayResponse(json);
+        } else {
+          displayResponse(
+            {
+              response: `Response Error ${ajax.status}`,
+            },
+          );
+        }
+      });
+      ajax.send();
+    </script>
+  </body>
+</html>

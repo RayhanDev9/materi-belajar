@@ -1,0 +1,9 @@
+ {
+    "name" : "rayhan",
+    "umur" : 19,
+    "alamt" : {
+        "kecamatan" : "tigaraksa",
+        "desa" : "pete",
+        "kampung" : "cibelentung"
+    }
+}

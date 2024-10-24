@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joke Bapa Bapa</title>
+  </head>
+  <body>
+    <h1>Joke Bapa Bapa</h1>
+    <ul id="ul"></ul>
+    <button type="button" id="button">Click</button>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      const ul = document.querySelector("#ul");
+      const button = document.querySelector("#button");
+
+      const addJoke = async () => {
+        const joke = await getJoke();
+        const liBaru = document.createElement("li");
+
+        liBaru.textContent = joke;
+        ul.append(liBaru);
+      };
+
+      const getJoke = async () => {
+        const config = {
+          headers: "application/json",
+        };
+
+        try {
+          const response = await axios.get(
+            "https://candaan-api.vercel.app/api/text/random",
+            config
+          );
+          return response.data.data;
+        } catch (error) {
+          return "Not Avalibe Jokes";
+        }
+      };
+
+      button.addEventListener("click", () => {
+        addJoke();
+      });
+    </script>
+  </body>
+</html>

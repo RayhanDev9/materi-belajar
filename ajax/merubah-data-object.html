@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merubah Data Object Json</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    img {
+      display: block;
+      margin: 20px;
+    }
+  </style>
+  <body>
+    <script>
+      //ke-1
+      const data = `{
+       "name" : "rayhan",
+       "umur" : 19,
+       "alamat" : {
+        "kecamatan" : "tigaraksa",
+        "desa" : "pete",
+        "kampung" : "cibelentung"
+    }}`;
+
+      const diUbahKeJavascript = JSON.parse(data);
+      console.info(diUbahKeJavascript);
+      
+      const diUbahKeJson = JSON.stringify(diUbahKeJavascript);
+      console.info(diUbahKeJson);
+    </script>
+  </body>
+</html>
