@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 30px;
+  text-align: center;
+}
+
+h2 {
+  margin: 10px;
+  text-align: center;
+}
+
+img {
+  width: 290px;
+  height: 240px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px;
+}
+.container .joke {
+  width: 50%;
+}
+.container .joke .ul {
+  font-size: 1.5em;
+  margin-right:15px ;
+}
+.container .joke .button {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  padding: 7px;
+  margin-top: 15px;
+  margin-left: 7px;
+}
+
+.container .joke .button:hover {
+  background-color: blue;
+  color: white;
+}
+
+/* class transition */
+.add-element {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.8s ease, transform 0.5s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media screen and (max-width:576px) {
+    .container #joke-image {
+        display: none;
+    }
+
+    h2 {
+        display: none;
+    }
+
+    .container #joke-text {
+        width: 100%;
+        border-right: none;
+    }
+
+}
+
+@media screen and (min-width:576px) and ( max-width:1300px)  {
+    img {
+        width:280px;
+        height:270px;
+        margin-left: 5px;
+        margin-top: 5px;
+      }
+
+    .container {
+        flex-wrap:wrap;
+        border-top: none;
+    }
+
+    .container #joke-text, .container #joke-image {
+        width: 100%;
+        border-right: none;
+    }
+
+}
