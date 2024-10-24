@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Data Dengan Ajax</title>
+  </head>
+  <body>
+    <form>
+      <label for="username">
+        Username : <input type="text" id="username" name="username" />
+      </label>
+      <br />
+      <label for="password">
+        Password : <input type="text" id="password" name="password" />
+      </label>
+      <br />
+      <button type="button" id="login">Login</button>
+    </form>
+    <h1 id="response"></h1>
+
+    <script>
+      function doLogin() {
+        const ajax = new XMLHttpRequest();
+
+        ajax.open("POST", "https://eoqsmc0ymvllu8a.m.pipedream.net");
+
+        ajax.addEventListener("load", () => {
+          const response = document.getElementById("response");
+          response.innerHTML = ajax.status;
+        });
+
+        ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        const form =  new FormData();
+          form.append('username',document.getElementById("username").value);
+          form.append('password',document.getElementById("username").value);
+        
+
+        ajax.send(form);
+        console.info(form);
+      }
+
+      document.getElementById("login").addEventListener("click", doLogin);
+    </script>
+  </body>
+</html>

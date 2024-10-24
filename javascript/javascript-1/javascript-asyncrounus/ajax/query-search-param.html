@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Query param</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="search">
+        Search : <input type="search" id="search" name="username" />
+      </label>
+      <button type="button" id="login">Search</button>
+    </form>
+    <h1 id="response"></h1>
+
+    <script>
+      function doSercah() {
+        const ajax = new XMLHttpRequest();
+
+        const param = new URLSearchParams();
+        param.append('search',document.getElementById('search').value);
+        param.append('filter',document.getElementById('search').value);
+
+
+        ajax.open(
+          "GET",
+          `ajax.html?${param.toString()}`
+        );
+
+        ajax.addEventListener("load", () => {
+          const response = document.getElementById("response");
+          response.innerHTML = ajax.status;
+        });
+
+        ajax.send();
+      }
+
+      document.getElementById("login").addEventListener("click", doSercah);
+
+      // const userName = document.getElementById("username");
+      // userName.value = "";
+      // const password = document.getElementById("password");
+      // password.value = "";
+    </script>
+  </body>
+</html>
