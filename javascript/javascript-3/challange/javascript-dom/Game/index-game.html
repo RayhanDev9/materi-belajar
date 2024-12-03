@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Klee+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Javascript Dom</title>
+    <link rel="stylesheet" href="style-game.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container-again">
+        <button type="button" class="again"><h2>Again!</h2></button>
+        <h3>betwen 1 and 20</h3>
+      </div>
+      <div class="container-title">
+        <h1 class="title">Guess My Number!</h1>
+        <h1 class="tanda-tanya">?</h1>
+      </div>
+      <div class="container-input-dan-hasil">
+        <div class="container-input">
+            <input type="number" class="tebak-angka" name="tebak-angka;" />
+
+            <br />
+            <div class="pembungkus-button-input">
+              <button class="check"><h4>Check!</h4></button>
+            </div>
+        </div>
+        <div class="container-hasil">
+          <h2 class="hasil">Start guessing . . . .</h2>
+          <div class="pembungkus-score">
+            <h2 class="score">💖 Score : <span>10</span> </h2>
+            <h2 class="high-score">🏆 Highscore : <span>0</span></h2>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="script-game.js"></script>
+  </body>
+</html>
