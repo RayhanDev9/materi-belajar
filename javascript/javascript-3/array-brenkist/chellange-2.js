@@ -1128,3 +1128,84 @@ const challangesSembilan = () => {
 
 }
 // challangesSembilan()
+
+const challangesSepuluh = () => {
+    // Soal 1: Chaining dengan String Methods
+    // Instruksi: Diberikan sebuah string yang berisi kalimat. Gunakan metode chaining untuk:
+    // 1.	Mengubah string menjadi huruf kapital.
+    // 2.	Menghapus spasi di awal dan akhir string.
+    // 3.	Mengganti semua huruf "A" dengan "X".
+    // javascript
+    // Salin kode
+    let kalimatSatu = "   belajar JavaScript sangat menyenankan    ";
+    // Pertanyaan:
+    // 1.	Gunakan metode chaining untuk melakukan perubahan yang disebutkan di atas.
+    // 2.	Tampilkan hasil akhirnya.
+    console.info(kalimatSatu.toUpperCase().trim().replaceAll('A', 'X'));
+    // ________________________________________
+    // Soal 2: Chaining dengan Array Methods
+    // Instruksi: Diberikan sebuah array angka. Gunakan metode chaining untuk:
+    // 1.	Menambahkan angka 5 ke akhir array.
+    // 2.	Mengurutkan array secara menurun.
+    // 3.	Menyaring angka yang lebih besar dari 10.
+    // javascript
+    // Salin kode
+    let angkaDua = [15, 3, 8, 22, 5, 10];
+    // Pertanyaan:
+    // 1.	Gunakan metode chaining untuk menyelesaikan instruksi di atas.
+    // 2.	Tampilkan hasil akhirnya.
+    angkaDua.push(5)
+    angkaDua.sort((a, b) => b - a)
+    console.info(angkaDua.filter(angka => angka >= 10))
+    // ________________________________________
+    // Soal 3: Chaining dengan Metode Array map(), filter(), dan reduce()
+    // Instruksi: Diberikan sebuah array angka. Gunakan metode chaining untuk:
+    // 1.	Mengalikan setiap angka dalam array dengan 2.
+    // 2.	Menyaring angka yang lebih besar dari 10.
+    // 3.	Menjumlahkan semua angka yang tersisa.
+    // javascript
+    // Salin kode
+    let angkaTiga = [5, 8, 12, 7, 3];
+    // Pertanyaan:
+    // 1.	Gunakan metode chaining untuk menyelesaikan instruksi di atas.
+    // 2.	Tampilkan hasil akhirnya.
+    
+    console.info(angkaTiga.map(angka => angka * 2).filter(angka => angka >= 10).reduce((acc,angka) => acc = (acc + angka)));
+
+    // ________________________________________
+    // Soal 4: Chaining dengan String Methods dan split()
+    // Instruksi: Diberikan sebuah string yang berisi kalimat. Gunakan metode chaining untuk:
+    // 1.	Mengubah string menjadi huruf kecil.
+    // 2.	Memisahkan string menjadi array berdasarkan spasi.
+    // 3.	Menghapus elemen array yang kosong (jika ada).
+    // javascript
+    // Salin kode
+    let kalimat = "    JavaScript adalah bahasa pemrograman    ";
+    // Pertanyaan:
+    // 1.	Gunakan metode chaining untuk menyelesaikan instruksi di atas.
+    // 2.	Tampilkan hasil akhirnya (sebuah array).
+    
+    const hasil = kalimat.toLowerCase().split(' ');
+    hasil.splice(0,4)
+    hasil.splice(-4)
+    console.info(hasil)
+    // ________________________________________
+    // Soal 5: Chaining dengan filter() dan map()
+    // Instruksi: Diberikan sebuah array objek dengan properti name dan age. Gunakan metode chaining untuk:
+    // 1.	Menyaring objek yang memiliki usia lebih dari 18.
+    // 2.	Membuat array baru yang berisi hanya nama-nama orang yang lolos penyaringan.
+    // javascript
+    // Salin kode
+    let orang = [
+      { name: "Alice", age: 25 },
+      { name: "Bob", age: 17 },
+      { name: "Charlie", age: 19 },
+      { name: "David", age: 16 }
+    ];
+    // Pertanyaan:
+    // 1.	Gunakan metode chaining untuk menyelesaikan instruksi di atas.
+    // 2.	Tampilkan hasil akhirnya (array nama).
+    const peploe = orang.filter(orang => orang.age >= 18);
+    console.info(peploe);
+}
+challangesSepuluh();
