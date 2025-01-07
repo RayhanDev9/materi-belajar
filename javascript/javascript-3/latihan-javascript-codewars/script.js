@@ -691,4 +691,308 @@ function tantanganDua() {
   }
   sepuluh();
 }
-tantanganDua()
+// tantanganDua()
+
+function tantanganTiga() {
+
+  const chellangeSatu = () => {
+    //     Tentu! Berikut adalah soal yang disederhanakan dan diterjemahkan ke dalam bahasa Indonesia:
+
+    // ---
+
+    // **Cari Angka Terkecil dalam Array**
+
+    // Diberikan sebuah array yang berisi angka-angka bulat, temukan angka terkecil dalam array tersebut.
+
+    // **Contoh:**
+
+    // - Jika diberikan array `[34, 15, 88, 2]`, hasilnya adalah `2`.
+    // - Jika diberikan array `[34, -345, -1, 100]`, hasilnya adalah `-345`.
+
+    // Anda dapat mengasumsikan bahwa array yang diberikan tidak kosong.
+
+    // ---
+
+    // Itulah versi sederhana dan terjemahan soal dalam bahasa Indonesia.
+    const smallestNumberOfRoundNumbers = (numbers) => {
+      const smlallNumbers = numbers.reduce((acc, num, i, arr) => {
+        console.info(num, arr[i]);
+        if (acc > num) {
+          return num
+        } else {
+          return acc
+        }
+      }, numbers[0]
+      )
+      return smlallNumbers
+    }
+
+    console.info(smallestNumberOfRoundNumbers([0, 34, -345, -1, 100, 0]));
+    console.info(smallestNumberOfRoundNumbers([34, -345, -1, 100]));
+
+
+    const numbers = [34, -345, -1, 100];
+    let result = 0;
+    for (const [i, num] of numbers.entries()) {
+      console.info(num, i)
+      if (result === 0) {
+        result = numbers[0]
+      }
+      if (num < result) {
+        result = num
+      }
+    }
+    console.info(result);
+
+    let rsultFor = 0;
+    for (let i = 0; i < numbers.length; i++) {
+      if (rsultFor === 0) {
+        rsultFor = numbers[0]
+      }
+      if (numbers[i] < rsultFor) {
+        rsultFor = numbers[i]
+      }
+    }
+    console.info(rsultFor);
+  }
+  // chellangeSatu();
+
+  const chellangeDua = () => {
+    //     Cari Nilai Maksimum dan Minimum dari Sebuah List
+
+    // Tugas Anda adalah membuat dua fungsi (misalnya, max dan min atau nama lainnya, sesuai bahasa pemrograman) yang menerima sebuah list yang berisi angka-angka bulat, dan mengembalikan angka terbesar dan terkecil dari list tersebut.
+
+    // Contoh:
+
+    // Jika diberikan list [4,6,2,1,9,63,-134,566], maka max = 566 dan min = -134.
+    // Jika diberikan list [-52, 56, 30, 29, -54, 0, -110], maka min = -110 dan max = 56.
+    // Jika diberikan list [42, 54, 65, 87, 0], maka min = 0 dan max = 87.
+    // Jika diberikan list [5], maka min = 5 dan max = 5.
+    // Catatan: Anda dapat mengasumsikan bahwa list yang diberikan tidak akan kosong.
+    // Membuat dua fungsi misalnya max atau min
+    //untuk fungsi max mengembalikan nilai max
+    // untuk fungsi min mengembalikan nilai min
+
+    const numbers = [4, 6, 2, 1, 9, 63, -134, 566];
+
+    const min = (numbers) => {
+      const smlallNumbers = numbers.reduce((acc, num, i, arr) => {
+        if (acc > num) {
+          return num
+        } else {
+          return acc
+        }
+      }, numbers[0]
+      )
+      return smlallNumbers
+    }
+
+    const max = (numbers) => {
+      const smlallNumbers = numbers.reduce((acc, num, i, arr) => {
+        if (acc < num) {
+          return num
+        } else {
+          return acc
+        }
+      }, numbers[0]
+      )
+      return smlallNumbers
+    }
+    console.info(numbers)
+    console.info(min(numbers), max(numbers))
+
+  }
+  // chellangeDua();
+
+  const chellangeTiga = () => {
+    //     Pangkat 2
+
+    // Tugas Anda adalah membuat fungsi yang menerima sebuah bilangan bulat non-negatif n sebagai input, dan mengembalikan sebuah list yang berisi semua hasil pangkat 2 dari 2^0 hingga 2^n (termasuk 2^n).
+
+    // Contoh:
+
+    // Jika n = 0, maka hasilnya adalah [1] # [2^0]
+    // Jika n = 1, maka hasilnya adalah [1, 2] # [2^0, 2^1]
+    // Jika n = 2, maka hasilnya adalah [1, 2, 4] # [2^0, 2^1, 2^2]
+
+    // membuat fungsi yang menerima sebuah bilangan bulat positif
+    //n sebagai input
+    //dan mengembalikan sebuah list semua hasil pangkat 2
+    //dari 2^0 hingga 2^n (termasuk 2^n) => 2^0 = 1 2^1 = 2 2^2=4
+
+    //membuat var resault = 0
+    // jika n === 0 return result
+    //else,looping n
+    //jika n lebih kecil dari 0 maka n--
+    //setiap perulangan kalikan reult * 2
+    //dan simpan hasilnya selalu di variable resault
+    //setelah selesai looping,return result
+    const exsponen = (n) => {
+      const rsault = n.map(n => {
+        let result = 1;
+        if (n === 0) return result;
+        else {
+          for (let i = n; i >= 0; i--)result = result * 2;
+          return result
+        }
+      })
+      console.info(rsault);
+    }
+    exsponen([0, 1, 2, 3, 4]);
+  }
+  // chellangeTiga();
+
+  const chellangeEmpat = () => {
+    //     Tetap Terhidrasi!
+
+    // Nathan suka bersepeda.
+
+    // Karena Nathan tahu pentingnya tetap terhidrasi, dia minum 0.5 liter air setiap jam bersepeda.
+
+    // Diberikan waktu dalam jam, Anda diminta untuk mengembalikan jumlah liter air yang akan diminum Nathan, dibulatkan ke nilai terkecil.
+
+    // Contoh:
+
+    // Jika waktu = 3 jam, maka Nathan minum 1 liter air.
+    // Jika waktu = 6.7 jam, maka Nathan minum 3 liter air.
+    // Jika waktu = 11.8 jam, maka Nathan minum 5 liter air.
+
+    // nathan minum air 0.5 liteer air setiap jam
+    //berapa jumlah liter air yang di minum nathan
+    //Dibutalkan ke nilai terkecil misalkan (1 = 1.5, 2 = 25)
+
+    const nathanMinumAirPerJam = (jam) => {
+      return Math.floor(0.5 * jam)
+    }
+
+    console.info(nathanMinumAirPerJam(2.5));
+
+  }
+  // chellangeEmpat();
+
+  const chellangeLima = () => {
+    //     Balikkan Nilai
+
+    // Diberikan sebuah deretan angka, kembalikan invers aditif dari setiap angka. Setiap angka positif menjadi negatif, dan angka negatif menjadi positif.
+
+    // Contoh:
+
+    // [1, 2, 3, 4, 5] menjadi [-1, -2, -3, -4, -5]
+    // [1, -2, 3, -4, 5] menjadi [-1, 2, -3, 4, -5]
+    // [] menjadi [] (array kosong tetap kosong)
+    // Anda dapat mengasumsikan bahwa semua nilai adalah bilangan bulat. Jangan mengubah array input yang diberikan.
+
+    // kembalikan angka menjadi invers aditif 
+    //Setiap angka positif menjadi negatif
+    //angka negatif menjadi positif
+    let numbers = [1, -2, 3, -4, 5];
+    const inversAditif = (nums) => {
+      let intermediateResult = [];
+      let resault = []
+      for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > 0) intermediateResult.push(`-${nums[i]}`)
+        else if (nums[i] < 0) intermediateResult.push(`-${nums[i]}`);
+      }
+      // resault = intermediateResult.map((num, i) => Number(num.replaceAll('--', '')))
+
+      for (let i = 0; i < intermediateResult.length; i++) {
+        resault.push(Number(intermediateResult[i].replaceAll('--', '')));
+      }
+      return resault;
+      // Ini merubah array
+      // nums[0] = 100;
+    }
+    console.info(inversAditif(numbers));
+    console.info(numbers);
+  }
+  // chellangeLima();
+
+  const chellangeEnam = () => {
+    //     Grasshopper - Pesan Pribadi
+
+    // Buatlah sebuah fungsi yang memberikan salam pribadi. Fungsi ini menerima dua parameter: name (nama) dan owner (pemilik).
+
+    // Gunakan kondisional untuk mengembalikan pesan yang tepat:
+
+    // Jika name sama dengan owner, kembalikan 'Hello boss'
+    // Jika tidak, kembalikan 'Hello guest'
+    const grasshopper = (name, owner) => {
+      if (owner === name) return 'Hello bos';
+      else return 'Hello guest';
+
+    }
+    console.info(grasshopper('owner', 'owner'))
+    console.info(grasshopper('rayhan', 'owner'))
+
+
+
+  }
+  // chellangeEnam()
+
+  const chellangeTujuh = () => {
+    //     Apakah ini Palindrom?
+
+    // Buatlah sebuah fungsi untuk memeriksa apakah sebuah string adalah palindrom.
+
+    // Palindrom adalah sebuah kata, angka, frasa, atau urutan simbol lainnya yang terbaca sama baik dari depan maupun dari belakang, seperti "madam" atau "racecar".
+
+    // Contoh:
+
+    // "madam" → true (karena "madam" terbaca sama dari depan dan belakang)
+    // "hello" → false (karena "hello" tidak terbaca sama dari depan dan belakang)
+    // Buatlah sebuah fungsi untuk memeriksa apakah sebuah string adalah palindrom.
+    //(seperti "madam" terbaca sama dari depan dan belakang)
+    // kalo benar return true
+
+    const palindrom = (letter) => {
+      return letter[0].toLowerCase() === letter[letter.length - 1].toLowerCase() ? true : false;
+    }
+    console.info(palindrom("Madam"));
+    console.info(palindrom("Hello"));
+
+  }
+  // chellangeTujuh();
+
+  const chellangeDelapan = () => {
+    //     Selisih Volume Kubus
+
+    // Pada latihan sederhana ini, Anda akan membuat sebuah program yang menerima dua daftar angka, a dan b. Setiap daftar berisi 3 angka positif, yang mewakili dimensi dari dua kubus a dan b. Anda harus menghitung selisih volume dari kubus-kubus tersebut tanpa mempedulikan mana yang lebih besar.
+
+    // Contoh: Jika parameter yang diberikan adalah ([2, 2, 3], [5, 4, 1]), maka volume kubus a adalah 12 dan volume kubus b adalah 20. Jadi, fungsi harus mengembalikan selisih volume yaitu 8.
+
+    // Catatan:
+
+    // Setiap daftar a dan b berisi 3 angka positif yang menunjukkan panjang, lebar, dan tinggi kubus.
+    // Fungsi harus mengembalikan selisih volume dari kedua kubus.
+    // Contoh Input dan Output:
+
+    // Input: ([2, 2, 3], [5, 4, 1])
+    // Output: 8
+    //parameter a [2, 2, 3]
+    //parameter b [5, 4, 1]
+    //menghasilkan output 8
+
+    const selisihVolumeKubus = (a, b) => {
+      // const kubuA = a.reduce((acc, a) => acc * a)
+      // const kubuB = b.reduce((acc, b) => acc * b)
+
+      let kubuA = 1;
+      for (let i = 0; i < a.length; i++) {
+        kubuA = kubuA * a[i];
+        console.info(kubuA)
+      }
+      let kubuB = 1;
+      for (let i = 0; i < b.length; i++) {
+        kubuB = kubuB * b[i];
+        console.info(kubuB);
+      }
+      console.info(kubuA, kubuB)
+
+      return kubuB - kubuA
+    }
+    console.info(selisihVolumeKubus([2, 2, 3], [5, 4, 1]))
+  }
+  // chellangeDelapan();
+}
+
+tantanganTiga();

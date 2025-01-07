@@ -1208,4 +1208,4 @@ const challangesSepuluh = () => {
     const peploe = orang.filter(orang => orang.age >= 18);
     console.info(peploe);
 }
-challangesSepuluh();
+// challangesSepuluh();
