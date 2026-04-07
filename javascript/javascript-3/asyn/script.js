@@ -2,9 +2,8 @@
 
 const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
-
 const renderCountry = function (data, className = '') {
-  const html = `
+   html = `
   <article class="country ${className}">
     <img class="country__img" src="${data.flag}" />
     <div class="country__data">
@@ -34,6 +33,8 @@ const getJSON = function (url, errorMsg = 'Something went wrong') {
     return response.json();
   });
 };
+
+
 
 /*
 ///////////////////////////////////////
@@ -72,7 +73,7 @@ getCountryData('usa');
 getCountryData('germany');
 */
 
-///////////////////////////////////////
+///////////////////////////////////////f
 // Welcome to Callback Hell
 
 /*

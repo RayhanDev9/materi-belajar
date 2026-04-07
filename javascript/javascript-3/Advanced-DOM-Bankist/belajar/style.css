@@ -1,0 +1,159 @@
+/* The page is NOT responsive. You can implement responsiveness yourself if you wanna have some fun 😃 */
+
+:root {
+  --color-primary: #5ec576;
+  --color-secondary: #ffcb03;
+  --color-tertiary: #ff585f;
+  --color-primary-darker: #4bbb7d;
+  --color-secondary-darker: #ffbb00;
+  --color-tertiary-darker: #fd424b;
+  --color-primary-opacity: #5ec5763a;
+  --color-secondary-opacity: #ffcd0331;
+  --color-tertiary-opacity: #ff58602d;
+  --gradient-primary: linear-gradient(to top left, #39b385, #9be15d);
+  --gradient-secondary: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: #444;
+  line-height: 1.9;
+  background-color: #f3f3f3;
+}
+
+/* Navigation */
+
+nav.nav {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 7rem;
+  padding-block: 1rem;
+  z-index: 100;
+}
+
+.nav__logo {
+  margin: 1rem;
+  aspect-ratio: auto;
+  width: 15rem;
+}
+
+.nav.sticky {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+}
+
+.nav__item {
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-size: large;
+  color: black;
+}
+
+.nav__link:link,
+.nav__link:visited {
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s;
+}
+
+.nav__link--btn:link,
+.nav__link--btn:visited {
+  padding: 0.8rem 2.5rem;
+  border-radius: 3rem;
+  background-color: var(--color-primary);
+  color: #222;
+}
+
+.nav__link--btn:hover,
+.nav__link--btn:active {
+  color: inherit;
+  background-color: var(--color-primary-darker);
+  color: #333;
+}
+
+/* Header title */
+.header__title {
+  display: grid;
+  grid-template-areas: "text text img";
+  padding: 6rem;
+}
+
+.header__title .container {
+  grid-area: text;
+}
+
+.header__title .container h1 {
+  font-size: 6em;
+  line-height: 1.35;
+}
+
+.header__title .container h4 {
+    font-size: 2.4em;
+    font-weight: 300;
+}
+
+.header__title img {
+  width: 40rem;
+  aspect-ratio: 1;
+  grid-area: img;
+}
+
+.btn--text {
+    display: inline-block;
+    background: none;
+    font-size: 1.7rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: var(--color-primary);
+    border: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 1rem;
+  }
+
+.highlight {
+  position: relative;
+}
+
+.highlight::after {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.7;
+  transform: scale(1.07, 1.05) skewX(-15deg);
+  background-image: var(--gradient-primary);
+}
+

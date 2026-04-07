@@ -1,0 +1,20 @@
+{
+  "name": "modern-javascript-development",
+  "version": "1.0.0",
+  "scripts": {
+    "dev" : "parcel src/index.html",
+    "build" : "parcel build src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "Muhamad Rayhan",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.1"
+  }
+}
