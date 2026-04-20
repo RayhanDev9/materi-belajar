@@ -1,0 +1,29 @@
+@use 'mixin' as f;
+// @import 'mixin';
+
+.header ul {
+  // @include c.inline-list();
+  li {
+    background-color: black;
+    padding: 0.7em;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.container-box {
+  @include f.flex-box(space-around, row-reverse);
+  width: 600px;
+  height: 500px;
+  background-color: salmon;
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  color: white;
+  background-color: black;
+}

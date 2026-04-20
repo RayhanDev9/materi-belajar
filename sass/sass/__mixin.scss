@@ -1,0 +1,41 @@
+@mixin inline-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+  }
+}
+
+.header ul {
+  @include inline-list();
+  li {
+    background-color: black;
+    padding: 0.7em;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+//  Argument @mixin
+@mixin flex-box($space: center, $dicretion: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: $space;
+  flex-direction: $dicretion;
+}
+
+.container-box {
+  @include flex-box(space-around, row-reverse);
+  width: 600px;
+  height: 500px;
+  background-color: salmon;
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  background-color: black;
+}

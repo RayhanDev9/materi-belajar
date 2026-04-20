@@ -1,0 +1,46 @@
+$myColor: salmon;
+header {
+  background-color: $myColor;
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+.main {
+  background: #dadada;
+  .main-heading {
+    font-size: 2em;
+  }
+}
+
+.main,
+footer {
+  h1,
+  p {
+    letter-spacing: 1px;
+  }
+}
+
+// & Parent selector
+
+.main {
+  .container & {
+    background-color: lightcyan;
+  }
+  &-heading {
+    font-size: 2em;
+  }
+  &-paragraph {
+    font-size: 1.4em;
+  }
+
+  &:hover {
+    background-color: salmon;
+  }
+}
+
+footer {
+&-heading {
+  font-size: 3rem;
+}
+}

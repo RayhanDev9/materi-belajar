@@ -1,0 +1,38 @@
+// Css variabel
+
+// :root {
+//   --primary-color: white;
+//   --secondary-color: blue;
+//   --text-color: purple;
+// }
+
+// body {
+//     box-flex-group: var(--secondary-color);
+// }
+
+// h1 {
+//    color : var(--text-color)
+// }
+
+// $primary-color: white;
+// $text-color: rgb(118, 89, 118);
+// $secondary-color: rgb(37, 155, 45);
+
+// body {
+//   $secondary-color: blue !global;
+//   background-color: $secondary-color;
+// }
+
+// h1 {
+//   color: $secondary-color;
+// }
+
+// Map
+$alert: (
+  "danger": red,
+  "succes": green,
+);
+
+h1 {
+  color: map-get($alert, "danger");
+}

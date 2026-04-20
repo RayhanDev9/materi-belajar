@@ -1,0 +1,37 @@
+header {
+  background-color: salmon;
+}
+header h1 {
+  font-size: 2rem;
+}
+
+.main {
+  background: #dadada;
+}
+.main .main-heading {
+  font-size: 2em;
+}
+
+.main h1,
+.main p,
+footer h1,
+footer p {
+  letter-spacing: 1px;
+}
+
+.container .main {
+  background-color: lightcyan;
+}
+.main-heading {
+  font-size: 2em;
+}
+.main-paragraph {
+  font-size: 1.4em;
+}
+.main:hover {
+  background-color: salmon;
+}
+
+footer-heading {
+  font-size: 3rem;
+}/*# sourceMappingURL=nested.css.map */

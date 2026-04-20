@@ -1,0 +1,69 @@
+
+    $warna-dasar :blueviolet;
+    $tg: center;
+
+
+
+// Bult ini moduls : color
+// Adjust-color ($color.
+// $red : null, $green : null, $blue : null, $hue : null, $saturation : null dan lain lain
+
+h1 {
+    color : adjust-color($color: $warna-dasar, $green: 130,$blue : -50 );
+    text-align: $tg;
+    
+}
+
+
+// Adjust-hue($color, $degree) ::after
+h1 {
+    color: adjust-hue($warna-dasar, -130deg);
+}
+
+// Complement($color)
+
+h1 {
+    color : complement($warna-dasar)
+}
+
+// Darken($color, $amount)
+h1 {
+color: darken($warna-dasar, 20%)
+}
+
+// lighten($color, $amount)
+h1 {
+color: lighten($warna-dasar, 10%)
+}
+
+// Saturate($color,$amount)
+h1 {
+    color:saturate($warna-dasar, 100%)
+}
+
+// desaturate($color,$amount)
+h1 {
+    color:desaturate($warna-dasar, 50%)
+}
+
+
+// Grasyeclae($color)
+
+h1 {
+    color: grayscale($warna-dasar);
+}
+
+// mix($color,$warna2,$wight)
+h1 {
+    color: mix($warna-dasar,  blue, $weight: 100%);
+}
+
+// fade-in($color,amoutn)
+h1 {
+    color: fade-in($warna-dasar, .9);
+}
+
+// fade-out($color,amoutn)
+h1 {
+    color: fade-out($warna-dasar, .5);
+}
