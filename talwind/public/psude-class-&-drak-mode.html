@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Psude Class & Drak Mode</title>
+
+    <link rel="stylesheet" href="css/psude-class-dan-drak-mode.css" />
+    <style>
+      /* CSS untuk toggle circle bergerak */
+      #toggle:checked ~ label .toggle-circle {
+        transform: translateX(1.2rem); /* 12px */
+      }
+
+      /* Transisi biar halus */
+      .toggle-circle {
+        transition: transform 0.2s ease;
+      }
+    </style>
+  </head>
+  <body class="dark:bg-slate-800 dark:text-slate-200">
+    <h1 class="text-slate-600">Psude Class & Drak Mode</h1>
+
+    <div class="flex justify-center">
+      <span class="text-sm text-slate-500 mr-2">Light</span>
+      <input type="checkbox" id="toggle" class="hidden" />
+      <label for="toggle">
+        <div
+          class="w-9 h-auto bg-slate-500 round flex items-center p-0 cursor-pointer rounded-full"
+        >
+          <div class="w-4 h-4 bg-white rounded-full toggle-circle"></div>
+        </div>
+      </label>
+      <span class="text-sm text-slate-500 ml-2">Dark</span>
+    </div>
+    
+    <button
+      class="my-10 bg-sky-500 px-5 py-2 rounded-full text-white font-semibold font-inter block mx-auto hover:bg-sky-600 active:700 focus:ring focus:ring-sky-500 dark:bg-slate-300 dark:text-slate-800 dark:hover:text-slate-900 dark:hover:bg-slate-100"
+    >
+      Simpan
+    </button>
+
+    <div
+      class="max-w-lg my-10 border border-slate-500 rounded-xl mx-auto p-5 shadow-md font-inter hover:bg-sky-500 group-hover:text-white dark:group-hover:text-slate-800 dark:hover:bg-slate-300"
+    >
+      <h5 class="font-bold text-slate-700 text-lg mb-3 group-hover:text-white">
+        My Card
+      </h5>
+      <p
+        class="text-slate-600 group-hover:text-white selection:bg-lime-500 selection:text-slate-900 font-serif first-line:uppercase first-line:tracking-widest first-letter:text-7xl dark:group-hover:text-slate-800"
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et a officiis
+        reprehenderit consectetur earum molestiae eveniet repudiandae adipisci
+        ex accusantium, explicabo eos, quo veritatis voluptatibus quisquam
+        reiciendis obcaecati corporis non.
+      </p>
+    </div>
+
+    <div
+      class="max-w-lg my-10 border border-slate-500 rounded-xl mx-auto p-5 shadow-md font-inter"
+    >
+      <h5 class="font-bold text-slate-700 text-lg mb-3">Form</h5>
+      <form action="">
+        <label for="email">
+          <span
+            class="block font-semibold mb-2 text-slate-700 after:content-['*'] after:text-pink-500 after:ml-1"
+            >Email</span
+          >
+          <input
+            type="email"
+            placeholder="masukan emaail"
+            class="px-3 py-2 border shadow rounded w-full block text-sm placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 invalid:text-pink-700 invalid:focus:ring-pink-700 invalid:focus:border-pink-700 peer"
+          />
+          <p class="text-sm m-1 text-pink-700 invisible peer-invalid:visible">
+            Email tidak valid
+          </p>
+        </label>
+      </form>
+    </div>
+  </body>
+
+  <script>
+    const checkbox = document.querySelector("#toggle");
+
+    const html = document.querySelector("html");
+
+    checkbox.addEventListener("click", function () {
+    //   checkbox.checked
+    //     ? html.classList.add("dark")
+    //     : html.classList.remove("dark");
+    html.classList.toggle('dark')
+    });
+  </script>
+</html>

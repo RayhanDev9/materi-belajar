@@ -1,0 +1,137 @@
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  /* align-items:end; */
+  align-content: center;
+  height: 200px;
+  background-color: #f3f4f6;
+  border: 2px solid #9ca3af;
+  gap: 16px;
+  padding: 16px;
+}
+.item {
+  text-align: center;
+  color: white;
+  padding: 8px;
+}
+.item1 {
+  background-color: #ef4444;
+  height: 48px;
+  width: 96px;
+  order: 2;
+}
+.item2 {
+  background-color: #3b82f6;
+  height: 80px;
+  width: 96px;
+  /* order: 3; */
+}
+.item3 {
+  background-color: #10b981;
+  height: 32px;
+  width: 96px;
+}
+
+/* Grid */
+.grid-5 {
+  display: grid;
+  /* grid-template-columns: [cline1] 100px [cline2] auto [cline3] 100px [cline4];
+  grid-template-rows: [rline1] 50px [rline2] auto [rline3] 100px [rline4]; */
+
+  grid-template-columns: 100px auto 100px;
+  grid-template-rows: 50px auto 100px;
+
+  grid-template-areas:
+    "header header header"
+    "content1 content1 content2"
+    "footer footer footer";
+  gap: 16px;
+}
+
+.header {
+  background-color: aqua;
+  /* grid-column-start: cline1;
+    grid-column-end: cline4;
+    grid-row-start: rline1;
+    grid-row-end: rline2; */
+
+  grid-area: header;
+}
+.footer {
+  background-color: aqua;
+  /* grid-column-start: cline1;
+    grid-column-end: cline4;
+    grid-row-start: rline3;
+    grid-row-end: rline4; */
+
+  grid-area: footer;
+}
+
+.content1 {
+  background-color: sandybrown;
+  /* grid-column-start: cline2;
+    grid-column-end: cline3;
+    grid-row-start: rline2;
+    grid-row-end: rline3; */
+
+  grid-area: content1;
+}
+
+.content2 {
+  background-color: sandybrown;
+  grid-area: content2;
+}
+
+.container-grid {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+
+  background-color: #3b82f6;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  height: 75vh;
+  gap: 10px;
+}
+
+.div {
+  background-color: bisque;
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px;
+}
+
+.content11 {
+  justify-self: center;
+  align-self: center;
+}
+
+.container-subgrid {
+  display: grid;
+  grid-template-columns: 100px 50px 100px 100px 100px;
+  grid-template-rows: 100px 50px 100px 100px 100px;
+  background-color: bisque;
+  width: 500px;
+  height: 500px;
+}
+
+.content-subgrid {
+  grid-column: 2/5;
+  grid-row: 2/5;
+  background-color: skyblue;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+}
+
+.inner {
+  margin: 5px;
+  background-color: purple;
+}
