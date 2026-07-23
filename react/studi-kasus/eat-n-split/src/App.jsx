@@ -35,6 +35,7 @@ function App() {
   const [friends, setFriends] = useState(initialFriends);
   const [selectedFriend, setSelectedFriend] = useState(null);
 
+  console.info(initialFriends.at(selectedFriend).id);
   function HandleShowAddFriend() {
     setShowAddFriend(!showAddFriend);
   }
@@ -80,6 +81,7 @@ function App() {
           <FormSplitBill
             selectedFriend={selectedFriend}
             onSplitBill={HandleSplitBil}
+            key={selectedFriend.id}
           />
         )}
       </div>

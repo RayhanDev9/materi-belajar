@@ -1,0 +1,305 @@
+{
+  "cities": [
+    {
+      "cityName": "Lisbon",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2027-10-31T15:59:59.138Z",
+      "notes": "My favorite city so far!",
+      "position": {
+        "lat": 38.727881642324164,
+        "lng": -9.140900099907554
+      },
+      "id": "73930385"
+    },
+    {
+      "cityName": "Madrid",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2027-07-15T08:22:53.976Z",
+      "notes": "",
+      "position": {
+        "lat": 40.46635901755316,
+        "lng": -3.7133789062500004
+      },
+      "id": "17806751"
+    },
+    {
+      "cityName": "Berlin",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2027-02-12T09:24:11.863Z",
+      "notes": "Amazing 😃",
+      "position": {
+        "lat": 52.53586782505711,
+        "lng": 13.376933665713324
+      },
+      "id": "98443197"
+    },
+    {
+      "cityName": "Barcelona",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2027-07-15T08:22:53.976Z",
+      "notes": "",
+      "position": {
+        "lat": 40.46635901755316,
+        "lng": -3.7133789062500004
+      },
+      "id": "1780444"
+    },
+    {
+      "cityName": "Mecklenburg-Vorp",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2027-02-12T09:24:11.863Z",
+      "notes": "Amazing 😃",
+      "position": {
+        "lat": 52.53586782505711,
+        "lng": 13.376933665713324
+      },
+      "id": "98443222"
+    },
+    {
+      "cityName": "Krokom",
+      "country": "Sweden",
+      "emoji": "🇸🇪",
+      "date": "2026-07-19T03:33:38.161Z",
+      "notes": "",
+      "position": {
+        "lat": "63.3929971882582",
+        "lng": "14.297377985889248"
+      },
+      "id": "-exNIYIKc00"
+    },
+    {
+      "cityName": "Tarazona",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-07-19T03:34:20.391Z",
+      "notes": "",
+      "position": {
+        "lat": "41.93448334424121",
+        "lng": "-1.748146262256807"
+      },
+      "id": "IDly2NTnE6c"
+    },
+    {
+      "cityName": "Valluercanes",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-07-19T03:34:30.428Z",
+      "notes": "",
+      "position": {
+        "lat": "42.56843159493716",
+        "lng": "-3.093742879069779"
+      },
+      "id": "GzuKUfrUE-Y"
+    },
+    {
+      "cityName": "Sernancelhe",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2026-07-19T03:35:46.354Z",
+      "notes": "",
+      "position": {
+        "lat": "40.830006468298485",
+        "lng": "-7.593820450158136"
+      },
+      "id": "WLRv0ZRYssY"
+    },
+    {
+      "cityName": "Pedrola",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-07-19T03:37:15.674Z",
+      "notes": "",
+      "position": {
+        "lat": "41.803622943637286",
+        "lng": "-1.2064108592174752"
+      },
+      "id": "tnTOOGicf44"
+    },
+    {
+      "cityName": "Castelnau-sur-Gupie",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2026-07-19T03:37:20.716Z",
+      "notes": "",
+      "position": {
+        "lat": "44.60580080206216",
+        "lng": "0.1400280912855756"
+      },
+      "id": "cap-3WCwIi8"
+    },
+    {
+      "cityName": "la Massana",
+      "country": "Andorra",
+      "emoji": "🇦🇩",
+      "date": "2026-07-19T03:53:22.672Z",
+      "notes": "",
+      "position": {
+        "lat": "42.55271901589236",
+        "lng": "1.4806759976693455"
+      },
+      "id": "HEy1Qj16gwI"
+    },
+    {
+      "cityName": "Rascheid",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2026-07-19T03:53:30.535Z",
+      "notes": "",
+      "position": {
+        "lat": "49.68159045924558",
+        "lng": "6.929262997401808"
+      },
+      "id": "amIkrZZN204"
+    },
+    {
+      "cityName": "Hilchenbach",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2026-07-19T03:53:35.235Z",
+      "notes": "",
+      "position": {
+        "lat": "50.999519883710185",
+        "lng": "8.159784393257402"
+      },
+      "id": "Iq8l8N0kBec"
+    },
+    {
+      "cityName": "Fuentenebro",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-07-19T09:02:28.161Z",
+      "notes": "",
+      "position": {
+        "lat": "41.52453913013575",
+        "lng": "-3.755733011556053"
+      },
+      "id": "-uo0uu4-HJo"
+    },
+    {
+      "cityName": "Mazarambroz",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-07-19T09:03:04.031Z",
+      "notes": "",
+      "position": {
+        "lat": "39.58796239245158",
+        "lng": "-4.0391809119589555"
+      },
+      "id": "odQ1QBUI9Y0"
+    },
+    {
+      "cityName": "Avallon",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2026-07-19T09:40:01.400Z",
+      "notes": "",
+      "position": {
+        "lat": "47.48723812150894",
+        "lng": "3.8750637786518065"
+      },
+      "id": "mG8qb5Xixxk"
+    },
+    {
+      "cityName": "Tosos",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-07-19T09:43:52.853Z",
+      "notes": "",
+      "position": {
+        "lat": "41.293797582786624",
+        "lng": "-1.1403349529005904"
+      },
+      "id": "oVKMRNPaSCE"
+    },
+    {
+      "cityName": "Larraga",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-07-19T09:44:03.485Z",
+      "notes": "",
+      "position": {
+        "lat": "42.552568835960656",
+        "lng": "-1.7983564315767422"
+      },
+      "id": "9uztjdDLUHM"
+    },
+    {
+      "cityName": "Borja",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-07-19T09:44:06.932Z",
+      "notes": "",
+      "position": {
+        "lat": "41.73776270211",
+        "lng": "-1.5765240348515455"
+      },
+      "id": "91EktSgmajA"
+    },
+    {
+      "cityName": "Monein",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2026-07-19T09:44:18.085Z",
+      "notes": "",
+      "position": {
+        "lat": "43.26073287139611",
+        "lng": "-0.49775804437636856"
+      },
+      "id": "PWuDt7DpnUE"
+    },
+    {
+      "cityName": "Boltana",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-07-19T09:44:56.415Z",
+      "notes": "",
+      "position": {
+        "lat": "42.37439481808498",
+        "lng": "-0.0831204518303741"
+      },
+      "id": "o_1KgJyhPdY"
+    },
+    {
+      "cityName": "Saint-Laurent-en-Royans",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2026-07-19T16:56:06.900Z",
+      "notes": "",
+      "position": {
+        "lat": "45.01109779671873",
+        "lng": "5.3622856352630786"
+      },
+      "id": "Gz9qM0PuGrE"
+    },
+    {
+      "cityName": "Lalueza",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-07-19T17:00:09.566Z",
+      "notes": "",
+      "position": {
+        "lat": "41.885476138595614",
+        "lng": "-0.22135642260869617"
+      },
+      "id": "LvEzOmUW8cc"
+    },
+    {
+      "cityName": "Uebigau-Wahrenbruck",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2026-07-19T17:08:54.787Z",
+      "notes": "",
+      "position": {
+        "lat": "51.57639766011176",
+        "lng": "13.335179142652464"
+      },
+      "id": "hT-ZLW-UIdY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
