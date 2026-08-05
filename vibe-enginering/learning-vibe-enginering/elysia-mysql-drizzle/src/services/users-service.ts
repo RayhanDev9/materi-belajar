@@ -55,3 +55,34 @@ export async function loginUser(email: string, passwordPlain: string) {
 
   return token;
 }
+
+export async function getCurrentUser(token: string) {
+  // 1. Cari sesi berdasarkan token
+  const session = await db
+    .select()
+    .from(sessions)
+    .where(eq(sessions.token, token))
+    .limit(1);
+
+  if (session.length === 0) {
+    throw new Error('Unauthorized');
+  }
+
+  // 2. Cari user berdasarkan user_id dari sesi
+  const user = await db
+    .select({
+      id: users.id,
+      name: users.name,
+      email: users.email,
+      createdAt: users.createdAt,
+    })
+    .from(users)
+    .where(eq(users.id, session[0].userId))
+    .limit(1);
+
+  if (user.length === 0) {
+    throw new Error('Unauthorized');
+  }
+
+  return user[0];
+}
