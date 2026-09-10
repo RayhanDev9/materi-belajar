@@ -1,17 +1,15 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
-  "include": ["src/**/*", "test/**/*"],
-  // "exclude" : ["test/**/*", "dist/**/*", "node_modules/**/*"],
   "compilerOptions": {
     // File Layout
-    "rootDir": "./",
-    "outDir": "dist/",
+    // "rootDir": "./src",
+    // "outDir": "./dist",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
     "module": "es6",
     "target": "esnext",
-    "types": ["jest"],
+    "types": [],
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
@@ -41,6 +39,6 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true
+    "skipLibCheck": true,
   }
 }
