@@ -1,0 +1,8 @@
+function getProp<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+
+interface ApiResponse<T = unknown> {
+  status: boolean;
+  data: T;
+}
