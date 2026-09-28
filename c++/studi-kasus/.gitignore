@@ -1,0 +1,14 @@
+# Binaries and object files
+*.exe
+*.o
+*.obj
+*.dll
+
+# Build directories
+build/
+bin/
+out/
+.vscode/
+
+# High score save file
+highscore.dat
