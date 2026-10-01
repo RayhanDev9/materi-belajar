@@ -19,6 +19,31 @@
       "name": "Argus",
       "alterEgo": "unix",
       "id": "4"
+    },
+    {
+      "name": "jordi",
+      "alterEgo": "ra",
+      "id": "XihbwuG8aJs"
+    },
+    {
+      "name": "supermen",
+      "alterEgo": "as",
+      "id": "EAxYIXvbix0"
+    },
+    {
+      "name": "flsas",
+      "alterEgo": "s",
+      "id": "W1aoUCkrYgY"
+    },
+    {
+      "name": "leopar",
+      "alterEgo": "lr",
+      "id": "XO-Gm0St4HY"
+    },
+    {
+      "name": "jono",
+      "alterEgo": "j n",
+      "id": "LCzqFHDzhCk"
     }
   ],
   "friends": [
@@ -53,6 +78,28 @@
         "vue",
         "angular"
       ]
+    }
+  ],
+  "colors": [
+    {
+      "id": "1",
+      "label": "red"
+    },
+    {
+      "id": "2",
+      "label": "blue"
+    },
+    {
+      "id": "3",
+      "label": "green"
+    },
+    {
+      "id": "4",
+      "label": "yellow"
+    },
+    {
+      "id": "5",
+      "label": "black"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
