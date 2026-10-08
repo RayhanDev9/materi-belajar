@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue';
+import { computed, onMounted, onUnmounted, ref } from 'vue';
 
 type product = {
   id: string;
@@ -58,6 +58,33 @@ const description = ref("Leptop Gaming");
 const price = ref(15000000);
 const image = ref("https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80");
 const cart = ref<product[]>([]);
+
+
+const totalHarga = computed(() => {
+  let total: number = 0;
+  for (let product = 0; product < products.value.length; product++) {
+    const element = products.value[product]?.price;
+    total += Number(element?? 0);
+  }
+
+  return total;
+})
+
+let intervalId: any = null;
+const now =ref(String(new Date().getSeconds()))
+
+onMounted(() => {
+ intervalId = setInterval(() => {
+    now.value = String(new Date().getSeconds());
+  },1000)
+})
+
+onUnmounted(()=> {
+ if (intervalId) clearInterval(intervalId);
+
+}
+)
+
 
 // Contoh Kasus v-html: Teks dari CMS/Backend yang memiliki format HTML
 const promoBanner = ref(
@@ -123,6 +150,10 @@ const html = "<em>tes </em>";
         <span class="stat-badge stat-cart">
           🛒 Keranjang: {{ cart.length }} item
         </span>
+        <button class="btn btn-sm btn-outline-success d-flex align-items-center gap-1">
+          <i class="fa-solid fa-cart-plus"></i>
+          <span>Tambah Ke Keranjang</span>
+        </button>
       </div>
     </header>
 
@@ -181,6 +212,9 @@ const html = "<em>tes </em>";
 
         <button type="submit" class="btn-submit">Simpan Produk</button>
       </form>
+
+      <h3>Total Harga: Rp {{ totalHarga.toLocaleString('id-ID') }}</h3>
+      <p>{{ now }}</p>
     </section>
   </div>
 </template>

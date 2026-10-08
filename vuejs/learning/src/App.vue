@@ -1,33 +1,53 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 import Materi1Katalog from './components/materi/Materi1Katalog.vue';
 import Materi2TodoList from './components/materi/Materi2TodoList.vue';
 
 // Menu pilihan materi
 const activeTab = ref<'materi1' | 'materi2'>('materi2');
+const styles = reactive({
+  heading : "text-center text-primary"  ,
+  size : 40,
+  btnStatus : false,
+})
+
+const btnState = computed(() => {
+  return styles.btnStatus ? 'd-none' : 'd-flex'
+})
+
+
 </script>
 
 <template>
   <div class="learning-container">
+    <!-- Header Title -->
+     <i class="fa-solid fa-trash me-1 fs-2" @click="styles.btnStatus = !styles.btnStatus"></i>
+    <header class="py-3 bg-white  border-bottom shadow-sm">
+      <h1 :class="styles.heading" :style="{ fontSize: styles.size + 'px' }">
+        Belajar Vue 3
+      </h1>
+    </header>
     <!-- Navigasi Materi Pembelajaran -->
     <nav class="nav-bar">
       <div class="nav-brand">
         📚 <strong>Vue 3 Learning Playground</strong>
       </div>
-      <div class="nav-tabs">
-        <button 
-          :class="{ active: activeTab === 'materi1' }" 
-          @click="activeTab = 'materi1'"
-        >
-          Materi 1: Katalog & Directives
-        </button>
-        <button 
-          :class="{ active: activeTab === 'materi2' }" 
-          @click="activeTab = 'materi2'"
-        >
-          Materi 2: Smart Todo List
-        </button>
-      </div>
+      <Transition name="i" mode="out-in" >
+        <div v-if="!styles.btnStatus" class="nav-tabs">
+          <button 
+            :class="{ active: activeTab === 'materi1' }" 
+            @click="activeTab = 'materi1'"
+          >
+            Materi 1: Katalog & Directives
+          </button>
+          <button 
+            :class="{ active: activeTab === 'materi2' }" 
+            @click="activeTab = 'materi2'"
+          >
+            Materi 2: Smart Todo List
+          </button>
+        </div>
+      </Transition>
     </nav>
 
     <!-- Konten Materi yang Sedang Aktif -->
@@ -39,6 +59,17 @@ const activeTab = ref<'materi1' | 'materi2'>('materi2');
 </template>
 
 <style scoped>
+
+.i-enter-from,
+.i-leave-to {
+  opacity: 0;
+}
+
+.i-enter-active,
+.i-leave-active {
+  transition: opacity 0.2s ease;
+}
+
 .learning-container {
   min-height: 100vh;
   background-color: #f8fafc;
