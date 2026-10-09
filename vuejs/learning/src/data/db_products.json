@@ -1,0 +1,110 @@
+{
+  "products": [
+    {
+      "title": "Sony WH-1000XM5 Wireless Headphones",
+      "price": 55999000,
+      "description": "Headphone nirkabel premium dengan fitur Active Noise Cancelling terdepan di industri dan daya tahan baterai hingga 30 jam.",
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "title": "Mechanical Keyboard Keychron K2 RGB",
+      "price": 1250000,
+      "description": "Keyboard mekanikal nirkabel 75% dengan Gateron G Pro Brown switch, konektivitas Bluetooth 5.1, dan bodi aluminium kokoh.",
+      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "4",
+      "title": "Apple Watch Ultra 2 Titanium",
+      "price": 13999000,
+      "description": "Smartwatch tangguh berbahan titanium untuk petualangan ekstrem, dilengkapi GPS frekuensi ganda presisi dan layar 3000 nits.",
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "5",
+      "title": "Logitech MX Master 3S Wireless Mouse",
+      "price": 1450000,
+      "description": "Mouse ergonomis produktivitas tinggi dengan sensor 8000 DPI, scroll roda MagSpeed ultra-cepat, dan klik yang sangat senyap.",
+      "image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "6",
+      "title": "Monitor Dell UltraSharp 27 Inch 4K",
+      "price": 8750000,
+      "description": "Monitor profesional IPS 4K UHD dengan cakupan warna 98% DCI-P3 dan konektivitas USB-C 90W power delivery untuk desainer.",
+      "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "7",
+      "title": "Sony Alpha A7 IV Mirrorless Camera",
+      "price": 31999000,
+      "description": "Kamera full-frame hybrid 33MP dengan kemampuan rekam video 4K 60p 10-bit dan sistem autofocus berbasis AI yang sangat cepat.",
+      "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "8",
+      "title": "Apple iPad Pro 11 Inch M4",
+      "price": 17499000,
+      "description": "Tablet tertipis dengan chip Apple M4 bertenaga super, layar Ultra Retina XDR OLED ganda, dan dukungan penuh Apple Pencil Pro.",
+      "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "9",
+      "title": "Speaker Bluetooth Marshall Emberton II",
+      "price": 2899000,
+      "description": "Speaker portabel dengan suara 360 derajat True Stereophonic khas Marshall, tahan air IP67, dan waktu putar lebih dari 30 jam.",
+      "image": "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "10",
+      "title": "Tas Ransel Laptop Anti Maling Mark Ryden",
+      "price": 580000,
+      "description": "Backpack modern kedap air dengan slot USB charger eksternal, kompartemen laptop 15.6 inch berbusa tebal, dan kunci TSA.",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "11",
+      "title": "Tumbler Stainless Steel Hydro Flask 32oz",
+      "price": 485000,
+      "description": "Botol minum isolasi vakum dinding ganda yang menjaga minuman tetap dingin hingga 24 jam atau panas hingga 12 jam tanpa embun.",
+      "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "12",
+      "title": "Mikrofon Podcast Shure SM7B Vocal",
+      "price": 6450000,
+      "description": "Mikrofon dinamis legendaris standar siaran radio dan podcast profesional dengan respons frekuensi yang halus dan hangat.",
+      "image": "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "13",
+      "title": "Lampu Meja Kerja Minimalis LED Eye-Care",
+      "price": 320000,
+      "description": "Lampu belajar LED dengan pengatur kecerahan sentuh, temperatur warna adaptif, dan fitur anti-flicker yang melindungi mata lelah.",
+      "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "14",
+      "title": "Power Bank Anker 737 24000mAh 140W",
+      "price": 1850000,
+      "description": "Powerbank berkapasitas besar dengan teknologi GaNPrime, output daya kilat 140W Power Delivery yang mampu mengisi daya laptop MacBook.",
+      "image": "https://images.unsplash.com/photo-1609592426861-528271012351?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "15",
+      "title": "Kursi Kerja Ergonomis Secretlab TITAN Evo",
+      "price": 7250000,
+      "description": "Kursi ergonomis kelas premium dengan penyangga tulang belakang L-ADAPT 4 arah, bantalan magnetik memory foam, dan kulit sintetis tahan lama.",
+      "image": "https://images.unsplash.com/photo-1580481077195-c3a821a5060f?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "title": "rayhan",
+      "price": 333333,
+      "description": "dggg",
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80",
+      "id": "5ne5VZ9EvZ8"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

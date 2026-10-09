@@ -1,81 +1,79 @@
 <script setup lang="ts">
-import { computed, reactive, ref } from 'vue';
-import Materi1Katalog from './components/materi/Materi1Katalog.vue';
-import Materi2TodoList from './components/materi/Materi2TodoList.vue';
+import { reactive } from 'vue';
 
-// Menu pilihan materi
-const activeTab = ref<'materi1' | 'materi2'>('materi2');
+// State sederhana untuk styling judul
 const styles = reactive({
-  heading : "text-center text-primary"  ,
-  size : 40,
-  btnStatus : false,
-})
-
-const btnState = computed(() => {
-  return styles.btnStatus ? 'd-none' : 'd-flex'
-})
-
-
+  heading: 'text-center text-primary',
+  size: 38,
+});
 </script>
 
 <template>
   <div class="learning-container">
-    <!-- Header Title -->
-     <i class="fa-solid fa-trash me-1 fs-2" @click="styles.btnStatus = !styles.btnStatus"></i>
-    <header class="py-3 bg-white  border-bottom shadow-sm">
-      <h1 :class="styles.heading" :style="{ fontSize: styles.size + 'px' }">
-        Belajar Vue 3
+    <!-- Header Halaman -->
+    <header class="py-3 bg-white border-bottom shadow-sm">
+      <h1 
+        :class="styles.heading" 
+        class="animate__animated animate__bounce"
+        :style="{ fontSize: styles.size + 'px' }"
+      >
+        Belajar Vue 3 &amp; VueRouter
       </h1>
     </header>
-    <!-- Navigasi Materi Pembelajaran -->
+
+    <!-- Bar Navigasi (RouterLink) -->
     <nav class="nav-bar">
       <div class="nav-brand">
         📚 <strong>Vue 3 Learning Playground</strong>
       </div>
-      <Transition name="i" mode="out-in" >
-        <div v-if="!styles.btnStatus" class="nav-tabs">
-          <button 
-            :class="{ active: activeTab === 'materi1' }" 
-            @click="activeTab = 'materi1'"
-          >
-            Materi 1: Katalog & Directives
-          </button>
-          <button 
-            :class="{ active: activeTab === 'materi2' }" 
-            @click="activeTab = 'materi2'"
-          >
-            Materi 2: Smart Todo List
-          </button>
-        </div>
-      </Transition>
+
+      <div class="nav-tabs">
+        <!-- 
+          RouterLink: Komponen resmi Vue Router untuk berpindah halaman tanpa reload.
+          Class 'active' otomatis ditambahkan ketika URL cocok dengan 'to="..."'.
+        -->
+        <RouterLink to="/katalog" class="nav-link-btn">
+          Katalog Buku
+        </RouterLink>
+
+        <RouterLink to="/todo-list" class="nav-link-btn">
+          Daftar Tugas
+        </RouterLink>
+
+        <RouterLink to="/lifecycle" class="nav-link-btn">
+          Materi 3: Lifecycle Hooks
+        </RouterLink>
+
+        <RouterLink to="/getdata" class="nav-link-btn">
+          Materi 4: Get Data
+        </RouterLink>
+      </div>
     </nav>
 
-    <!-- Konten Materi yang Sedang Aktif -->
+    <!-- Wadah Penampil Halaman (RouterView) -->
     <main class="content-wrapper">
-      <Materi1Katalog v-if="activeTab === 'materi1'" />
-      <Materi2TodoList v-else-if="activeTab === 'materi2'" />
+      <!-- 
+        RouterView: Merender halaman yang sesuai dengan rute URL aktif saat ini.
+        Menggunakan Transition agar pergantian halaman memiliki animasi fade yang halus.
+      -->
+      <RouterView v-slot="{ Component }">
+        <Transition name="fade" mode="out-in">
+          <component :is="Component" />
+        </Transition>
+      </RouterView>
     </main>
   </div>
 </template>
 
 <style scoped>
-
-.i-enter-from,
-.i-leave-to {
-  opacity: 0;
-}
-
-.i-enter-active,
-.i-leave-active {
-  transition: opacity 0.2s ease;
-}
-
+/* 1. Tata Letak Dasar */
 .learning-container {
   min-height: 100vh;
   background-color: #f8fafc;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* 2. Navigasi */
 .nav-bar {
   display: flex;
   justify-content: space-between;
@@ -98,33 +96,54 @@ const btnState = computed(() => {
   gap: 10px;
 }
 
-.nav-tabs button {
+/* 3. Tombol Navigasi (RouterLink) */
+.nav-link-btn {
+  display: inline-block;
   padding: 10px 18px;
   border-radius: 8px;
   border: 1px solid #e2e8f0;
   background-color: #ffffff;
   color: #64748b;
+  text-decoration: none;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.nav-tabs button:hover {
+.nav-link-btn:hover {
   color: #1e293b;
   background-color: #f1f5f9;
 }
 
-.nav-tabs button.active {
+/* Class 'active' otomatis ditempelkan oleh Vue Router ke link yang sedang dikunjungi */
+.nav-link-btn.active {
   background-color: #42b883;
   color: #ffffff;
   border-color: #42b883;
   box-shadow: 0 2px 8px rgba(66, 184, 131, 0.3);
 }
 
+/* 4. Area Konten Halaman */
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 24px 20px 48px;
+}
+
+/* 5. Animasi Transisi Halus Saat Berpindah Rute */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
 }
 </style>

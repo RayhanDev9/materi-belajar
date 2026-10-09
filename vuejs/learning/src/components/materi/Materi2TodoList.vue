@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
+import TodoItem from './TodoItem.vue';
+
 
 // Tipe data untuk setiap item todo
 type Todo = {
@@ -7,6 +9,7 @@ type Todo = {
   text: string;
   isDone: boolean;
 };
+
 
 // =========================================================
 // TUGAS 1: Deklarasikan State (ref)
@@ -70,10 +73,13 @@ const filteredTodos = computed(() => {
 });
 
 // =========================================================
-// TUGAS 5: Ubah Status Selesai / Belum Selesai & Hapus
+// TUGAS 5: Ubah Status Selesai / Belum Selesai & Hapus (via Event Emit)
 // =========================================================
-function toggleTodo(todo: Todo) {
-  todo.isDone = !todo.isDone;
+function toggleTodo(id: number) {
+  const target = todos.value.find(t => t.id === id);
+  if (target) {
+    target.isDone = !target.isDone;
+  }
 }
 
 function deleteTask(id: number) {
@@ -84,7 +90,7 @@ function deleteTask(id: number) {
 <template>
   <main class="todo-app">
     <header class="app-header">
-      <h1>📝 My Smart To-Do List</h1>
+      <h1>📋 My Smart To-Do List</h1>
       <!-- Tampilkan gabungan teks progres di sini -->
       <p class="summary">{{ progressSummary }}</p>
     </header>
@@ -121,24 +127,17 @@ function deleteTask(id: number) {
       </button>
     </div>
 
-    <!-- Daftar List Tugas -->
+    <!-- Daftar List Tugas Menggunakan Komponen Anak -->
     <ul class="task-list">
-      <li 
+      <TodoItem 
         v-for="item in filteredTodos" 
         :key="item.id" 
-        class="task-item"
-        :class="{ completed: item.isDone }"
-      >
-        <label class="task-label">
-          <input 
-            type="checkbox" 
-            :checked="item.isDone" 
-            @change="toggleTodo(item)" 
-          />
-          <span class="task-text">{{ item.text }}</span>
-        </label>
-        <button class="btn-delete" @click="deleteTask(item.id)">✕</button>
-      </li>
+        :id="item.id"
+        :text="item.text"
+        :is-done="item.isDone"
+        @toggle="toggleTodo"
+        @delete="deleteTask"
+      />
 
       <li v-if="filteredTodos.length === 0" class="empty-state">
         Tidak ada tugas di kategori ini! 🎉
@@ -233,44 +232,6 @@ function deleteTask(id: number) {
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-
-.task-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 14px;
-  background-color: #f8fafc;
-  border: 1px solid #f1f5f9;
-  border-radius: 8px;
-  transition: all 0.2s;
-}
-
-.task-item.completed .task-text {
-  text-decoration: line-through;
-  color: #94a3b8;
-}
-
-.task-label {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  cursor: pointer;
-  flex: 1;
-}
-
-.btn-delete {
-  background: none;
-  border: none;
-  color: #ef4444;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-
-.btn-delete:hover {
-  background-color: #fee2e2;
 }
 
 .empty-state {
