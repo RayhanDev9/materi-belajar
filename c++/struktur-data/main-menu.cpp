@@ -51,6 +51,30 @@ string getStringInput(const string& prompt) {
     return str;
 }
 
+// Pratinjau isi berkas ke layar
+void printFileContent(const string& filename) {
+    ifstream file(filename);
+    if (!file.is_open()) {
+        cout << "[INFO] File tidak dapat dibuka untuk pratinjau.\n";
+        return;
+    }
+    cout << "\n================ PRATINJAU FILE ================\n";
+    cout << "Nama File: " << filename << "\n";
+    cout << "------------------------------------------------\n";
+    string line;
+    int lineNum = 1;
+    bool hasContent = false;
+    while (getline(file, line)) {
+        cout << "  Baris " << lineNum++ << ": " << line << "\n";
+        hasContent = true;
+    }
+    if (!hasContent) {
+        cout << "  (File kosong)\n";
+    }
+    cout << "================================================\n";
+    file.close();
+}
+
 // ============================================================================
 // 1. CLASS SINGLE STACK
 // ============================================================================
@@ -67,35 +91,41 @@ public:
 
     void push(int value) {
         if (isFull()) {
-            cout << "[ERROR] Stack Penuh (Overflow)! Tidak dapat menambahkan " << value << endl;
+            cout << "[ERROR] Stack Penuh (Overflow)! Indeks [0 s.d. " << (MAX - 1) << "] sudah terisi.\n";
         } else {
             top++;
             data[top] = value;
-            cout << "[SUKSES] Data " << value << " berhasil dimasukkan ke Stack.\n";
+            cout << "[SUKSES] Data " << value << " berhasil dimasukkan ke Stack pada Indeks [" << top << "].\n";
         }
     }
 
     int pop() {
         if (isEmpty()) {
-            cout << "[ERROR] Stack Kosong (Underflow)!\n";
+            cout << "[ERROR] Stack Kosong (Underflow)! Tidak ada data untuk dikeluarkan.\n";
             return -1;
         }
         int val = data[top];
+        int idx = top;
         top--;
-        cout << "[SUKSES] Data " << val << " berhasil dikeluarkan dari Stack.\n";
+        cout << "[SUKSES] Data " << val << " berhasil dikeluarkan dari Stack dari Indeks [" << idx << "].\n";
         return val;
     }
 
     void display() const {
-        if (isEmpty()) {
-            cout << "Stack Kosong.\n";
-            return;
+        cout << "\n=== STATUS ARRAY FISIK SINGLE STACK (Kapasitas: " << MAX << ") ===\n";
+        for (int i = MAX - 1; i >= 0; i--) {
+            cout << "Indeks [" << i << "]: ";
+            if (i <= top) {
+                cout << "[ " << data[i] << " ]";
+                if (i == top) cout << " <-- TOP (Puncak Tumpukan)";
+            } else {
+                cout << "[ KOSONG ]";
+            }
+            cout << "\n";
         }
-        cout << "Isi Stack (Top -> Bottom):\n";
-        for (int i = top; i >= 0; i--) {
-            cout << "| " << data[i] << " |" << (i == top ? " <-- Top" : "") << endl;
-        }
-        cout << "-------\n";
+        cout << "------------------------------------------------\n";
+        cout << "Pointer Top         : Indeks [" << top << "] " << (isEmpty() ? "(Stack Kosong)" : "") << "\n";
+        cout << "Jumlah Elemen Terisi: " << (top + 1) << " dari " << MAX << " slot.\n";
     }
 
     void saveToFile(const string& filename) const {
@@ -113,6 +143,7 @@ public:
         }
         file.close();
         cout << "[SUKSES] Data Stack berhasil disimpan ke file '" << filename << "'.\n";
+        printFileContent(filename);
     }
 
     void loadFromFile(const string& filename) {
@@ -133,9 +164,11 @@ public:
             count++;
         }
         file.close();
-        cout << "[SUKSES] Berhasil membaca " << count << " data dari file '" << filename << "'.\n";
+        cout << "[SUKSES] Berhasil memuat " << count << " data dari file '" << filename << "'.\n";
+        printFileContent(filename);
     }
 };
+
 
 // ============================================================================
 // 2. CLASS DOUBLE STACK
@@ -158,51 +191,62 @@ public:
 
     void push(int stackChoice, int value) {
         if (isFull()) {
-            cout << "[ERROR] Double Stack Penuh (Overflow)!\n";
+            cout << "[ERROR] Double Stack Penuh (Overflow)! Pointer Top 1 [" << top1 << "] telah bertemu Top 2 [" << top2 << "].\n";
             return;
         }
         if (stackChoice == 1) {
             top1++;
             data[top1] = value;
-            cout << "[SUKSES] Data " << value << " masuk ke Stack Sisi Kiri (Stack 1).\n";
+            cout << "[SUKSES] Data " << value << " masuk ke Stack 1 (Sisi Kiri) pada Indeks [" << top1 << "].\n";
         } else {
             top2--;
             data[top2] = value;
-            cout << "[SUKSES] Data " << value << " masuk ke Stack Sisi Kanan (Stack 2).\n";
+            cout << "[SUKSES] Data " << value << " masuk ke Stack 2 (Sisi Kanan) pada Indeks [" << top2 << "].\n";
         }
     }
 
     void pop(int stackChoice) {
         if (stackChoice == 1) {
             if (isEmpty1()) {
-                cout << "[ERROR] Stack Sisi Kiri Kosong!\n";
+                cout << "[ERROR] Stack 1 (Sisi Kiri) Kosong!\n";
                 return;
             }
-            cout << "[SUKSES] Data " << data[top1] << " keluar dari Stack Sisi Kiri.\n";
+            int val = data[top1];
+            int idx = top1;
             top1--;
+            cout << "[SUKSES] Data " << val << " keluar dari Stack 1 (Sisi Kiri) dari Indeks [" << idx << "].\n";
         } else {
             if (isEmpty2()) {
-                cout << "[ERROR] Stack Sisi Kanan Kosong!\n";
+                cout << "[ERROR] Stack 2 (Sisi Kanan) Kosong!\n";
                 return;
             }
-            cout << "[SUKSES] Data " << data[top2] << " keluar dari Stack Sisi Kanan.\n";
+            int val = data[top2];
+            int idx = top2;
             top2++;
+            cout << "[SUKSES] Data " << val << " keluar dari Stack 2 (Sisi Kanan) dari Indeks [" << idx << "].\n";
         }
     }
 
     void display() const {
-        cout << "--- STATUS DOUBLE STACK ---\n";
-        cout << "Stack 1 [Sisi Kiri]  (Top -> Dasar): ";
-        if (isEmpty1()) cout << "[Kosong]";
-        else {
-            for (int i = top1; i >= 0; i--) cout << "[" << data[i] << "] ";
+        cout << "\n=== STATUS ARRAY FISIK DOUBLE STACK (Kapasitas: " << MAX << ") ===\n";
+        for (int i = 0; i < MAX; i++) {
+            cout << "Indeks [" << i << "]: ";
+            if (i <= top1) {
+                cout << "[ " << data[i] << " ] (Stack 1)";
+                if (i == top1) cout << " <-- TOP 1 (Puncak Kiri)";
+            } else if (i >= top2) {
+                cout << "[ " << data[i] << " ] (Stack 2)";
+                if (i == top2) cout << " <-- TOP 2 (Puncak Kanan)";
+            } else {
+                cout << "[ KOSONG ] <--- Slot Bebas";
+            }
+            cout << "\n";
         }
-        cout << "\nStack 2 [Sisi Kanan] (Top -> Dasar): ";
-        if (isEmpty2()) cout << "[Kosong]";
-        else {
-            for (int i = top2; i < MAX; i++) cout << "[" << data[i] << "] ";
-        }
-        cout << "\nSisa slot kosong: " << (top2 - top1 - 1) << endl;
+        cout << "------------------------------------------------\n";
+        cout << "Pointer Top 1 (Kiri)  : Indeks [" << top1 << "] " << (isEmpty1() ? "(Kosong)" : "") << "\n";
+        cout << "Pointer Top 2 (Kanan) : Indeks [" << top2 << "] " << (isEmpty2() ? "(Kosong)" : "") << "\n";
+        cout << "Sisa Slot Bebas       : " << (top2 - top1 - 1) << " slot.\n";
+        cout << "Kondisi Overflow      : (Top1 + 1 == Top2)\n";
     }
 
     void saveToFile(const string& filename) const {
@@ -219,6 +263,7 @@ public:
         for (int i = top2; i < MAX; i++) file << data[i] << "\n";
         file.close();
         cout << "[SUKSES] Data Double Stack berhasil disimpan ke file '" << filename << "'.\n";
+        printFileContent(filename);
     }
 
     void loadFromFile(const string& filename) {
@@ -243,6 +288,7 @@ public:
         }
         file.close();
         cout << "[SUKSES] Berhasil membaca data Double Stack dari file '" << filename << "'.\n";
+        printFileContent(filename);
     }
 };
 
@@ -263,37 +309,65 @@ public:
 
     void enqueue(int value) {
         if (isFull()) {
-            cout << "[ERROR] Queue Penuh (Overflow)!\n";
+            cout << "[ERROR] Linear Queue Penuh (Overflow)!\n";
+            if (front > 0) {
+                cout << ">> [PENJELASAN PRESENTASI / FALSE OVERFLOW]:\n";
+                cout << "   Pointer Rear berada di indeks [" << rear << "] (ujung array).\n";
+                cout << "   Padahal indeks [0 s.d. " << (front - 1) << "] KOSONG karena data sudah di-dequeue!\n";
+                cout << "   Inilah bukti kelemahan Linear Queue (slot depan terbuang sia-sia).\n";
+            }
             return;
         }
         if (front == -1) front = 0;
         rear++;
         data[rear] = value;
-        cout << "[SUKSES] Data " << value << " berhasil masuk ke Linear Queue.\n";
+        cout << "[SUKSES] Data " << value << " berhasil masuk ke Linear Queue pada Indeks [" << rear << "].\n";
     }
 
     int dequeue() {
         if (isEmpty()) {
-            cout << "[ERROR] Queue Kosong (Underflow)!\n";
+            cout << "[ERROR] Linear Queue Kosong (Underflow)!\n";
             return -1;
         }
         int val = data[front];
+        int idx = front;
         front++;
-        if (front > rear) { front = -1; rear = -1; }
-        cout << "[SUKSES] Data " << val << " berhasil keluar dari Linear Queue.\n";
+        cout << "[SUKSES] Data " << val << " berhasil keluar dari Linear Queue dari Indeks [" << idx << "].\n";
+        if (front > rear) {
+            cout << "[INFO] Seluruh data telah habis di-dequeue. Pointer di-reset ke (Front: -1, Rear: -1).\n";
+            front = -1; rear = -1;
+        }
         return val;
     }
 
     void display() const {
-        if (isEmpty()) {
-            cout << "Linear Queue Kosong.\n";
-            return;
+        cout << "\n=== STATUS ARRAY FISIK LINEAR QUEUE (Kapasitas: " << MAX << ") ===\n";
+        for (int i = 0; i < MAX; i++) {
+            cout << "Indeks [" << i << "]: ";
+            if (!isEmpty() && i >= front && i <= rear) {
+                cout << "[ " << data[i] << " ]";
+                if (i == front && i == rear) {
+                    cout << " <-- FRONT & REAR";
+                } else if (i == front) {
+                    cout << " <-- FRONT (Depan / Siap Keluar)";
+                } else if (i == rear) {
+                    cout << " <-- REAR (Belakang / Terakhir Masuk)";
+                }
+            } else {
+                if (front > 0 && i < front) {
+                    cout << "[ KOSONG ] (Bekas Dequeue - Terbuang/Tidak Bisa Diisi Lagi)";
+                } else {
+                    cout << "[ KOSONG ] (Slot Kosong)";
+                }
+            }
+            cout << "\n";
         }
-        cout << "Isi Linear Queue (Depan -> Belakang): ";
-        for (int i = front; i <= rear; i++) {
-            cout << "[ " << data[i] << " ] ";
+        cout << "------------------------------------------------\n";
+        cout << "Pointer Front : Indeks [" << front << "] " << (isEmpty() ? "(Queue Kosong)" : "") << "\n";
+        cout << "Pointer Rear  : Indeks [" << rear << "]\n";
+        if (isFull() && front > 0) {
+            cout << ">> ANALISIS: Terjadi 'False Overflow' (Indeks depan kosong, tapi Rear sudah di ujung!)\n";
         }
-        cout << endl;
     }
 
     void saveToFile(const string& filename) const {
@@ -309,6 +383,7 @@ public:
         for (int i = front; i <= rear; i++) file << data[i] << "\n";
         file.close();
         cout << "[SUKSES] Data Linear Queue berhasil disimpan ke '" << filename << "'.\n";
+        printFileContent(filename);
     }
 
     void loadFromFile(const string& filename) {
@@ -328,6 +403,7 @@ public:
         }
         file.close();
         cout << "[SUKSES] Berhasil membaca " << count << " data dari file '" << filename << "'.\n";
+        printFileContent(filename);
     }
 };
 
@@ -348,7 +424,8 @@ public:
 
     void enqueue(int value) {
         if (isFull()) {
-            cout << "[ERROR] Circular Queue Penuh (Overflow)!\n";
+            cout << "[ERROR] Circular Queue Penuh (Overflow)! Indeks [0 s.d. " << (MAX - 1) << "] penuh terpakai.\n";
+            cout << ">> Info: (Rear + 1) % MAX == Front [(" << rear << " + 1) % " << MAX << " == " << front << "]\n";
             return;
         }
         if (isEmpty()) {
@@ -357,7 +434,12 @@ public:
             rear = (rear + 1) % MAX;
         }
         data[rear] = value;
-        cout << "[SUKSES] Data " << value << " masuk di indeks [" << rear << "].\n";
+        cout << "[SUKSES] Data " << value << " masuk ke Circular Queue pada Indeks [" << rear << "].\n";
+        if (rear < front) {
+            cout << ">> [PENJELASAN PRESENTASI / CIRCULAR WRAP]:\n";
+            cout << "   Indeks berhasil MEMUTAR kembali ke indeks [" << rear << "]!\n";
+            cout << "   Slot kosong di awal array berhasil dimanfaatkan (solusi Linear Queue).\n";
+        }
     }
 
     int dequeue() {
@@ -366,8 +448,10 @@ public:
             return -1;
         }
         int val = data[front];
-        cout << "[SUKSES] Data " << val << " keluar dari indeks [" << front << "].\n";
+        int idx = front;
+        cout << "[SUKSES] Data " << val << " keluar dari Circular Queue dari Indeks [" << idx << "].\n";
         if (front == rear) {
+            cout << "[INFO] Elemen terakhir telah keluar. Queue sekarang kosong (Front & Rear di-reset ke -1).\n";
             front = -1; rear = -1;
         } else {
             front = (front + 1) % MAX;
@@ -376,23 +460,45 @@ public:
     }
 
     void display() const {
-        if (isEmpty()) {
-            cout << "Circular Queue Kosong.\n";
-            return;
+        cout << "\n=== STATUS ARRAY FISIK CIRCULAR QUEUE (Kapasitas: " << MAX << ") ===\n";
+        for (int i = 0; i < MAX; i++) {
+            cout << "Indeks [" << i << "]: ";
+            bool isActive = false;
+            if (!isEmpty()) {
+                if (front <= rear) {
+                    isActive = (i >= front && i <= rear);
+                } else {
+                    isActive = (i >= front || i <= rear);
+                }
+            }
+
+            if (isActive) {
+                cout << "[ " << data[i] << " ]";
+                if (i == front && i == rear) {
+                    cout << " <-- FRONT & REAR";
+                } else if (i == front) {
+                    cout << " <-- FRONT (Awal Antrean)";
+                } else if (i == rear) {
+                    cout << " <-- REAR (Akhir Antrean)";
+                }
+            } else {
+                cout << "[ KOSONG ]";
+            }
+            cout << "\n";
         }
-        cout << "Isi Circular Queue (Front -> Rear): ";
-        int i = front;
-        while (true) {
-            cout << "[ " << data[i] << " ] ";
-            if (i == rear) break;
-            i = (i + 1) % MAX;
+        cout << "------------------------------------------------\n";
+        cout << "Pointer Front : Indeks [" << front << "] " << (isEmpty() ? "(Queue Kosong)" : "") << "\n";
+        cout << "Pointer Rear  : Indeks [" << rear << "]\n";
+        if (!isEmpty()) {
+            int count = (front <= rear) ? (rear - front + 1) : (MAX - front + rear + 1);
+            cout << "Jumlah Elemen : " << count << " dari " << MAX << " slot terpakai.\n";
+            cout << "Rumus Modulus : Indeks berikutnya = (Rear + 1) % MAX = (" << rear << " + 1) % " << MAX << " = " << ((rear + 1) % MAX) << "\n";
         }
-        cout << endl;
     }
 
     void saveToFile(const string& filename) const {
         if (isEmpty()) {
-            cout << "[PERINGATAN] Circular Queue kosong.\n";
+            cout << "[PERINGATAN] Circular Queue kosong, tidak ada data untuk disimpan.\n";
             return;
         }
         ofstream file(filename);
@@ -408,6 +514,7 @@ public:
         }
         file.close();
         cout << "[SUKSES] Circular Queue disimpan ke file '" << filename << "'.\n";
+        printFileContent(filename);
     }
 
     void loadFromFile(const string& filename) {
@@ -425,6 +532,7 @@ public:
         }
         file.close();
         cout << "[SUKSES] Berhasil membaca " << count << " data dari file '" << filename << "'.\n";
+        printFileContent(filename);
     }
 };
 
@@ -445,7 +553,7 @@ public:
 
     void insertFront(int value) {
         if (isFull()) {
-            cout << "[ERROR] Deque Penuh!\n";
+            cout << "[ERROR] Deque Penuh! Tidak dapat menambahkan " << value << " di Front.\n";
             return;
         }
         if (isEmpty()) {
@@ -456,12 +564,12 @@ public:
             front = front - 1;
         }
         data[front] = value;
-        cout << "[SUKSES] insertFront(" << value << ") di indeks [" << front << "].\n";
+        cout << "[SUKSES] insertFront: Data " << value << " berhasil dimasukkan pada Indeks [" << front << "].\n";
     }
 
     void insertRear(int value) {
         if (isFull()) {
-            cout << "[ERROR] Deque Penuh!\n";
+            cout << "[ERROR] Deque Penuh! Tidak dapat menambahkan " << value << " di Rear.\n";
             return;
         }
         if (isEmpty()) {
@@ -472,17 +580,19 @@ public:
             rear = rear + 1;
         }
         data[rear] = value;
-        cout << "[SUKSES] insertRear(" << value << ") di indeks [" << rear << "].\n";
+        cout << "[SUKSES] insertRear: Data " << value << " berhasil dimasukkan pada Indeks [" << rear << "].\n";
     }
 
     int deleteFront() {
         if (isEmpty()) {
-            cout << "[ERROR] Deque Kosong!\n";
+            cout << "[ERROR] Deque Kosong! Tidak ada data untuk di-deleteFront.\n";
             return -1;
         }
         int val = data[front];
-        cout << "[SUKSES] deleteFront: Data " << val << " dari indeks [" << front << "].\n";
+        int idx = front;
+        cout << "[SUKSES] deleteFront: Data " << val << " berhasil dikeluarkan dari Indeks [" << idx << "].\n";
         if (front == rear) {
+            cout << "[INFO] Seluruh elemen telah habis dikeluarkan. Deque di-reset ke (Front: -1, Rear: -1).\n";
             front = -1; rear = -1;
         } else if (front == MAX - 1) {
             front = 0;
@@ -494,12 +604,14 @@ public:
 
     int deleteRear() {
         if (isEmpty()) {
-            cout << "[ERROR] Deque Kosong!\n";
+            cout << "[ERROR] Deque Kosong! Tidak ada data untuk di-deleteRear.\n";
             return -1;
         }
         int val = data[rear];
-        cout << "[SUKSES] deleteRear: Data " << val << " dari indeks [" << rear << "].\n";
+        int idx = rear;
+        cout << "[SUKSES] deleteRear: Data " << val << " berhasil dikeluarkan dari Indeks [" << idx << "].\n";
         if (front == rear) {
+            cout << "[INFO] Seluruh elemen telah habis dikeluarkan. Deque di-reset ke (Front: -1, Rear: -1).\n";
             front = -1; rear = -1;
         } else if (rear == 0) {
             rear = MAX - 1;
@@ -510,23 +622,40 @@ public:
     }
 
     void display() const {
-        if (isEmpty()) {
-            cout << "Deque Kosong.\n";
-            return;
+        cout << "\n=== STATUS ARRAY FISIK DEQUE (Kapasitas: " << MAX << ") ===\n";
+        for (int i = 0; i < MAX; i++) {
+            cout << "Indeks [" << i << "]: ";
+            bool isActive = false;
+            if (!isEmpty()) {
+                if (front <= rear) {
+                    isActive = (i >= front && i <= rear);
+                } else {
+                    isActive = (i >= front || i <= rear);
+                }
+            }
+
+            if (isActive) {
+                cout << "[ " << data[i] << " ]";
+                if (i == front && i == rear) {
+                    cout << " <-- FRONT & REAR";
+                } else if (i == front) {
+                    cout << " <-- FRONT (Pintu Depan)";
+                } else if (i == rear) {
+                    cout << " <-- REAR (Pintu Belakang)";
+                }
+            } else {
+                cout << "[ KOSONG ]";
+            }
+            cout << "\n";
         }
-        cout << "Isi Deque (Front -> Rear): ";
-        int i = front;
-        while (true) {
-            cout << "[ " << data[i] << " ] ";
-            if (i == rear) break;
-            i = (i + 1) % MAX;
-        }
-        cout << endl;
+        cout << "------------------------------------------------\n";
+        cout << "Pointer Front : Indeks [" << front << "] " << (isEmpty() ? "(Deque Kosong)" : "") << "\n";
+        cout << "Pointer Rear  : Indeks [" << rear << "]\n";
     }
 
     void saveToFile(const string& filename) const {
         if (isEmpty()) {
-            cout << "[PERINGATAN] Deque kosong.\n";
+            cout << "[PERINGATAN] Deque kosong, tidak ada data untuk disimpan.\n";
             return;
         }
         ofstream file(filename);
@@ -542,6 +671,7 @@ public:
         }
         file.close();
         cout << "[SUKSES] Deque disimpan ke file '" << filename << "'.\n";
+        printFileContent(filename);
     }
 
     void loadFromFile(const string& filename) {
@@ -559,6 +689,7 @@ public:
         }
         file.close();
         cout << "[SUKSES] Berhasil membaca " << count << " data dari file '" << filename << "'.\n";
+        printFileContent(filename);
     }
 };
 
