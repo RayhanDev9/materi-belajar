@@ -47,6 +47,15 @@ const styles = reactive({
         <RouterLink to="/getdata" class="nav-link-btn">
           Materi 4: Get Data
         </RouterLink>
+        <RouterLink to="/query" class="nav-link-btn">
+          Materi 5: Query
+        </RouterLink>
+        <RouterLink to="/query-challenge" class="nav-link-btn">
+          🏆 Tantangan Query
+        </RouterLink>
+        <RouterLink to="/penia" class="nav-link-btn">
+          Materi 6: Penia
+        </RouterLink>
       </div>
     </nav>
 

@@ -6,6 +6,9 @@ import Materi4GetData from "@/components/materi/Materi4GetData.vue";
 import ProductDetail from "@/components/materi/ProductDetail.vue";
 import ProductCreate from "@/components/materi/ProductCreate.vue";
 import ProductEdit from "@/components/materi/ProductEdit.vue";
+import Materi5Query from "@/components/materi/Materi5Query.vue";
+import Materi5Challenge from "@/components/materi/Materi5Challenge.vue";
+import Materi6Penia from "@/components/materi/Materi6Penia.vue";
 
 const routes = [
   {
@@ -26,6 +29,21 @@ const routes = [
     path: "/lifecycle",
     name: "lifecycle",
     component: Materi3Lifecycle,
+  },
+  {
+    path: "/query",
+    name: "query",
+    component: Materi5Query,
+  },
+  {
+    path: "/query-challenge",
+    name: "query-challenge",
+    component: Materi5Challenge,
+  },
+  {
+    path: "/penia",
+    name: "penia",
+    component: Materi6Penia,
   },
   {
     path: "/product/create",

@@ -1,13 +1,6 @@
 {
   "products": [
     {
-      "title": "Sony WH-1000XM5 Wireless Headphones",
-      "price": 55999000,
-      "description": "Headphone nirkabel premium dengan fitur Active Noise Cancelling terdepan di industri dan daya tahan baterai hingga 30 jam.",
-      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80",
-      "id": "2"
-    },
-    {
       "id": "3",
       "title": "Mechanical Keyboard Keychron K2 RGB",
       "price": 1250000,
@@ -24,7 +17,7 @@
     {
       "id": "5",
       "title": "Logitech MX Master 3S Wireless Mouse",
-      "price": 1450000,
+      "price": 34,
       "description": "Mouse ergonomis produktivitas tinggi dengan sensor 8000 DPI, scroll roda MagSpeed ultra-cepat, dan klik yang sangat senyap.",
       "image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80"
     },
@@ -104,6 +97,13 @@
       "description": "dggg",
       "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80",
       "id": "5ne5VZ9EvZ8"
+    },
+    {
+      "title": "anting",
+      "price": 3333333333,
+      "description": "Produk ditambahkan via TanStack Vue Query demo.",
+      "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80",
+      "id": "8TcHOwcmlhs"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
