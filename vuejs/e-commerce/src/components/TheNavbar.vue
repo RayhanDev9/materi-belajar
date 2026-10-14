@@ -20,9 +20,7 @@ const authStore = useAuthStore();
 
 const handleLogout = () => {
   authStore.logout();
-  if (route.path.startsWith("/admin")) {
-    router.push("/menu");
-  }
+  router.push("/login");
 };
 </script>
 

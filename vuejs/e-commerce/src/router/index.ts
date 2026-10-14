@@ -11,28 +11,43 @@ import Login from "@/views/auth/Login.vue";
 const routes = [
   {
     path: "/",
-    redirect: "/menu",
+    redirect: () => {
+      const authStore = useAuthStore();
+      return authStore.isAuthenticated ? "/menu" : "/login";
+    },
   },
   {
     path: "/menu",
     name: "menu",
     component: Menu,
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: "/menu/detail/:id",
     name: "menu-detail",
     component: MenuDetail,
     props: true,
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: "/cart",
     name: "cart",
     component: Cart,
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: "/checkout",
     name: "checkout",
     component: Checkout,
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: "/login",
@@ -48,10 +63,14 @@ const routes = [
       requiresAdmin: true,
     },
   },
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: "/login",
+  },
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 });
 
@@ -59,20 +78,23 @@ const router = createRouter({
 router.beforeEach((to, _from, next) => {
   const authStore = useAuthStore();
 
-  if (to.meta.requiresAdmin) {
-    // 1. Jika belum login sama sekali
-    if (!authStore.isAuthenticated) {
-      return next({
-        path: "/login",
-        query: { redirect: to.fullPath },
-      });
-    }
+  // 1. Jika belum login dan mencoba mengakses halaman selain login
+  if (to.path !== "/login" && !authStore.isAuthenticated) {
+    return next({
+      path: "/login",
+      query: to.fullPath && to.fullPath !== "/" ? { redirect: to.fullPath } : undefined,
+    });
+  }
 
-    // 2. Jika sudah login tetapi role BUKAN admin
-    if (!authStore.isAdmin) {
-      alert("Akses Ditolak: Halaman ini hanya dapat diakses oleh Admin.");
-      return next({ path: "/menu" });
-    }
+  // 2. Jika sudah login dan mencoba mengakses halaman login kembali
+  if (to.path === "/login" && authStore.isAuthenticated) {
+    return next({ path: authStore.isAdmin ? "/admin" : "/menu" });
+  }
+
+  // 3. Jika halaman membutuhkan role admin tapi user bukan admin
+  if (to.meta.requiresAdmin && !authStore.isAdmin) {
+    alert("Akses Ditolak: Halaman ini hanya dapat diakses oleh Admin.");
+    return next({ path: "/menu" });
   }
 
   next();

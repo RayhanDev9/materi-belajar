@@ -104,7 +104,7 @@ const resetFilter = () => {
         v-else-if="isError"
         icon="⚠️"
         title="Gagal Menghubungkan ke Server"
-        :description="error?.message || 'Pastikan json-server sudah berjalan di port 3001'"
+        :description="error?.message || 'Gagal memuat data produk, silakan periksa koneksi internet Anda.'"
       >
         <button class="btn-primary" @click="() => refetch()">Coba Lagi</button>
       </EmptyState>
