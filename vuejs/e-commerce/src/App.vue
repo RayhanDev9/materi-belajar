@@ -1,23 +1,28 @@
 <script setup lang="ts">
 import { RouterView } from "vue-router";
+import { TheNavbar } from "@/components";
 </script>
 
 <template>
-  <!-- <header class="app-header">
-    <div class="header-content">
-      <div class="brand">
-        <span class="logo">📦</span>
-        <h1>Vue E-Commerce</h1>
-      </div>
-      <nav class="nav-links">
-        <RouterLink to="/" class="nav-link" :class="{ active: $route.path === '/' }">Menu</RouterLink>
-        <RouterLink to="/cart" class="nav-link" :class="{ active: $route.path === '/cart' }">Keranjang</RouterLink>
-      </nav>
-    </div>
-  </header> -->
-  <main class="app-main">
-    <RouterView />
-  </main>
+  <div class="app-layout">
+    <!-- Navbar Global: Menu, Admin, & Keranjang dengan Counter -->
+    <TheNavbar />
+
+    <!-- Halaman Konten Rute -->
+    <main class="app-main">
+      <RouterView />
+    </main>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+}
+</style>

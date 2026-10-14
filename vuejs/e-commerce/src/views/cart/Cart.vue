@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { RouterLink } from "vue-router";
+import { useRouter, RouterLink } from "vue-router";
 import { useCartStore } from "@/stores/useCart";
 import useFormatCurrency from "@/composables/useCurrency";
 import { EmptyState, ToastNotification } from "@/components";
@@ -10,6 +10,7 @@ import CartHeader from "./components/CartHeader.vue";
 import CartItemList from "./components/CartItemList.vue";
 import CartSummary from "./components/CartSummary.vue";
 
+const router = useRouter();
 const cartStore = useCartStore();
 
 
@@ -51,10 +52,7 @@ const handleApplyVoucher = (code: string) => {
 };
 
 const handleCheckout = () => {
-  const finalPrice = discountCodeApplied.value
-    ? Math.max(0, cartStore.totalPrice - 10000)
-    : cartStore.totalPrice;
-  alert(`Pesanan berhasil dibuat! Total pembayaran: ${useFormatCurrency(finalPrice)}`);
+  router.push("/checkout");
 };
 </script>
 
