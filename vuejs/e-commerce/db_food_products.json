@@ -1,0 +1,303 @@
+{
+  "products" : [
+  {
+    "id": "prod-001",
+    "name": "Rendang Sapi Suwir Basah (250g)",
+    "slug": "rendang-sapi-suwir-basah-250g",
+    "category": "makanan-berat",
+    "description": "Daging sapi pilihan yang dimasak perlahan dengan rempah khas Minang selama 8 jam hingga bumbu meresap sempurna. Tahan hingga 1 bulan di suhu ruang (vacuum pack).",
+    "price": 68000,
+    "originalPrice": 85000,
+    "discountPercent": 20,
+    "stock": 25,
+    "unit": "pack (250g)",
+    "rating": 4.9,
+    "reviewCount": 342,
+    "images": [
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80"
+    ],
+    "isSpicy": true,
+    "spicyLevel": 2,
+    "isHalal": true,
+    "isVegetarian": false,
+    "ingredients": [
+      "Daging Sapi",
+      "Santan Kelapa",
+      "Cabai Merah",
+      "Bawang Merah",
+      "Bawang Putih",
+      "Lengkuas",
+      "Serai",
+      "Rempah Tradisional"
+    ],
+    "nutrition": {
+      "calories": 380,
+      "protein": 28,
+      "carbs": 8,
+      "fat": 26
+    },
+    "tags": [
+      "Best Seller",
+      "Frozen / Siap Saji",
+      "Lauk Praktis"
+    ]
+  },
+  {
+    "id": "prod-002",
+    "name": "Ayam Goreng Lengkuas Gurih Komplit",
+    "slug": "ayam-goreng-lengkuas-gurih-komplit",
+    "category": "makanan-berat",
+    "description": "1 ekor ayam pejantan potong 4 dengan taburan serundeng lengkuas renyah melimpah dan sambal terasi terpisah.",
+    "price": 65000,
+    "stock": 18,
+    "unit": "1 ekor (4 potong)",
+    "rating": 4.8,
+    "reviewCount": 189,
+    "images": [
+      "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=80"
+    ],
+    "isSpicy": false,
+    "isHalal": true,
+    "ingredients": [
+      "Ayam Pejantan",
+      "Lengkuas Parut",
+      "Kunyit",
+      "Ketumbar",
+      "Bawang Putih",
+      "Garam"
+    ],
+    "nutrition": {
+      "calories": 420,
+      "protein": 34,
+      "carbs": 6,
+      "fat": 28
+    },
+    "tags": [
+      "Menu Keluarga",
+      "Lauk Praktis"
+    ]
+  },
+  {
+    "id": "prod-003",
+    "name": "Keripik Tempe Crispy Daun Jeruk",
+    "slug": "keripik-tempe-crispy-daun-jeruk",
+    "category": "snack",
+    "description": "Irisan tempe super tipis dengan balutan tepung beras renyah dan aroma wangi irisan daun jeruk segar.",
+    "price": 18000,
+    "originalPrice": 20000,
+    "discountPercent": 10,
+    "stock": 50,
+    "unit": "pouch 150g",
+    "rating": 4.7,
+    "reviewCount": 95,
+    "images": [
+      "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&w=800&q=80"
+    ],
+    "isSpicy": false,
+    "isHalal": true,
+    "isVegetarian": true,
+    "ingredients": [
+      "Kedelai",
+      "Tepung Beras",
+      "Daun Jeruk",
+      "Ketumbar",
+      "Bawang Putih",
+      "Minyak Nabati"
+    ],
+    "nutrition": {
+      "calories": 160,
+      "protein": 7,
+      "carbs": 14,
+      "fat": 9
+    },
+    "tags": [
+      "Camilan Sehat",
+      "Vegetarian",
+      "Oleh-oleh"
+    ]
+  },
+  {
+    "id": "prod-004",
+    "name": "Baso Aci Kuah Pedas Jeletot",
+    "slug": "baso-aci-kuah-pedas-jeletot",
+    "category": "snack",
+    "description": "Paket instan baso aci isi abon sapi, siomay kering, batagor mini, pilus cikur, bumbu gurih, dan bubuk cabai pedas ekstra.",
+    "price": 15000,
+    "originalPrice": 18000,
+    "discountPercent": 17,
+    "stock": 80,
+    "unit": "pack 200g",
+    "rating": 4.6,
+    "reviewCount": 520,
+    "images": [
+      "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80"
+    ],
+    "isSpicy": true,
+    "spicyLevel": 5,
+    "isHalal": true,
+    "ingredients": [
+      "Tepung Tapioka",
+      "Abon Sapi",
+      "Tahu Kering",
+      "Cabai Rawit Merah Kering",
+      "Bawang Putih",
+      "Minyak Bawang"
+    ],
+    "nutrition": {
+      "calories": 290,
+      "protein": 5,
+      "carbs": 45,
+      "fat": 10
+    },
+    "tags": [
+      "Pedas Nampol",
+      "Instan",
+      "Favorit Remaja"
+    ]
+  },
+  {
+    "id": "prod-005",
+    "name": "Kopi Susu Gula Aren Asli (1 Liter)",
+    "slug": "kopi-susu-gula-aren-asli-1-liter",
+    "category": "minuman",
+    "description": "Espresso blend Arabika-Robusta dipadukan dengan fresh milk creamy dan manis alami sirup gula aren organik.",
+    "price": 65000,
+    "originalPrice": 75000,
+    "discountPercent": 13,
+    "stock": 15,
+    "unit": "botol 1L",
+    "rating": 4.9,
+    "reviewCount": 410,
+    "images": [
+      "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=800&q=80"
+    ],
+    "isHalal": true,
+    "isVegetarian": true,
+    "ingredients": [
+      "Kopi Arabika & Robusta",
+      "Susu Segar",
+      "Gula Aren Asli Organik"
+    ],
+    "nutrition": {
+      "calories": 210,
+      "protein": 4,
+      "carbs": 26,
+      "fat": 9
+    },
+    "tags": [
+      "Ready to Drink",
+      "Coffee"
+    ]
+  },
+  {
+    "id": "prod-006",
+    "name": "Matcha Latte Oat Milk",
+    "slug": "matcha-latte-oat-milk",
+    "category": "minuman",
+    "description": "Uji matcha Jepang ceremonial grade diseduh dengan susu gandum (oat milk), bebas laktosa dan rendah kalori.",
+    "price": 32000,
+    "stock": 30,
+    "unit": "cup 350ml",
+    "rating": 4.8,
+    "reviewCount": 112,
+    "images": [
+      "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=800&q=80"
+    ],
+    "isHalal": true,
+    "isVegetarian": true,
+    "ingredients": [
+      "Matcha Powder Uji",
+      "Oat Milk Barista",
+      "Pemanis Alami Tebu"
+    ],
+    "nutrition": {
+      "calories": 140,
+      "protein": 2,
+      "carbs": 20,
+      "fat": 4
+    },
+    "tags": [
+      "Plant-Based",
+      "Dairy-Free",
+      "Healthy"
+    ]
+  },
+  {
+    "id": "prod-007",
+    "name": "Fudgy Brownies Panggang Almond Keju",
+    "slug": "fudgy-brownies-panggang-almond-keju",
+    "category": "dessert",
+    "description": "Brownies panggang dengan tekstur shiny crust di luar dan lumer lembut di dalam, bertabur irisan almond dan keju cheddar panggang.",
+    "price": 55000,
+    "originalPrice": 60000,
+    "discountPercent": 8,
+    "stock": 20,
+    "unit": "box (20x10 cm)",
+    "rating": 4.9,
+    "reviewCount": 275,
+    "images": [
+      "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80"
+    ],
+    "isHalal": true,
+    "isVegetarian": true,
+    "ingredients": [
+      "Dark Chocolate Compound",
+      "Butter",
+      "Tepung Terigu",
+      "Telur",
+      "Kacang Almond",
+      "Keju Cheddar"
+    ],
+    "nutrition": {
+      "calories": 340,
+      "protein": 5,
+      "carbs": 42,
+      "fat": 18
+    },
+    "tags": [
+      "Dessert",
+      "Manis",
+      "Hampers"
+    ]
+  },
+  {
+    "id": "prod-008",
+    "name": "Sambal Cumi Asin Cabe Ijo (200g)",
+    "slug": "sambal-cumi-asin-cabe-ijo-200g",
+    "category": "bumbu-instan",
+    "description": "Potongan cumi asin empuk dimasak bersama sambal cabai hijau segar dan minyak gurih. Siap santap langsung dengan nasi hangat.",
+    "price": 38000,
+    "stock": 45,
+    "unit": "jar 200g",
+    "rating": 4.8,
+    "reviewCount": 310,
+    "images": [
+      "https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&fit=crop&w=800&q=80"
+    ],
+    "isSpicy": true,
+    "spicyLevel": 4,
+    "isHalal": true,
+    "isVegetarian": false,
+    "ingredients": [
+      "Cumi Asin",
+      "Cabai Rawit Hijau",
+      "Cabai Hijau Besar",
+      "Tomat Hijau",
+      "Bawang Merah",
+      "Minyak Kelapa"
+    ],
+    "nutrition": {
+      "calories": 190,
+      "protein": 14,
+      "carbs": 4,
+      "fat": 13
+    },
+    "tags": [
+      "Pedas",
+      "Lauk Praktis",
+      "Sambal Rumahan"
+    ]
+  }
+]
+}

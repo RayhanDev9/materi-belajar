@@ -1,11 +1,23 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { RouterView } from "vue-router";
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <!-- <header class="app-header">
+    <div class="header-content">
+      <div class="brand">
+        <span class="logo">📦</span>
+        <h1>Vue E-Commerce</h1>
+      </div>
+      <nav class="nav-links">
+        <RouterLink to="/" class="nav-link" :class="{ active: $route.path === '/' }">Menu</RouterLink>
+        <RouterLink to="/cart" class="nav-link" :class="{ active: $route.path === '/cart' }">Keranjang</RouterLink>
+      </nav>
+    </div>
+  </header> -->
+  <main class="app-main">
+    <RouterView />
+  </main>
 </template>
 
 <style scoped></style>
