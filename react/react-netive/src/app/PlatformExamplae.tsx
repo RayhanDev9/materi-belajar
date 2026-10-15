@@ -1,6 +1,6 @@
 import { Platform, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import CoustomButton from "@/components/CoustomButton/CoustomButton";
+// import CoustomButton from "@/components/CoustomButton/CoustomButton";
 
 export default function PlatformExample() {
   return (
@@ -8,7 +8,7 @@ export default function PlatformExample() {
       <View style={styles.container}>
         <View style={styles.box}>
           <Text style={styles.text}>SafeAreaView</Text>
-          <CoustomButton title="Pres" onPress={() => alert("Press")}/>
+          {/* <CoustomButton title="Pres" onPress={() => alert("Press")}/> */}
         </View>
       </View>
     </SafeAreaView>

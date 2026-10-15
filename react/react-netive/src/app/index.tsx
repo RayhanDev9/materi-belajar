@@ -1,7 +1,6 @@
-import ExApp from "./exercise-1/ExApp";
-
+import FormLogin from "./RNForms/FormLogin";
 export default function HomeScreen() {
-  return <ExApp />;
+  return <FormLogin />;
 }
 
 // const styles = StyleSheet.create({
