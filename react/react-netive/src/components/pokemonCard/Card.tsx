@@ -1,0 +1,148 @@
+import {
+    Image,
+    ImageSourcePropType,
+    Platform,
+    StyleSheet,
+    Text,
+    View,
+} from "react-native";
+
+interface CardProps {
+  name: string;
+  image: ImageSourcePropType;
+  type: string;
+  hp: number;
+  moves: string[];
+  weaknesses: string[];
+}
+
+const getTypeDetails = (type: string) => {
+  switch (type.toLowerCase()) {
+    case "electric":
+      return { borderColor: "#FFD700", emoji: "⚡" };
+    case "water":
+      return { borderColor: "#6493EA", emoji: "💧" };
+    case "fire":
+      return { borderColor: "#FF5733", emoji: "🔥" };
+    case "grass":
+      return { borderColor: "#66CC66", emoji: "🌿" };
+    default:
+      return { borderColor: "#A0A0A0", emoji: "❓" };
+  }
+};
+
+export default function Card({
+  name,
+  image,
+  type,
+  hp,
+  moves,
+  weaknesses,
+}: CardProps) {
+  const { borderColor, emoji } = getTypeDetails(type);
+  return (
+    <View style={[styles.card, { borderColor }]}>
+      <View style={styles.nameContainer}>
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.hp}>💖{hp}</Text>
+      </View>
+
+      <Image
+        style={styles.image}
+        source={image}
+        accessibilityLabel={`${name} Pokemon`}
+        resizeMode="contain"
+      />
+
+      <View style={styles.typeContainer}>
+        <View style={[styles.badge, { borderColor }]}>
+          <Text style={styles.typeEmoji}>{emoji}</Text>
+          <Text style={styles.typeText}>{type}</Text>
+        </View>
+      </View>
+
+      <View style={styles.movesContainer}>
+        <Text style={styles.movesText}>Movie : {moves.join(", ")}</Text>
+      </View>
+
+      <View style={styles.weaknessContainer}>
+        <Text style={styles.weaknessText}>
+          Weakness : {weaknesses.join(", ")}
+        </Text>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  card: {
+    backgroundColor: "white",
+    borderRadius: 16,
+    borderWidth: 2,
+    padding: 16,
+    margin: 16,
+    ...Platform.select({
+      ios: {
+        shadowOffset: { width: 2, height: 2 },
+        shadowColor: "#333",
+        shadowOpacity: 0.3,
+        shadowRadius: 4,
+      },
+      android: {
+        elevation: 5,
+      },
+    }),
+  },
+
+  nameContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 22,
+  },
+  name: {
+    fontSize: 30,
+    fontWeight: "bold",
+  },
+  hp: {
+    fontSize: 20,
+  },
+  image: {
+    width: "100%",
+    height: 200,
+    marginBottom: 22,
+  },
+  typeContainer: {
+    alignItems: "center",
+    marginBottom: 22,
+  },
+  badge: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: 50,
+    borderWidth: 4,
+  },
+  typeEmoji: {
+    fontSize: 20,
+    marginRight: 12,
+  },
+  typeText: {
+    fontSize: 22,
+    fontWeight: "bold",
+  },
+  movesContainer: {
+    marginBottom: 16,
+  },
+  movesText: {
+    fontSize: 22,
+    fontWeight: "bold",
+  },
+  weaknessContainer: {
+    marginBottom: 8,
+  },
+  weaknessText: {
+    fontSize: 22,
+    fontWeight: "bold",
+  },
+});

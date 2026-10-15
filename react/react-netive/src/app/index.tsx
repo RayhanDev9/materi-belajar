@@ -1,7 +1,7 @@
-import PlatformExample from "./PlatformExamplae";
+import ExApp from "./exercise-1/ExApp";
 
 export default function HomeScreen() {
-  return <PlatformExample />;
+  return <ExApp />;
 }
 
 // const styles = StyleSheet.create({
