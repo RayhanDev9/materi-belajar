@@ -1,6 +1,7 @@
-import RNTabsApp from "./RNNavigation/RNTabsApp";
+import RNNestedApp from "./RNNavigation/RNNestedApp";
+
 export default function HomeScreen() {
-  return <RNTabsApp />;
+  return <RNNestedApp />;
 }
 
 // const styles = StyleSheet.create({
