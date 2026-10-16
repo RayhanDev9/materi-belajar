@@ -1,6 +1,6 @@
-import FormLogin from "./RNForms/FormLogin";
+import RNTabsApp from "./RNNavigation/RNTabsApp";
 export default function HomeScreen() {
-  return <FormLogin />;
+  return <RNTabsApp />;
 }
 
 // const styles = StyleSheet.create({
