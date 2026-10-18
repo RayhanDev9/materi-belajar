@@ -217,3 +217,7 @@
 
 // //   }
 // // });
+
+export default function BoxScreen() {
+  return null;
+}
