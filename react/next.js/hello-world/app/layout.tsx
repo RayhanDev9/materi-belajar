@@ -2,8 +2,12 @@ import { chdir, title } from "process";
 import React from "react";
 
 export const metadata = {
-  title: "Next.js",
-  description: "Generate by next.js",
+  title: {
+    default: "Muhamda Rayhan - learning next.js",
+    template: "%s | Learning",
+    // absolute: "",
+  },
+  description: "Generate by next js",
 };
 
 export default function RootLayout({
@@ -13,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }

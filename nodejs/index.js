@@ -1,10 +1,28 @@
 const path = require("node:path");
+const PizzShop = require("./pizza-shop");
 
-console.info(path.join("folder1", "folder2", "index.html"));
-console.info(path.join("/folder1", "folder2", "index.html"));
-console.info(path.join("/folder1", "//folder2", "index.html"));
-console.info(path.join("folder1", "folder2", "../index.html"));
-console.info(path.join(__dirname, "module-local/data.json"));
+const pizzaShop = new PizzShop();
+
+pizzaShop.on("order", (size, topping) => {
+  console.info(`Hello ${size}, ${topping}`);
+});
+
+pizzaShop.order("large", "mushrooms");
+pizzaShop.display();
+
+require("./callback-pettren");
+
+// console.info(path.join("folder1", "folder2", "index.html"));
+// console.info(path.join("/folder1", "folder2", "index.html"));
+// console.info(path.join("/folder1", "//folder2", "index.html"));
+// console.info(path.join("folder1", "folder2", "../index.html"));
+// console.info(path.join(__dirname, "module-local/data.json"));
+
+// console.info(path.resolve("folder1", "folder2", "index.html"));
+// console.info(path.resolve("/folder1", "folder2", "index.html"));
+// console.info(path.resolve("/folder1", "//folder2", "index.html"));
+// console.info(path.resolve("folder1", "folder2", "../index.html"));
+// console.info(path.resolve(__dirname, "module-local/data.json"));
 
 // console.info(__filename);
 // console.info(__dirname);

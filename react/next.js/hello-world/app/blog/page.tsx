@@ -1,7 +1,16 @@
-import React from 'react'
+import Link from "next/link";
+import React from "react";
+
+export const metadata = {
+  title: {
+    absolute: "blog",
+  },
+};
 
 export default function page() {
   return (
-    <div>My blog</div>
-  )
+    <div>
+      <Link href="/">Home</Link>My blog
+    </div>
+  );
 }
