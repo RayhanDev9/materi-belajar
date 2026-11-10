@@ -10,7 +10,7 @@ pizzaShop.on("order", (size, topping) => {
 pizzaShop.order("large", "mushrooms");
 pizzaShop.display();
 
-require("./callback-pettren");
+require("../callback/callback-pettren");
 
 // console.info(path.join("folder1", "folder2", "index.html"));
 // console.info(path.join("/folder1", "folder2", "index.html"));
