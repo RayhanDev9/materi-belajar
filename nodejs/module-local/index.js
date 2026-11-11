@@ -1,6 +1,17 @@
 const data = require("./data.json");
+const http = require("node:http");
 
 console.info(data);
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
+  res.end("Hello, world!");
+});
+
+const port = process.env.PORT || 3000;
+server.listen(port, () => {
+  console.info(`Server is running on port ${port}`);
+});
 
 // // require("./batman.js");
 // require("./superman.js");
