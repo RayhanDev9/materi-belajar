@@ -1,6 +1,6 @@
-import { chdir, title } from "process";
 import React from "react";
 import "./globals.css";
+import ErrorWrapper from "./error-wrapper";
 
 export const metadata = {
   title: {
@@ -19,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main>{children}</main>
+        <ErrorWrapper>
+          <main>{children}</main>
+        </ErrorWrapper>
       </body>
     </html>
   );

@@ -7,10 +7,18 @@ export const metadata = {
   },
 };
 
-export default function page() {
+export default async function BlogPage() {
+  // ⏱️ Buat simulasi delay 2 detik di sini:
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Intentional delay");
+    }, 2000);
+  });
+
   return (
     <div>
-      <Link href="/">Home</Link>My blog
+      <Link href="/">Home</Link>
+      <h1>My blog</h1>
     </div>
   );
 }

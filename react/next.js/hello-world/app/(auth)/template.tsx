@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 
 const navLinks = [
   { name: "Register", href: "/register" },
@@ -15,9 +15,17 @@ export default function AuthLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [input, setInput] = useState("");
   const pathname = usePathname();
   return (
     <div>
+      <div>
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+      </div>
       <div className="flex gap-4 mb-4">
         {navLinks.map((link) => {
           // Cek apakah halaman yang dibuka sama dengan href link ini
