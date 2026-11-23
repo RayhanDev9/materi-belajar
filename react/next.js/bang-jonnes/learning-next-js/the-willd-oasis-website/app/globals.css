@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+/* ========================================================
+   THE WILD OASIS - THEME VARIABLES (LUXURY CABIN PALETTE)
+   Palet warna mewah bernuansa alam: kayu hangat, hijau pinus, & malam gelap
+   ======================================================== */
+:root {
+  --bg-dark: #111827;           /* Latar belakang malam elegan */
+  --bg-card: rgba(31, 41, 55, 0.7); /* Efek kaca (glassmorphism) */
+  --text-main: #f9fafb;         /* Teks utama terang */
+  --text-muted: #9ca3af;        /* Teks sekunder/keterangan */
+  --accent-gold: #f59e0b;       /* Aksen emas mewah (Luxury Gold) */
+  --accent-gold-hover: #d97706; /* Emas saat disentuh kursor */
+  --accent-pine: #10b981;       /* Aksen hijau pinus pegunungan */
+  --border-color: rgba(75, 85, 99, 0.4);
+}
+
+/* ========================================================
+   PENGATURAN DASAR HALAMAN (BODY & CONTAINER)
+   ======================================================== */
+body {
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(245, 158, 11, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.08) 0%, transparent 40%);
+  color: var(--text-main);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* ========================================================
+   TIPOGRAFI (JUDUL & TEKS)
+   ======================================================== */
+h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ffffff 30%, var(--accent-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+h2, h3 {
+  color: #f3f4f6;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 650px;
+}
+
+/* ========================================================
+   NAVIGASI (OTOMATIS RAPI UNTUK KOMPONEN NAVIGATION)
+   ======================================================== */
+ul {
+  list-style: none;
+  padding: 8px 16px;
+  margin: 0 0 32px 0;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 9999px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+ul li a {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+ul li a:hover {
+  color: #ffffff;
+  background: rgba(245, 158, 11, 0.15);
+  transform: translateY(-1px);
+}
+
+/* ========================================================
+   TOMBOL TAUTAN UTAMA (CTA BUTTON SEPERTI "EXPLORE CABINS")
+   ======================================================== */
+a:not(ul a) {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-hover));
+  color: #111827;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 12px;
+  margin-top: 16px;
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.35);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:not(ul a):hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+  filter: brightness(1.08);
+}
