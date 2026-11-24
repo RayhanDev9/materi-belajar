@@ -1,5 +1,6 @@
 import { eachDayOfInterval } from "date-fns";
 import { supabase } from "./supabase";
+import { notFound } from "next/navigation";
 
 export interface Cabin {
   id: number;
@@ -74,6 +75,7 @@ export async function getCabin(id: number | string): Promise<Cabin | null> {
 
   if (error) {
     console.error(error);
+    notFound();
   }
 
   return data;
