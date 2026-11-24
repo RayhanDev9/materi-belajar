@@ -1,9 +1,10 @@
 import CabinCard, { Cabin } from "@/app/_components/CabinCard";
+import { getCabins } from "../_lib/data-service";
 
-export default function Page() {
+export default async function Page() {
   // CHANGE
-  const cabins: Cabin[] = [];
-
+  const cabins: Cabin[] = await getCabins();
+  console.info(cabins);
   return (
     <div>
       <h1 className="text-4xl mb-5 text-accent-400 font-medium">
