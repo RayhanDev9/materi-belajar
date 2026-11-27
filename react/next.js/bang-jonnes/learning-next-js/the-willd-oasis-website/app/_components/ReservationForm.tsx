@@ -1,6 +1,10 @@
+"use client";
 import type { Cabin } from "@/app/_lib/data-service";
+import { useReservtion } from "./ReservationContext";
 
 function ReservationForm({ cabin }: { cabin: Cabin }) {
+  const { range } = useReservtion();
+
   // CHANGE
   const { maxCapacity } = cabin;
 
@@ -21,6 +25,9 @@ function ReservationForm({ cabin }: { cabin: Cabin }) {
         </div> */}
       </div>
 
+      <p>
+        {range?.from?.toDateString()} to {range?.to?.toDateString()}
+      </p>
       <form className="bg-primary-900 py-10 px-16 text-lg flex gap-5 flex-col">
         <div className="space-y-2">
           <label htmlFor="numGuests">How many guests?</label>
