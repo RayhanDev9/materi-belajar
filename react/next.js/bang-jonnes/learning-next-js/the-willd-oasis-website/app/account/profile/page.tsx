@@ -1,7 +1,8 @@
+import type { Metadata } from "next";
 import SelectCountry from "@/app/_components/SelectCountry";
 import UpdateProfileFrom from "@/app/_components/UpdateProfileFrom";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Update profile",
 };
 

@@ -1,18 +1,30 @@
+"use client";
+
 import { isWithinInterval } from "date-fns";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
+import type { Cabin, Settings } from "@/app/_lib/data-service";
 
-function isAlreadyBooked(range, datesArr) {
-  return (
-    range.from &&
-    range.to &&
-    datesArr.some((date) =>
-      isWithinInterval(date, { start: range.from, end: range.to })
-    )
-  );
+interface DateRange {
+  from?: Date | null;
+  to?: Date | null;
 }
 
-function DateSelector() {
+function isAlreadyBooked(range: DateRange, datesArr: Date[]): boolean {
+  if (!range.from || !range.to) return false;
+  const start = range.from;
+  const end = range.to;
+
+  return datesArr.some((date) => isWithinInterval(date, { start, end }));
+}
+
+interface DateSelectorProps {
+  settings: Settings;
+  bookedDates: Date[];
+  cabin: Cabin;
+}
+
+function DateSelector({ settings, bookedDates, cabin }: DateSelectorProps) {
   // CHANGE
   const regularPrice = 23;
   const discount = 23;
@@ -21,8 +33,9 @@ function DateSelector() {
   const range = { from: null, to: null };
 
   // SETTINGS
-  const minBookingLength = 1;
-  const maxBookingLength = 23;
+  const { minBookingLength, maxBookingLength } = settings;
+  // const minBookingLength = 1;
+  // const maxBookingLength = 23;
 
   return (
     <div className="flex flex-col justify-between">
