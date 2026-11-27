@@ -1,13 +1,27 @@
 import { Suspense } from "react";
 import CabinList from "../_components/CabinList";
 import Spinner from "../_components/Spinner";
+import { cacheLife } from "next/cache";
+import Filter from "../_components/Filter";
 
-export const revalidate = 0;
+// export const revalidate = 0;
 // export const revalidate = 15;
 // export const revalidate = 3600;
 
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  // "use cache";
+  // cacheLife({
+  //   revalidate: 300, // 5 menit (dalam detik)
+  // });
 
-export default async function Page() {
+  const params = await searchParams;
+
+  const filter = params?.capacity ?? "all";
+
   return (
     <div>
       <h1 className="text-4xl mb-5 text-accent-400 font-medium">
@@ -21,8 +35,11 @@ export default async function Page() {
         home away from home. The perfect spot for a peaceful, calm vacation.
         Welcome to paradise.
       </p>
-      <Suspense fallback={<Spinner />}>
-        <CabinList />
+      <div className="flex mb-8 justify-end">
+        <Filter />
+      </div>{" "}
+      <Suspense fallback={<Spinner />} key={filter}>
+        <CabinList filter={filter} />
       </Suspense>
     </div>
   );

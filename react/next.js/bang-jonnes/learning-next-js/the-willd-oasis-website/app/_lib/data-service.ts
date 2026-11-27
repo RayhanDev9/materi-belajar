@@ -205,15 +205,19 @@ export async function getCountries(): Promise<Country[]> {
   try {
     const res = await fetch(
       "https://restcountries.com/v2/all?fields=name,flag",
+      { signal: AbortSignal.timeout(8000) },
     );
     if (res.ok) {
       const countries = await res.json();
-      if (Array.isArray(countries)) return countries;
+      if (Array.isArray(countries)) {
+        return countries.sort((a, b) => a.name.localeCompare(b.name));
+      }
     }
 
     // Fallback ke endpoint v3.1 jika v2 deprecated atau gagal
     const resV3 = await fetch(
       "https://restcountries.com/v3.1/all?fields=name,flags",
+      { signal: AbortSignal.timeout(8000) },
     );
     if (resV3.ok) {
       const data = await resV3.json();
@@ -227,8 +231,28 @@ export async function getCountries(): Promise<Country[]> {
       }
     }
 
-    return [];
-  } catch {
+    // Fallback ke countriesnow.space jika restcountries.com sedang bermasalah
+    const resFallback = await fetch(
+      "https://countriesnow.space/api/v0.1/countries/flag/images",
+      { signal: AbortSignal.timeout(8000) },
+    );
+    if (resFallback.ok) {
+      const json = await resFallback.json();
+      if (Array.isArray(json?.data)) {
+        return json.data
+          .map((country: { name: string; flag: string }) => ({
+            name: country.name,
+            flag: country.flag || "",
+          }))
+          .sort((a: Country, b: Country) => a.name.localeCompare(b.name));
+      }
+    }
+
+    throw new Error(
+      `Failed to fetch countries (v2: ${res.status}, v3: ${resV3.status}, fallback: ${resFallback.status})`,
+    );
+  } catch (err) {
+    console.error("getCountries error:", err);
     return [];
   }
 }
